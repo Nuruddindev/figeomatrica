@@ -1,6 +1,5 @@
 name: "Geometrize a figure"
 description: "Claim a figure and contribute its geometry spec + examples"
-labels: ["contribution"]
 body:
   - type: markdown
     attributes:
