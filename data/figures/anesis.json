@@ -4,7 +4,38 @@
   "categories": [
     "of Understatement"
   ],
-  "geometri": null,
-  "contoh": null,
-  "atribusi": null
+  "geometri": {
+    "jangkar": "Akhir",
+    "kelas": "Konseptual",
+    "satuan": "unit",
+    "operasi": "detractio",
+    "minim_ulangan": 1,
+    "catatan": "kalimat penutup yang meredam efek sebelumnya"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "Kami menang total.",
+        "Musuh hancur berkeping.",
+        "Setidaknya untuk sementara."
+      ],
+      [
+        "The evidence is overwhelming.",
+        "Justice will be served.",
+        "Probably."
+      ]
+    ],
+    "negatif": [
+      [
+        "Kami menang total.",
+        "Musuh hancur berkeping.",
+        "Dan kemenangan itu abadi."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
