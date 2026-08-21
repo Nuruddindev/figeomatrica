@@ -4,7 +4,38 @@
   "categories": [
     "of Understatement"
   ],
-  "geometri": null,
-  "contoh": null,
-  "atribusi": null
+  "geometri": {
+    "jangkar": "Akhir",
+    "kelas": "Konseptual",
+    "satuan": "wacana",
+    "operasi": "detractio",
+    "minim_ulangan": 1,
+    "catatan": "menyusul dan meredam gaya retoris unit-unit sebelumnya"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "We shall fight on the seas.",
+        "We shall never surrender.",
+        "Atau mungkin menyerah saja kalau hujan."
+      ],
+      [
+        "Kemenangan pasti milik kita!",
+        "Tiada jalan mundur!",
+        "Yaudah deh."
+      ]
+    ],
+    "negatif": [
+      [
+        "We shall fight on the seas.",
+        "We shall never surrender.",
+        "We shall carry the fight to every shore."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
