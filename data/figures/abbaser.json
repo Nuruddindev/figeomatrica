@@ -4,7 +4,35 @@
   "categories": [
     "of Understatement"
   ],
-  "geometri": null,
-  "contoh": null,
-  "atribusi": null
+  "geometri": {
+    "jangkar": "UnitUtuh",
+    "kelas": "Konseptual",
+    "satuan": "wacana",
+    "operasi": "detractio",
+    "minim_ulangan": 1,
+    "catatan": "dinilai relatif terhadap skala ekspektasi yang dibangun konteks sebelumnya"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "Presiden membacakan pidato kenegaraan di depan dewan.",
+        "\"Oh iya, jangan lupa bayar parkir.\""
+      ],
+      [
+        "The general described the fallen heroes.",
+        "\"Anyway, lunch?\""
+      ]
+    ],
+    "negatif": [
+      [
+        "The general described the fallen heroes.",
+        "The nation bowed in silence."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
