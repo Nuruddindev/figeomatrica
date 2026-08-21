@@ -1,28 +1,35 @@
+*English version · [Versi Indonesia](CONTRIBUTING.id.md)*
+
 # Contributing to Figeometrica
 
-Terima kasih! Panduan ini menjelaskan cara menyumbang **geometri figur** —
-spesifikasi terstruktur yang membuat sebuah figur retoris dapat dideteksi
-mesin. Anda tidak perlu menulis kode; satu file JSON + contoh kalimat sudah
-cukup.
+Thank you! This guide explains how to contribute a **figure geometry** —
+a structured specification that makes a rhetorical figure machine-detectable.
+You don't need to write code; a single JSON file plus example sentences is
+enough.
 
-## Tesis dalam satu baris
+## Thesis in one line
 
-> Setiap figur, bila didefinisikan dengan baik, adalah operasi atas deret:
-> **operasi × jangkar × satuan × pengulangan**.
+> Every figure, when properly defined, is an operation over a series:
+> **operation × anchor × unit × repetition**.
 
-## Bentuk kanonik
+## Canonical form
 
-| Field | Isi | Nilai yang sah |
+| Field | Content | Valid values |
 |---|---|---|
-| `jangkar` | di mana pola menempel | `Awal`, `Akhir`, `Sisipan`, `UnitUtuh`, `AntarUnit` |
-| `kelas` | kelas kesetaraan elemen | `Leksikal`, `Akar`, `Gramatikal`, `Konseptual` |
-| `satuan` | satuan elemen yang dioperasikan | `grafem`, `kata`, `frasa`, `unit`, `wacana` |
-| `operasi` | operasi klasik (operae) | `adjectio`, `detractio`, `immutatio`, `transmutatio`, `repetitio` |
-| `minim_ulangan` | ulangan minimum pola repetisi | angka ≥ 1 |
-| `template` | slot pola (opsional) | `["A","*","A"]` — id sama = label sama, `*` = apa pun |
-| `catatan` | penjelasan singkat (opsional) | teks bebas |
+| `jangkar` (anchor) | where the pattern attaches | `Awal` (Start), `Akhir` (End), `Sisipan` (Insertion), `UnitUtuh` (WholeUnit), `AntarUnit` (BetweenUnits) |
+| `kelas` (class) | equivalence class of elements | `Leksikal` (Lexical), `Akar` (Root), `Gramatikal` (Grammatical), `Konseptual` (Conceptual) |
+| `satuan` (unit) | unit of the operated element | `grafem` (grapheme), `kata` (word), `frasa` (phrase), `unit`, `wacana` (discourse) |
+| `operasi` (operation) | classical operation (operae) | `adjectio`, `detractio`, `immutatio`, `transmutatio`, `repetitio` |
+| `minim_ulangan` (min. repetitions) | minimum repetition count of the pattern | integer ≥ 1 |
+| `template` | pattern slots (optional) | `["A","*","A"]` — same id = same label, `*` = anything |
+| `catatan` (notes) | brief explanation (optional) | free text |
 
-Contoh entry lengkap (`data/figures/anaphora.json`):
+Note: field names and enum values stay in Indonesian in the actual JSON
+(`jangkar`, `kelas`, `satuan`, etc.) — this table only translates their
+meaning for English-speaking contributors. Use the Indonesian keys exactly
+as shown when writing your entry.
+
+Full example entry (`data/figures/anaphora.json`):
 
 ```json
 {
@@ -38,40 +45,41 @@ Contoh entry lengkap (`data/figures/anaphora.json`):
     "positif": [["We came.", "We saw.", "We conquered."]],
     "negatif": [["He came.", "They saw.", "It ended."]]
   },
-  "atribusi": { "geometri": "username-anda", "contoh": "username-anda", "lisensi": "MIT" }
+  "atribusi": { "geometri": "your-username", "contoh": "your-username", "lisensi": "MIT" }
 }
 ```
 
-## Aturan contoh (bagian terpenting)
+## Example rules (the most important part)
 
-- **Positif** HARUS memicu pola; **negatif** HARUS TIDAK memicu (mirip tapi
-  bukan figur itu).
-- Tiap contoh = array unit wacana (kalimat). Figur lintas-unit (anaphora,
-  anadiplosis, climax) butuh beberapa unit; antimetabole cukup satu.
-- Validator menjalankan matcher deterministik atas contoh Anda. Lulus =
-  kontribusi Anda tervalidasi mesin; gagal = CI memberi tahu persis contoh
-  mana yang bermasalah.
-- Pola di luar keluarga matcher saat ini (mis. kelas Konseptual seperti
-  chiasmus, atau sisipan seperti tmesis/parenthesis) tetap diterima — CI
-  menandainya *jalur manual* untuk review maintainer.
+- **Positive** examples MUST trigger the pattern; **negative** examples
+  MUST NOT trigger it (similar-looking, but not the figure itself).
+- Each example is an array of discourse units (sentences). Cross-unit
+  figures (anaphora, anadiplosis, climax) need multiple units; antimetabole
+  only needs one.
+- The validator runs a deterministic matcher against your examples. Passing
+  means your contribution is machine-validated; failing means CI tells you
+  exactly which example is problematic.
+- Patterns outside the current matcher family (e.g. Conceptual-class figures
+  like chiasmus, or insertion figures like tmesis/parenthesis) are still
+  accepted — CI flags them for a *manual review* path by maintainers.
 
-## Alur kerja
+## Workflow
 
-1. Buka issue dengan template **"Geometrize a figure"**, klaim satu figur.
-2. Fork → branch → edit **satu file** `data/figures/<nama>.json`.
-3. Jalankan lokal: `cargo run -p figeometrica-rhetorica --bin validate`
-4. Push dan buka PR. CI memverifikasi otomatis.
+1. Open an issue using the **"Geometrize a figure"** template, and claim one figure.
+2. Fork → branch → edit **a single file** `data/figures/<name>.json`.
+3. Run locally: `cargo run -p figeometrica-rhetorica --bin validate`
+4. Push and open a PR. CI verifies automatically.
 
-## Lisensi & atribusi
+## License & attribution
 
-- Kontribusi dilisensikan **MIT** sejak dibuka PR-nya (inbound = outbound).
-- Nama Anda tersimpan di field `atribusi` entri + CONTRIBUTORS.md.
-- **Jangan menyalin definisi prosa** dari sumber berhak cipta (Silva
-  Rhetoricae dsb.). Struktur taksonomi klasik adalah milik publik; tulisan
-  orang lain bukan.
+- Contributions are licensed under **MIT** as soon as the PR is opened (inbound = outbound).
+- Your name is stored in the entry's `atribusi` field and in CONTRIBUTORS.md.
+- **Do not copy prose definitions** from copyrighted sources (Silva
+  Rhetoricae, etc.). The classical taxonomic structure is public domain;
+  other people's writing is not.
 
-## Co-authorship dataset paper
+## Dataset paper co-authorship
 
-Kontributor dengan **≥ 10 entri diterima** atau berperan sebagai validator
-masuk daftar co-author publikasi dataset. Kriteria final diumumkan sebelum
-paper ditulis dan tidak berlaku surut.
+Contributors with **≥ 10 accepted entries**, or who serve as a validator,
+are added to the co-author list of the dataset publication. Final criteria
+will be announced before the paper is written and are not retroactive.
