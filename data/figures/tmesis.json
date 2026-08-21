@@ -5,17 +5,13 @@
     "of Amplification",
     "of Interruption"
   ],
-  "geometri": {
-    "jangkar": "Sisipan",
-    "kelas": "Leksikal",
-    "satuan": "kata",
-    "operasi": "adjectio",
-    "minim_ulangan": 1,
-    "template": [],
-    "catatan": "sisip di tengah kata/frasa"
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "What place so instant to be abso-bloody-lutely noble?"
       ],
@@ -23,7 +19,7 @@
         "Kata itu sungguh tak masuk logika."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "That is absolutely noble."
       ],
@@ -32,9 +28,13 @@
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "Insertion",
+    "class": "Lexical",
+    "grain": "word",
+    "operation": "addition",
+    "min_repeats": 1,
+    "template": [],
+    "note": "sisip di tengah kata/frasa"
   }
 }

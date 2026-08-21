@@ -119,15 +119,15 @@ where
 /// Grain of the operated-on element (canonical-form axis).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Grain {
-    #[serde(alias = "grafem")]
+    #[serde(alias = "grafem", alias = "grapheme")]
     Grapheme,
-    #[serde(alias = "kata")]
+    #[serde(alias = "kata", alias = "word")]
     Word,
-    #[serde(alias = "frasa")]
+    #[serde(alias = "frasa", alias = "phrase")]
     Phrase,
     #[serde(alias = "unit")]
     Unit,
-    #[serde(alias = "wacana")]
+    #[serde(alias = "wacana", alias = "discourse")]
     Discourse,
 }
 
@@ -135,16 +135,22 @@ pub enum Grain {
 /// operae plus repetition).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Operation {
-    #[serde(alias = "adjectio")]
+    #[serde(alias = "adjectio", alias = "addition")]
     Addition,
-    #[serde(alias = "detractio")]
+    #[serde(alias = "detractio", alias = "deletion")]
     Deletion,
-    #[serde(alias = "immutatio")]
+    #[serde(alias = "immutatio", alias = "substitution")]
     Substitution,
-    #[serde(alias = "transmutatio")]
+    #[serde(alias = "transmutatio", alias = "permutation")]
     Permutation,
-    #[serde(alias = "repetitio")]
+    #[serde(alias = "repetitio", alias = "repetition")]
     Repetition,
+    /// Ordinal constraint: element i corresponds to position i of an
+    /// external reference sequence (e.g. successive alphabet letters →
+    /// abecedarian). Added when the dataset demanded it — canonical form
+    /// grows with evidence, not speculation.
+    #[serde(alias = "ordering")]
+    Ordering,
 }
 
 /// Geometry definition of one figure (data-driven; future source: the
@@ -398,6 +404,14 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
              1, 0.80, "pemotongan segmen akhir kata (apocope/clipping)");
     }
 
+    // ── Positional ordering (abecedarian family) ─────────────────────
+    if d.contains("alphabet") || d.contains("successive letters")
+        || d.contains("initial letters in order")
+        || d.contains("letters follow") {
+        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Grapheme, Operation::Ordering,
+             1, 0.80, "huruf awal tiap unit mengikuti urutan referensi eksternal (abecedarian)");
+    }
+
     candidates.into_iter().max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
 }
 
@@ -433,6 +447,7 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         Some(Operation::Substitution) => "immutatio",
         Some(Operation::Permutation) => "transmutatio",
         Some(Operation::Repetition) => "repetitio",
+        Some(Operation::Ordering) => "ordering",
         None => "repetitio",
     };
     format!(
@@ -1050,6 +1065,16 @@ mod tests {
         assert_eq!(draft.pattern.class, ElementClass::Lexical);
         assert_eq!(draft.pattern.operation, Some(Operation::Deletion));
         assert!(draft.confidence >= 0.75);
+    }
+
+    #[test]
+    fn heuristic_compiles_abecedarian_ordering() {
+        let d = "A series of units whose initial letters follow the order of \
+                 the alphabet.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::CrossUnit);
+        assert_eq!(draft.pattern.operation, Some(Operation::Ordering));
+        assert_eq!(draft.pattern.grain, Some(Grain::Grapheme));
     }
 
     #[test]

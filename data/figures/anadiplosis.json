@@ -4,19 +4,13 @@
   "categories": [
     "of Repetition"
   ],
-  "geometri": {
-    "jangkar": "AntarUnit",
-    "kelas": "Leksikal",
-    "satuan": "unit",
-    "operasi": "repetitio",
-    "minim_ulangan": 1,
-    "template": [
-      "A",
-      "A"
-    ]
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "There is light.",
         "Light illuminates everything."
@@ -26,16 +20,22 @@
         "Cahaya menerangi segalanya."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "There is light.",
         "Darkness hides everything."
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "unit",
+    "operation": "repetition",
+    "min_repeats": 1,
+    "template": [
+      "A",
+      "A"
+    ]
   }
 }

@@ -4,21 +4,13 @@
   "categories": [
     "of Balance"
   ],
-  "geometri": {
-    "jangkar": "UnitUtuh",
-    "kelas": "Leksikal",
-    "satuan": "frasa",
-    "operasi": "transmutatio",
-    "minim_ulangan": 1,
-    "template": [
-      "A",
-      "B",
-      "B",
-      "A"
-    ]
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "Fair is foul, and foul is fair."
       ],
@@ -26,15 +18,23 @@
         "Jangan hidup untuk makan, tapi makan untuk hidup."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "He lives to eat and drinks to live."
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "WholeUnit",
+    "class": "Lexical",
+    "grain": "phrase",
+    "operation": "permutation",
+    "min_repeats": 1,
+    "template": [
+      "A",
+      "B",
+      "B",
+      "A"
+    ]
   }
 }

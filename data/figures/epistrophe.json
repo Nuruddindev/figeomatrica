@@ -4,20 +4,13 @@
   "categories": [
     "of Repetition"
   ],
-  "geometri": {
-    "jangkar": "Akhir",
-    "kelas": "Leksikal",
-    "satuan": "unit",
-    "operasi": "repetitio",
-    "minim_ulangan": 2,
-    "template": [
-      "A",
-      "*",
-      "A"
-    ]
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "I work hard.",
         "You work hard."
@@ -27,16 +20,23 @@
         "Kamu bekerja keras."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "I work hard.",
         "You work fast."
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "Final",
+    "class": "Lexical",
+    "grain": "unit",
+    "operation": "repetition",
+    "min_repeats": 2,
+    "template": [
+      "A",
+      "*",
+      "A"
+    ]
   }
 }

@@ -6,17 +6,13 @@
     "of Definition",
     "of Interruption"
   ],
-  "geometri": {
-    "jangkar": "Sisipan",
-    "kelas": "Leksikal",
-    "satuan": "unit",
-    "operasi": "adjectio",
-    "minim_ulangan": 1,
-    "template": [],
-    "catatan": "sisipan penyela kalimat"
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "The truth (and only the truth) will set you free."
       ],
@@ -24,7 +20,7 @@
         "Semua orang tahu hal itu (kecuali dia) sejak lama."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "The truth will set you free."
       ],
@@ -33,9 +29,13 @@
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "Insertion",
+    "class": "Lexical",
+    "grain": "unit",
+    "operation": "addition",
+    "min_repeats": 1,
+    "template": [],
+    "note": "sisipan penyela kalimat"
   }
 }

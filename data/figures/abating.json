@@ -1,19 +1,21 @@
 {
-  "id": 1,
-  "name": "abating",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Understatement"
   ],
-  "geometri": {
-    "jangkar": "Akhir",
-    "kelas": "Konseptual",
-    "satuan": "wacana",
-    "operasi": "detractio",
-    "minim_ulangan": 1,
-    "catatan": "meredam gaya retoris unit-unit sebelumnya; dinilai relatif terhadap skala ekspektasi"
-  },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "negative": [
+      [
+        "We shall fight on the seas.",
+        "We shall never surrender.",
+        "We shall carry the fight to every shore."
+      ]
+    ],
+    "positive": [
       [
         "We shall fight on the seas.",
         "We shall never surrender.",
@@ -24,18 +26,16 @@
         "Tiada jalan mundur!",
         "Yaudah deh."
       ]
-    ],
-    "negatif": [
-      [
-        "We shall fight on the seas.",
-        "We shall never surrender.",
-        "We shall carry the fight to every shore."
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Final",
+    "class": "Conceptual",
+    "grain": "discourse",
+    "min_repeats": 1,
+    "note": "meredam gaya retoris unit-unit sebelumnya",
+    "operation": "deletion"
+  },
+  "id": 1,
+  "name": "abating"
 }

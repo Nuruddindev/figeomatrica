@@ -1,19 +1,21 @@
 {
-  "id": 63,
-  "name": "anesis",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Understatement"
   ],
-  "geometri": {
-    "jangkar": "Akhir",
-    "kelas": "Konseptual",
-    "satuan": "unit",
-    "operasi": "detractio",
-    "minim_ulangan": 1,
-    "catatan": "kalimat penutup yang meredam efek sebelumnya"
-  },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "negative": [
+      [
+        "Kami menang total.",
+        "Musuh hancur berkeping.",
+        "Dan kemenangan itu abadi."
+      ]
+    ],
+    "positive": [
       [
         "Kami menang total.",
         "Musuh hancur berkeping.",
@@ -24,18 +26,16 @@
         "Justice will be served.",
         "Probably."
       ]
-    ],
-    "negatif": [
-      [
-        "Kami menang total.",
-        "Musuh hancur berkeping.",
-        "Dan kemenangan itu abadi."
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Final",
+    "class": "Conceptual",
+    "grain": "unit",
+    "min_repeats": 1,
+    "note": "kalimat penutup yang meredam efek",
+    "operation": "deletion"
+  },
+  "id": 63,
+  "name": "anesis"
 }

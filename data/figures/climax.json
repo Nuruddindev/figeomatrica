@@ -5,17 +5,13 @@
     "of Amplification",
     "of Parallelism"
   ],
-  "geometri": {
-    "jangkar": "AntarUnit",
-    "kelas": "Leksikal",
-    "satuan": "unit",
-    "operasi": "repetitio",
-    "minim_ulangan": 2,
-    "template": [],
-    "catatan": "rantai anadiplosis >=2 (gradatio)"
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "The first is hope.",
         "Hope brings conviction.",
@@ -27,16 +23,20 @@
         "Keyakinan membawa tindakan."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "Hope brings conviction.",
         "Action brings results."
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "unit",
+    "operation": "repetition",
+    "min_repeats": 2,
+    "template": [],
+    "note": "rantai anadiplosis >=2 (gradatio)"
   }
 }

@@ -1,19 +1,20 @@
 {
-  "id": 4,
-  "name": "abcisio",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Omission"
   ],
-  "geometri": {
-    "jangkar": "Akhir",
-    "kelas": "Leksikal",
-    "satuan": "kata",
-    "operasi": "detractio",
-    "minim_ulangan": 1,
-    "catatan": "pemotongan segmen akhir kata (apocope/clipping)"
-  },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "negative": [
+      [
+        "photograph -> photography",
+        "laboratory -> laboratorian"
+      ]
+    ],
+    "positive": [
       [
         "photograph -> photo",
         "laboratory -> lab"
@@ -22,17 +23,17 @@
         "fotografi -> foto",
         "laboratorium -> lab"
       ]
-    ],
-    "negatif": [
-      [
-        "photograph -> photography",
-        "laboratory -> laboratorian"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Final",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: pemotongan segmen akhir kata (apocope/clipping)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 4,
+  "name": "abcisio"
 }

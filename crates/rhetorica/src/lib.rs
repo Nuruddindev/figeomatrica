@@ -23,11 +23,11 @@ use serde::{Deserialize, Serialize};
 /// Positives MUST trigger the figure's geometry when machine-verifiable;
 /// negatives MUST NOT. The validator (`src/bin/validate.rs`) enforces this.
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
-pub struct Contoh {
-    #[serde(default)]
-    pub positif: Vec<Vec<String>>,
-    #[serde(default)]
-    pub negatif: Vec<Vec<String>>,
+pub struct Examples {
+    #[serde(default, alias = "positif")]
+    pub positive: Vec<Vec<String>>,
+    #[serde(default, alias = "negatif")]
+    pub negative: Vec<Vec<String>>,
 }
 
 /// One figure entry of the theory base.
@@ -36,12 +36,14 @@ pub struct FigureEntry {
     pub id: u32,
     pub name: String,
     /// Compiled geometry; `None` = definition not yet geometrized.
-    #[serde(default)]
-    pub geometri: Option<FigurePattern>,
+    /// Field name is English "geometry"; Indonesian "geometri" accepted for backward compat.
+    #[serde(default, alias = "geometri")]
+    pub geometry: Option<FigurePattern>,
     #[serde(default)]
     pub categories: Vec<String>,
-    #[serde(default)]
-    pub contoh: Option<Contoh>,
+    /// Examples: English "examples" with "positive"/"negative"; Indonesian "contoh" with "positif"/"negatif" accepted.
+    #[serde(default, alias = "contoh")]
+    pub examples: Option<Examples>,
     /// GitHub usernames / attribution for this entry.
     #[serde(default)]
     pub atribusi: Option<serde_json::Value>,
@@ -79,7 +81,7 @@ impl std::str::FromStr for Rhetorica {
     fn from_str(json: &str) -> Result<Self, Self::Err> {
         let mut base: Rhetorica = serde_json::from_str(json).map_err(LoadError::Json)?;
         for f in &mut base.figures {
-            if let Some(g) = &mut f.geometri {
+            if let Some(g) = &mut f.geometry {
                 if g.name.is_empty() {
                     g.name = f.name.clone();
                 }
@@ -110,7 +112,7 @@ impl Rhetorica {
 
     /// Figures whose definitions have been compiled to geometry.
     pub fn geometrized(&self) -> impl Iterator<Item = &FigureEntry> {
-        self.figures.iter().filter(|f| f.geometri.is_some())
+        self.figures.iter().filter(|f| f.geometry.is_some())
     }
 
     /// Look up a figure by name (exact match).
@@ -135,7 +137,7 @@ mod tests {
     fn anaphora_has_compiled_geometry() {
         let r = Rhetorica::embedded().unwrap();
         let f = r.figure("anaphora").expect("anaphora present");
-        let g = f.geometri.as_ref().expect("anaphora geometrized");
+        let g = f.geometry.as_ref().expect("anaphora geometrized");
         assert_eq!(g.anchor, Anchor::Initial);
         assert_eq!(g.class, ElementClass::Lexical);
         assert_eq!(g.min_repeats, 2);
@@ -157,7 +159,7 @@ mod tests {
         // SARVA DB convention inside geometri must deserialize via aliases.
         let json = r#"{"figures":[{"id":1,"name":"tmesis","geometri":{"nama":"tmesis","jangkar":"Sisipan","kelas":"Leksikal","satuan":"grafem","operasi":"adjectio","minim_ulangan":1,"template":[],"catatan":"kata dipotong"}}]}"#;
         let r = Rhetorica::from_str(json).unwrap();
-        let g = r.figure("tmesis").unwrap().geometri.as_ref().unwrap();
+        let g = r.figure("tmesis").unwrap().geometry.as_ref().unwrap();
         assert_eq!(g.anchor, Anchor::Insertion);
         assert_eq!(g.grain, Some(figeometrica_core::Grain::Grapheme));
         assert_eq!(g.operation, Some(figeometrica_core::Operation::Addition));

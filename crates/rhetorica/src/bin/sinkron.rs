@@ -1,9 +1,10 @@
 //! Sync geometry from a SARVA database dump into the per-figure dataset.
 //!
 //! SARVA remains the source of truth for definitions + compiled geometry;
-//! this repo owns examples (contoh) and attribution. The merge keeps both:
-//! `geometri` comes from the dump, everything already present in
-//! `data/figures/` stays untouched.
+//! this repo owns examples and attribution. The dump carries the legacy
+//! Indonesian DB convention (jangkar/kelas/satuan/operasi/minim_ulangan);
+//! this tool translates it into the public English schema (`geometry` with
+//! anchor/class/grain/operation/min_repeats) before writing.
 //!
 //! Usage:
 //!   1. Export the dump from your SARVA vault:
@@ -33,64 +34,157 @@ struct DumpEntry {
     geometri: Option<serde_json::Value>,
 }
 
+/// Legacy Indonesian value → public English value.
+const ANCHOR: &[(&str, &str)] = &[
+    ("Awal", "Initial"),
+    ("Akhir", "Final"),
+    ("Sisipan", "Insertion"),
+    ("UnitUtuh", "WholeUnit"),
+    ("AntarUnit", "CrossUnit"),
+];
+const CLASS: &[(&str, &str)] = &[
+    ("Leksikal", "Lexical"),
+    ("Akar", "Root"),
+    ("Gramatikal", "Grammatical"),
+    ("Konseptual", "Conceptual"),
+];
+const GRAIN: &[(&str, &str)] = &[
+    ("grafem", "grapheme"),
+    ("kata", "word"),
+    ("frasa", "phrase"),
+    ("unit", "unit"),
+    ("wacana", "discourse"),
+];
+const OPERATION: &[(&str, &str)] = &[
+    ("adjectio", "addition"),
+    ("detractio", "deletion"),
+    ("immutatio", "substitution"),
+    ("transmutatio", "permutation"),
+    ("repetitio", "repetition"),
+    ("ordering", "ordering"),
+];
+
+fn en(value: &str, table: &[(&str, &str)]) -> String {
+    table
+        .iter()
+        .find(|(legacy, _)| *legacy == value)
+        .map(|(_, public)| public.to_string())
+        .unwrap_or_else(|| value.to_string())
+}
+
+/// Translate a geometry object into the public English schema. Accepts the
+/// value either as a real object or as a string containing JSON (the SQLite
+/// dump wraps TEXT columns as strings). Returns `None` when required fields
+/// are missing/malformed.
+fn terjemahkan(geo: &serde_json::Value) -> Option<serde_json::Value> {
+    let geo = match geo {
+        serde_json::Value::String(s) => serde_json::from_str::<serde_json::Value>(s).ok()?,
+        v => v.clone(),
+    };
+    let o = geo.as_object()?;
+    fn as_str(v: Option<&serde_json::Value>) -> Option<&str> {
+        v?.as_str()
+    }
+    let pick = |en_key: &str, id_key: &str| -> Option<&serde_json::Value> {
+        o.get(en_key).or_else(|| o.get(id_key))
+    };
+
+    let mut out = serde_json::Map::new();
+    out.insert(
+        "anchor".into(),
+        serde_json::Value::String(en(as_str(pick("anchor", "jangkar"))?, ANCHOR)),
+    );
+    out.insert(
+        "class".into(),
+        serde_json::Value::String(en(as_str(pick("class", "kelas"))?, CLASS)),
+    );
+    if let Some(s) = as_str(pick("grain", "satuan")) {
+        out.insert("grain".into(), serde_json::Value::String(en(s, GRAIN)));
+    }
+    if let Some(s) = as_str(pick("operation", "operasi")) {
+        out.insert("operation".into(), serde_json::Value::String(en(s, OPERATION)));
+    }
+    if let Some(n) = pick("min_repeats", "minim_ulangan").and_then(|v| v.as_u64()) {
+        out.insert("min_repeats".into(), serde_json::Value::from(n));
+    }
+    if let Some(t) = pick("template", "template") {
+        out.insert("template".into(), t.clone());
+    }
+    if let Some(s) = as_str(pick("note", "catatan")) {
+        out.insert("note".into(), serde_json::Value::String(s.into()));
+    }
+    Some(serde_json::Value::Object(out))
+}
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     let Some(dump_path) = args.get(1) else {
-        eprintln!("Pemakaian: sinkron <sarva_dump.json>");
-        eprintln!("Lihat komentar header file ini untuk cara membuat dump.");
+        eprintln!("Usage: sinkron <sarva_dump.json>");
+        eprintln!("See the header comment of this file for how to create the dump.");
         std::process::exit(2);
     };
 
     let dump_raw = fs::read_to_string(dump_path).unwrap_or_else(|e| {
-        eprintln!("Gagal membaca {dump_path}: {e}");
+        eprintln!("Cannot read {dump_path}: {e}");
         std::process::exit(1);
     });
     let entries: Vec<DumpEntry> = serde_json::from_str(&dump_raw).unwrap_or_else(|e| {
-        eprintln!("Dump bukan array yang valid: {e}");
+        eprintln!("Dump is not a valid array: {e}");
         std::process::exit(1);
     });
 
-    let dataset_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("data/figures");
+    // Dataset lives at the repository root (same as build.rs reads).
+    let dataset_dir =
+        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../data/figures");
 
-    let mut diperbarui = 0usize;
-    let mut dilewati = 0usize;
-    let mut tanpa_berkas = 0usize;
+    let mut updated = 0usize;
+    let mut skipped = 0usize;
+    let mut no_file = 0usize;
 
     for e in &entries {
         // Only sync figures that actually carry geometry in SARVA.
         let Some(geo) = e.geometri.as_ref().filter(|g| !g.is_null()) else {
-            dilewati += 1;
+            skipped += 1;
+            continue;
+        };
+        let Some(translated) = terjemahkan(geo) else {
+            eprintln!("⚠ {}: geometri tidak bisa diterjemahkan, dilewati", e.name);
+            skipped += 1;
             continue;
         };
         let path = dataset_dir.join(format!("{}.json", slug(&e.name)));
         if !path.exists() {
-            tanpa_berkas += 1;
+            no_file += 1;
             continue;
         }
-        if terapkan(&path, geo) {
-            println!("↺ {}: geometri disalin dari SARVA", e.name);
-            diperbarui += 1;
+        if apply(&path, &translated) {
+            println!("↺ {}: geometry copied from SARVA", e.name);
+            updated += 1;
         } else {
-            dilewati += 1;
+            skipped += 1;
         }
     }
 
-    println!(
-        "{diperbarui} berkas diperbarui, {dilewati} sudah sama/dilewati, {tanpa_berkas} figur tanpa berkas dataset."
-    );
-    if diperbarui > 0 {
-        println!("Selanjutnya: git diff data/figures && cargo run -p figeometrica-rhetorica --bin validate");
+    println!("{updated} files updated, {skipped} already equal/skipped, {no_file} figures without a dataset file.");
+    if updated > 0 {
+        println!("Next: git diff data/figures && cargo run -p figeometrica-rhetorica --bin validate");
     }
 }
 
-/// Overwrite only the `geometri` field when it actually differs.
-fn terapkan(path: &Path, geo_baru: &serde_json::Value) -> bool {
+/// Overwrite only the `geometry` field when it actually differs.
+fn apply(path: &Path, geometry_new: &serde_json::Value) -> bool {
     let raw = fs::read_to_string(path).expect("dataset file readable");
     let mut v: serde_json::Value = serde_json::from_str(&raw).expect("valid dataset JSON");
-    if v.get("geometri") == Some(geo_baru) {
+    if v.get("geometry").map(|g| g == geometry_new).unwrap_or(false) {
         return false;
     }
-    v["geometri"] = geo_baru.clone();
+    v["geometry"] = geometry_new.clone();
+    // Drop the legacy Indonesian key so the entry never carries both
+    // (serde treats field+alias as one target → duplicate-field error).
+    if let Some(obj) = v.as_object_mut() {
+        obj.remove("geometri");
+        obj.retain(|_, val| !val.is_null());
+    }
     fs::write(
         path,
         serde_json::to_string_pretty(&v).expect("serialize") + "\n",

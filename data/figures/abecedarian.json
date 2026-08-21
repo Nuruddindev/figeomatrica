@@ -1,10 +1,42 @@
 {
-  "id": 3,
-  "name": "abecedarian",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
-    "of Amplification"
+    "of Repetition"
   ],
-  "geometri": null,
-  "contoh": null,
-  "atribusi": null
+  "examples": {
+    "negative": [
+      [
+        "All night we waited.",
+        "Dark clouds gathered.",
+        "Suddenly rain fell."
+      ]
+    ],
+    "positive": [
+      [
+        "All night we waited.",
+        "Bright stars appeared.",
+        "Come, morning said."
+      ],
+      [
+        "Airnya jernih.",
+        "Batunya hitam.",
+        "Cahaya menembus."
+      ]
+    ]
+  },
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "grapheme",
+    "min_repeats": 1,
+    "note": "unsur berturutan terjangkar pada posisi alfabet berurutan",
+    "operation": "ordering",
+    "template": []
+  },
+  "id": 3,
+  "name": "abecedarian"
 }

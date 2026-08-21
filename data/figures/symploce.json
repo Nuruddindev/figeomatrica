@@ -4,17 +4,13 @@
   "categories": [
     "of Repetition"
   ],
-  "geometri": {
-    "jangkar": "Awal",
-    "kelas": "Leksikal",
-    "satuan": "unit",
-    "operasi": "repetitio",
-    "minim_ulangan": 2,
-    "template": [],
-    "catatan": "awal DAN akhir unit berturut (anaphora+epistrophe)"
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
   },
-  "contoh": {
-    "positif": [
+  "examples": {
+    "positive": [
       [
         "When I was young, I was free.",
         "When I was old, I was free."
@@ -24,16 +20,20 @@
         "Ketika tua, aku merdeka."
       ]
     ],
-    "negatif": [
+    "negative": [
       [
         "I was young and free.",
         "I was old and bound."
       ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "unit",
+    "operation": "repetition",
+    "min_repeats": 2,
+    "template": [],
+    "note": "awal DAN akhir unit berturut (anaphora+epistrophe)"
   }
 }

@@ -2,7 +2,7 @@
 // contributions.
 //
 // For every figure with a compiled geometry:
-//   1. examples (`contoh`) must exist with at least one positive;
+//   1. examples (`examples`) must exist with at least one positive;
 //   2. if the pattern belongs to the matcher's detectable family, EVERY
 //      positive example must trigger the figure and EVERY negative must not;
 //   3. otherwise the entry is flagged for maintainer review (schema and
@@ -58,15 +58,15 @@ fn main() -> std::process::ExitCode {
     let mut mesin = 0usize;
 
     for f in &base.figures {
-        if f.geometri.is_none() {
+        if f.geometry.is_none() {
             continue;
         }
-        let Some(contoh) = &f.contoh else {
-            eprintln!("[gagal] {}: geometri ada tetapi 'contoh' kosong — wajib minimal satu contoh positif", f.name);
+        let Some(ex) = &f.examples else {
+            eprintln!("[gagal] {}: geometri ada tetapi 'examples' kosong — wajib minimal satu contoh positif", f.name);
             errors += 1;
             continue;
         };
-        if contoh.positif.is_empty() {
+        if ex.positive.is_empty() {
             eprintln!("[gagal] {}: tidak ada contoh positif", f.name);
             errors += 1;
             continue;
@@ -74,13 +74,13 @@ fn main() -> std::process::ExitCode {
 
         if terdeteksi(&f.name) {
             mesin += 1;
-            for ex in &contoh.positif {
+            for ex in &ex.positive {
                 if !temuan_untuk(&f.name, ex) {
                     eprintln!("[gagal] {}: contoh positif TIDAK memicu geometri: {:?}", f.name, ex);
                     errors += 1;
                 }
             }
-            for ex in &contoh.negatif {
+            for ex in &ex.negative {
                 if temuan_untuk(&f.name, ex) {
                     eprintln!("[gagal] {}: contoh negatif justru MEmicu geometri: {:?}", f.name, ex);
                     errors += 1;
