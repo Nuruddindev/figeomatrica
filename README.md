@@ -10,6 +10,9 @@ with classical rhetoric — the world's oldest text-analysis taxonomy) compiled
 into structured, machine-checkable specifications, plus engines that execute
 them deterministically and auditably.
 
+**Why does this matter?** Read the [manifesto](MANIFESTO.md) — bilingual,
+five minutes.
+
 ```
 figure = OPERATION × ANCHOR × GRAIN × REPETITION
          (adjectio | detractio | immutatio | transmutatio | repetitio)
