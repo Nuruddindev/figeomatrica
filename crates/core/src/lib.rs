@@ -389,6 +389,15 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
              1, 0.70, "di bawah skala ekspektasi konteks (abbaser)");
     }
 
+    // ── Truncation / clipping / apocope ────────────────────────────────
+    if d.contains("truncat") || d.contains("clipping") || d.contains("apocope")
+        || d.contains("shorten") && (d.contains("remov") || d.contains("cut") || d.contains("delet"))
+        || d.contains("final segment") || d.contains("terminal segment")
+        || d.contains("removing the end") || d.contains("cut off the end") {
+        push(Anchor::Final, ElementClass::Lexical, Grain::Word, Operation::Deletion,
+             1, 0.80, "pemotongan segmen akhir kata (apocope/clipping)");
+    }
+
     candidates.into_iter().max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
 }
 
@@ -1030,6 +1039,17 @@ mod tests {
         assert_eq!(draft.pattern.anchor, Anchor::WholeUnit);
         assert_eq!(draft.pattern.operation, Some(Operation::Permutation));
         assert_eq!(draft.pattern.class, ElementClass::Lexical);
+    }
+
+    #[test]
+    fn heuristic_compiles_truncation_clipping() {
+        let d = "Truncate(word, terminal_segment) -> a shortened word form \
+                 produced by removing its final segment.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::Final);
+        assert_eq!(draft.pattern.class, ElementClass::Lexical);
+        assert_eq!(draft.pattern.operation, Some(Operation::Deletion));
+        assert!(draft.confidence >= 0.75);
     }
 
     #[test]

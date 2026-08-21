@@ -4,7 +4,35 @@
   "categories": [
     "of Omission"
   ],
-  "geometri": null,
-  "contoh": null,
-  "atribusi": null
+  "geometri": {
+    "jangkar": "Akhir",
+    "kelas": "Leksikal",
+    "satuan": "kata",
+    "operasi": "detractio",
+    "minim_ulangan": 1,
+    "catatan": "pemotongan segmen akhir kata (apocope/clipping)"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "photograph -> photo",
+        "laboratory -> lab"
+      ],
+      [
+        "fotografi -> foto",
+        "laboratorium -> lab"
+      ]
+    ],
+    "negatif": [
+      [
+        "photograph -> photography",
+        "laboratory -> laboratorian"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
