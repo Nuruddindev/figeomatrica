@@ -17,11 +17,12 @@ figure = OPERATION × ANCHOR × GRAIN × REPETITION
          × (grapheme | word | phrase | unit | discourse)
 ```
 
-Example — `tmesis` ("abso-bloody-lutely"):
+Example — `tmesis` ("abso-bloody-lutely"), as stored in
+[`data/figures/tmesis.json`](data/figures/tmesis.json):
 
 ```json
-{ "anchor": "Insertion", "class": "Lexical", "grain": "word",
-  "operation": "adjectio", "min_repeats": 1, "template": [] }
+{ "jangkar": "Sisipan", "kelas": "Leksikal", "satuan": "kata",
+  "operasi": "adjectio", "minim_ulangan": 1, "template": [] }
 ```
 
 ## Crates
@@ -53,8 +54,28 @@ parenthesis); the rhetoric theory base is being geometrized incrementally.
 
 447 of 456 figures still need their geometry compiled — and the machine
 checks your work: every contribution ships with example sentences that CI
-runs through the deterministic matcher. Pick a figure, fill one JSON file,
-open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
+runs through the deterministic matcher. No code required; one JSON file is
+enough.
+
+**How to contribute (± 15 minutes for your first figure):**
+
+1. **Claim a figure** — open an issue with the
+   ["Geometrize a figure"](../../issues/new?template=geometrize-figure.md)
+   template, or pick any file in [`data/figures/`](data/figures) whose
+   `"geometri"` is `null` (e.g. `epizeuxis.json`).
+2. **Fill the canonical form** — `jangkar`, `kelas`, `satuan`, `operasi`,
+   `minim_ulangan`, plus a slot `template` if the figure has one. The field
+   reference is in [CONTRIBUTING.md](CONTRIBUTING.md).
+3. **Add examples** — positive sentences that *must* trigger the pattern,
+   near-miss negatives that *must not*. This is what makes your entry
+   machine-checkable.
+4. **Check locally** — `cargo run -p figeometrica-rhetorica --bin validate`
+5. **Open a PR** — CI verifies automatically: pass = merged with your name
+   in the entry's `atribusi`; fail = you get the exact failing example.
+
+Patterns outside the matcher's current family (conceptual-class figures like
+chiasmus, insertions like tmesis) are welcome too — they route to maintainer
+review instead of automatic verification.
 
 ## License
 
