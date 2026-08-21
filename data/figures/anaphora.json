@@ -1,0 +1,45 @@
+{
+  "id": 59,
+  "name": "anaphora",
+  "categories": [
+    "of Repetition"
+  ],
+  "geometri": {
+    "jangkar": "Awal",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "repetitio",
+    "minim_ulangan": 2,
+    "template": [
+      "A",
+      "*",
+      "A"
+    ]
+  },
+  "contoh": {
+    "positif": [
+      [
+        "We came.",
+        "We saw.",
+        "We conquered."
+      ],
+      [
+        "Kami datang.",
+        "Kami melihat.",
+        "Kami menaklukkan."
+      ]
+    ],
+    "negatif": [
+      [
+        "He came.",
+        "They saw.",
+        "It ended."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

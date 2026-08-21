@@ -1,0 +1,41 @@
+{
+  "id": 340,
+  "name": "parenthesis",
+  "categories": [
+    "of Amplification",
+    "of Definition",
+    "of Interruption"
+  ],
+  "geometri": {
+    "jangkar": "Sisipan",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "adjectio",
+    "minim_ulangan": 1,
+    "template": [],
+    "catatan": "sisipan penyela kalimat"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "The truth (and only the truth) will set you free."
+      ],
+      [
+        "Semua orang tahu hal itu (kecuali dia) sejak lama."
+      ]
+    ],
+    "negatif": [
+      [
+        "The truth will set you free."
+      ],
+      [
+        "Semua orang tahu hal itu sejak lama."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

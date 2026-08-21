@@ -1,0 +1,42 @@
+{
+  "id": 147,
+  "name": "climax",
+  "categories": [
+    "of Amplification",
+    "of Parallelism"
+  ],
+  "geometri": {
+    "jangkar": "AntarUnit",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "repetitio",
+    "minim_ulangan": 2,
+    "template": [],
+    "catatan": "rantai anadiplosis >=2 (gradatio)"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "The first is hope.",
+        "Hope brings conviction.",
+        "Conviction brings action."
+      ],
+      [
+        "Yang pertama adalah harapan.",
+        "Harapan membawa keyakinan.",
+        "Keyakinan membawa tindakan."
+      ]
+    ],
+    "negatif": [
+      [
+        "Hope brings conviction.",
+        "Action brings results."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

@@ -49,6 +49,13 @@ Early development. Core matcher covers 9 patterns (anaphora, epistrophe,
 symploce, anadiplosis, gradatio/climax, antimetabole, chiasmus, tmesis,
 parenthesis); the rhetoric theory base is being geometrized incrementally.
 
+## Participate
+
+447 of 456 figures still need their geometry compiled — and the machine
+checks your work: every contribution ships with example sentences that CI
+runs through the deterministic matcher. Pick a figure, fill one JSON file,
+open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 MIT — see [LICENSE-MIT](LICENSE-MIT).

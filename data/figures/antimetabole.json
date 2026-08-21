@@ -1,0 +1,40 @@
+{
+  "id": 73,
+  "name": "antimetabole",
+  "categories": [
+    "of Balance"
+  ],
+  "geometri": {
+    "jangkar": "UnitUtuh",
+    "kelas": "Leksikal",
+    "satuan": "frasa",
+    "operasi": "transmutatio",
+    "minim_ulangan": 1,
+    "template": [
+      "A",
+      "B",
+      "B",
+      "A"
+    ]
+  },
+  "contoh": {
+    "positif": [
+      [
+        "Fair is foul, and foul is fair."
+      ],
+      [
+        "Jangan hidup untuk makan, tapi makan untuk hidup."
+      ]
+    ],
+    "negatif": [
+      [
+        "He lives to eat and drinks to live."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

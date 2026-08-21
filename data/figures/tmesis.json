@@ -1,0 +1,40 @@
+{
+  "id": 425,
+  "name": "tmesis",
+  "categories": [
+    "of Amplification",
+    "of Interruption"
+  ],
+  "geometri": {
+    "jangkar": "Sisipan",
+    "kelas": "Leksikal",
+    "satuan": "kata",
+    "operasi": "adjectio",
+    "minim_ulangan": 1,
+    "template": [],
+    "catatan": "sisip di tengah kata/frasa"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "What place so instant to be abso-bloody-lutely noble?"
+      ],
+      [
+        "Kata itu sungguh menya-nggak-mungkin-hkan logika."
+      ]
+    ],
+    "negatif": [
+      [
+        "That is absolutely noble."
+      ],
+      [
+        "I cannot possibly agree."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

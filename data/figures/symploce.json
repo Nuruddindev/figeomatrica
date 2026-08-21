@@ -1,0 +1,39 @@
+{
+  "id": 402,
+  "name": "symploce",
+  "categories": [
+    "of Repetition"
+  ],
+  "geometri": {
+    "jangkar": "Awal",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "repetitio",
+    "minim_ulangan": 2,
+    "template": [],
+    "catatan": "awal DAN akhir unit berturut (anaphora+epistrophe)"
+  },
+  "contoh": {
+    "positif": [
+      [
+        "When I was young, I was free.",
+        "When I was old, I was free."
+      ],
+      [
+        "Ketika muda, aku merdeka.",
+        "Ketika tua, aku merdeka."
+      ]
+    ],
+    "negatif": [
+      [
+        "I was young and free.",
+        "I was old and bound."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

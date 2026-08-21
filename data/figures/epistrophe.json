@@ -1,0 +1,42 @@
+{
+  "id": 237,
+  "name": "epistrophe",
+  "categories": [
+    "of Repetition"
+  ],
+  "geometri": {
+    "jangkar": "Akhir",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "repetitio",
+    "minim_ulangan": 2,
+    "template": [
+      "A",
+      "*",
+      "A"
+    ]
+  },
+  "contoh": {
+    "positif": [
+      [
+        "I work hard.",
+        "You work hard."
+      ],
+      [
+        "Saya bekerja keras.",
+        "Kamu bekerja keras."
+      ]
+    ],
+    "negatif": [
+      [
+        "I work hard.",
+        "You work fast."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}

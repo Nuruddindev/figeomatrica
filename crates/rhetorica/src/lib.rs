@@ -16,6 +16,20 @@
 use figeometrica_core::FigurePattern;
 use serde::{Deserialize, Serialize};
 
+/// Example sentences attached to a figure. Each example is a sequence of
+/// discourse units (most figures need one unit; cross-unit figures like
+/// anaphora need several).
+///
+/// Positives MUST trigger the figure's geometry when machine-verifiable;
+/// negatives MUST NOT. The validator (`src/bin/validate.rs`) enforces this.
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct Contoh {
+    #[serde(default)]
+    pub positif: Vec<Vec<String>>,
+    #[serde(default)]
+    pub negatif: Vec<Vec<String>>,
+}
+
 /// One figure entry of the theory base.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FigureEntry {
@@ -26,6 +40,11 @@ pub struct FigureEntry {
     pub geometri: Option<FigurePattern>,
     #[serde(default)]
     pub categories: Vec<String>,
+    #[serde(default)]
+    pub contoh: Option<Contoh>,
+    /// GitHub usernames / attribution for this entry.
+    #[serde(default)]
+    pub atribusi: Option<serde_json::Value>,
 }
 
 /// The rhetoric theory base.
@@ -71,9 +90,10 @@ impl std::str::FromStr for Rhetorica {
 }
 
 impl Rhetorica {
-    /// Embedded dataset shipped with the crate (workspace `data/` at build time).
+    /// Embedded dataset: per-figure files from `data/figures/*.json` merged
+    /// by build.rs at compile time.
     pub fn embedded_json() -> &'static str {
-        include_str!("../../../data/figures.json")
+        include_str!(concat!(env!("OUT_DIR"), "/figures.json"))
     }
 
     /// Load the embedded dataset.

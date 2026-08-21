@@ -1,0 +1,41 @@
+{
+  "id": 56,
+  "name": "anadiplosis",
+  "categories": [
+    "of Repetition"
+  ],
+  "geometri": {
+    "jangkar": "AntarUnit",
+    "kelas": "Leksikal",
+    "satuan": "unit",
+    "operasi": "repetitio",
+    "minim_ulangan": 1,
+    "template": [
+      "A",
+      "A"
+    ]
+  },
+  "contoh": {
+    "positif": [
+      [
+        "There is light.",
+        "Light illuminates everything."
+      ],
+      [
+        "Ada cahaya.",
+        "Cahaya menerangi segalanya."
+      ]
+    ],
+    "negatif": [
+      [
+        "There is light.",
+        "Darkness hides everything."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
+}
