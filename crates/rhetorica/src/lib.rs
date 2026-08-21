@@ -1,0 +1,140 @@
+// figeometrica-rhetorica
+// ─────────────────────────────────────────────────────────────────────────────
+// The classical-rhetoric theory base as data.
+//
+// A theory base is a versioned JSON dataset: figures with their compiled
+// geometric specs, plus category links. The loader is theory-agnostic —
+// future bases (e.g. fallacies as apparent enthymemes) follow the same
+// shape and load through the same API.
+//
+// NOTE on definitions: prose definitions are intentionally NOT shipped yet.
+// Many current definitions derive from copyrighted secondary sources and are
+// being rewritten as original text before publication. Structure (names,
+// categories, geometry) is public-domain classical material.
+// ─────────────────────────────────────────────────────────────────────────────
+
+use figeometrica_core::FigurePattern;
+use serde::{Deserialize, Serialize};
+
+/// One figure entry of the theory base.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FigureEntry {
+    pub id: u32,
+    pub name: String,
+    /// Compiled geometry; `None` = definition not yet geometrized.
+    #[serde(default)]
+    pub geometri: Option<FigurePattern>,
+    #[serde(default)]
+    pub categories: Vec<String>,
+}
+
+/// The rhetoric theory base.
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct Rhetorica {
+    #[serde(default)]
+    pub figures: Vec<FigureEntry>,
+}
+
+#[derive(Debug)]
+pub enum LoadError {
+    Io(std::io::Error),
+    Json(serde_json::Error),
+}
+
+impl std::fmt::Display for LoadError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            LoadError::Io(e) => write!(f, "cannot read theory base: {e}"),
+            LoadError::Json(e) => write!(f, "invalid theory base JSON: {e}"),
+        }
+    }
+}
+
+impl std::error::Error for LoadError {}
+
+impl std::str::FromStr for Rhetorica {
+    type Err = LoadError;
+
+    /// Parse a theory base from a JSON string. Fills empty embedded pattern
+    /// names from their parent figure entries.
+    fn from_str(json: &str) -> Result<Self, Self::Err> {
+        let mut base: Rhetorica = serde_json::from_str(json).map_err(LoadError::Json)?;
+        for f in &mut base.figures {
+            if let Some(g) = &mut f.geometri {
+                if g.name.is_empty() {
+                    g.name = f.name.clone();
+                }
+            }
+        }
+        Ok(base)
+    }
+}
+
+impl Rhetorica {
+    /// Embedded dataset shipped with the crate (workspace `data/` at build time).
+    pub fn embedded_json() -> &'static str {
+        include_str!("../../../data/figures.json")
+    }
+
+    /// Load the embedded dataset.
+    pub fn embedded() -> Result<Rhetorica, LoadError> {
+        use std::str::FromStr;
+        Rhetorica::from_str(Self::embedded_json())
+    }
+
+    /// Load from a file path.
+    pub fn from_path(path: &std::path::Path) -> Result<Rhetorica, LoadError> {
+        use std::str::FromStr;
+        Rhetorica::from_str(&std::fs::read_to_string(path).map_err(LoadError::Io)?)
+    }
+
+    /// Figures whose definitions have been compiled to geometry.
+    pub fn geometrized(&self) -> impl Iterator<Item = &FigureEntry> {
+        self.figures.iter().filter(|f| f.geometri.is_some())
+    }
+
+    /// Look up a figure by name (exact match).
+    pub fn figure(&self, name: &str) -> Option<&FigureEntry> {
+        self.figures.iter().find(|f| f.name == name)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use figeometrica_core::{Anchor, ElementClass};
+    use std::str::FromStr;
+
+    #[test]
+    fn embedded_base_loads_with_full_catalog() {
+        let r = Rhetorica::embedded().unwrap();
+        assert!(r.figures.len() > 400, "expected the full figure catalog");
+    }
+
+    #[test]
+    fn anaphora_has_compiled_geometry() {
+        let r = Rhetorica::embedded().unwrap();
+        let f = r.figure("anaphora").expect("anaphora present");
+        let g = f.geometri.as_ref().expect("anaphora geometrized");
+        assert_eq!(g.anchor, Anchor::Initial);
+        assert_eq!(g.class, ElementClass::Lexical);
+        assert_eq!(g.min_repeats, 2);
+    }
+
+    #[test]
+    fn geometrized_count_matches_seed() {
+        let r = Rhetorica::embedded().unwrap();
+        assert_eq!(r.geometrized().count(), 9);
+    }
+
+    #[test]
+    fn indonesian_geometry_aliases_load() {
+        // SARVA DB convention inside geometri must deserialize via aliases.
+        let json = r#"{"figures":[{"id":1,"name":"tmesis","geometri":{"nama":"tmesis","jangkar":"Sisipan","kelas":"Leksikal","satuan":"grafem","operasi":"adjectio","minim_ulangan":1,"template":[],"catatan":"kata dipotong"}}]}"#;
+        let r = Rhetorica::from_str(json).unwrap();
+        let g = r.figure("tmesis").unwrap().geometri.as_ref().unwrap();
+        assert_eq!(g.anchor, Anchor::Insertion);
+        assert_eq!(g.grain, Some(figeometrica_core::Grain::Grapheme));
+        assert_eq!(g.operation, Some(figeometrica_core::Operation::Addition));
+    }
+}

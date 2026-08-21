@@ -1,0 +1,13 @@
+[package]
+name = "figeometrica-core"
+description = "Geometry spec format and deterministic matcher for textual figures: figure = operation x anchor x grain x repetition."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
