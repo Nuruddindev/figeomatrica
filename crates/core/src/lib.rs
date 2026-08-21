@@ -283,6 +283,156 @@ impl FigurePattern {
     }
 }
 
+/// Result of heuristic definition compilation.
+#[derive(Debug, Clone)]
+pub struct DraftGeometri {
+    /// Compiled pattern; `name` is left empty — the caller fills it from the
+    /// parent figure record.
+    pub pattern: FigurePattern,
+    /// 0.0–1.0 heuristic confidence. >= 0.75 is usually safe to apply
+    /// automatically; lower should wait for human confirmation.
+    pub confidence: f32,
+}
+
+/// Deterministic prose-to-canonical compiler (heuristic stage).
+///
+/// Scans a natural-language figure definition for geometric markers
+/// (position words, repetition, inversion, insertion, diminution...) and
+/// drafts the canonical form. This is Stage A: cheap, offline, auditable.
+/// Unmatched definitions return `None` — they wait for an LLM pass or a
+/// human, never get guessed.
+///
+/// Rule coverage grows over time; unknown phrasing is expected to fall
+/// through rather than produce a wrong spec.
+pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
+    let d = definition.to_lowercase();
+    let mut candidates: Vec<DraftGeometri> = Vec::new();
+
+    let mut push = |anchor: Anchor, class: ElementClass, grain: Grain, op: Operation,
+                    min_repeats: usize, confidence: f32, catatan: &str| {
+        candidates.push(DraftGeometri {
+            pattern: FigurePattern {
+                name: String::new(),
+                template: vec![],
+                anchor,
+                class,
+                min_repeats,
+                grain: Some(grain),
+                operation: Some(op),
+                note: Some(format!("kompilasi heuristik: {catatan}")),
+            },
+            confidence,
+        });
+    };
+
+    // ── Repetition family ────────────────────────────────────────────
+    let rep = d.contains("repetit") || d.contains("repeat");
+    let awal = d.contains("beginning") || d.contains("the start");
+    let akhir = d.contains("end of") || d.contains("the end")
+        || d.contains("conclusion of successive");
+    if rep && awal && akhir {
+        push(Anchor::Initial, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             2, 0.80, "pengulangan di awal DAN akhir unit (symploce)");
+    } else if rep && (d.contains("beginning of successive") || d.contains("begins successive")
+        || d.contains("at the beginning")) {
+        push(Anchor::Initial, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             2, 0.90, "pengulangan kata pembuka antar-unit (anaphora)");
+    } else if rep && (d.contains("end of successive") || d.contains("ends of successive")
+        || d.contains("at the end")) {
+        push(Anchor::Final, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             2, 0.90, "pengulangan kata penutup antar-unit (epistrophe)");
+    }
+    if d.contains("last word") && (d.contains("first word") || d.contains("next")) {
+        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             1, 0.85, "akhir unit menjadi awal unit berikut (anadiplosis)");
+    }
+    if (d.contains("chain") || d.contains("series of clauses")) && rep {
+        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             2, 0.70, "rantai pengulangan berturutan (gradatio/climax)");
+    }
+    if rep && (d.contains("immediate repetition") || d.contains("repeated immediatel")) {
+        push(Anchor::WholeUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
+             2, 0.70, "pengulangan langsung dalam satu unit (epizeuxis)");
+    }
+
+    // ── Inversion family ─────────────────────────────────────────────
+    if (d.contains("invers") || d.contains("reverse") || d.contains("reversal"))
+        && (d.contains("order of word") || d.contains("order of phrase") || d.contains("phras")) {
+        let kelas = if d.contains("meaning") || d.contains("concept") {
+            ElementClass::Conceptual
+        } else {
+            ElementClass::Lexical
+        };
+        push(Anchor::WholeUnit, kelas, Grain::Phrase, Operation::Permutation,
+             1, 0.80, "inversi/permutasi frasa (antimetabole/chiasmus)");
+    }
+
+    // ── Insertion family ─────────────────────────────────────────────
+    if d.contains("insert") && (d.contains("word") && (d.contains("within a word")
+        || d.contains("into a word") || d.contains("middle of a word") || d.contains("cut"))) {
+        push(Anchor::Insertion, ElementClass::Lexical, Grain::Grapheme, Operation::Addition,
+             1, 0.75, "sisipan di dalam kata (tmesis)");
+    } else if d.contains("interpolat") || d.contains("parenthetic")
+        || (d.contains("insert") && (d.contains("sentence") || d.contains("clause"))) {
+        push(Anchor::Insertion, ElementClass::Lexical, Grain::Phrase, Operation::Addition,
+             1, 0.70, "penyela di tengah kalimat (parenthesis)");
+    }
+
+    // ── Conceptual diminution ────────────────────────────────────────
+    let turun = d.contains("reduce") || d.contains("diminish") || d.contains("lessen")
+        || d.contains("lower than") || d.contains("beneath the");
+    if turun && d.contains("conclud") {
+        push(Anchor::Final, ElementClass::Conceptual, Grain::Discourse, Operation::Deletion,
+             1, 0.75, "penutup yang meredam gaya sebelumnya (abating/anesis)");
+    } else if turun && (d.contains("expected") || d.contains("anticipat")) {
+        push(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Discourse, Operation::Deletion,
+             1, 0.70, "di bawah skala ekspektasi konteks (abbaser)");
+    }
+
+    candidates.into_iter().max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
+}
+
+/// Serialize a compiled pattern into the SARVA database JSON convention
+/// (Indonesian keys/values: jangkar/kelas/satuan/operasi/minim_ulangan).
+/// The crate's own serialization stays English; this bridge keeps legacy
+/// consumers working.
+pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
+    let jangkar = match p.anchor {
+        Anchor::Initial => "Awal",
+        Anchor::Final => "Akhir",
+        Anchor::Insertion => "Sisipan",
+        Anchor::WholeUnit => "UnitUtuh",
+        Anchor::CrossUnit => "AntarUnit",
+    };
+    let kelas = match p.class {
+        ElementClass::Lexical => "Leksikal",
+        ElementClass::Root => "Akar",
+        ElementClass::Grammatical => "Gramatikal",
+        ElementClass::Conceptual => "Konseptual",
+    };
+    let satuan = match p.grain {
+        Some(Grain::Grapheme) => "grafem",
+        Some(Grain::Word) => "kata",
+        Some(Grain::Phrase) => "frasa",
+        Some(Grain::Unit) => "unit",
+        Some(Grain::Discourse) => "wacana",
+        None => "unit",
+    };
+    let operasi = match p.operation {
+        Some(Operation::Addition) => "adjectio",
+        Some(Operation::Deletion) => "detractio",
+        Some(Operation::Substitution) => "immutatio",
+        Some(Operation::Permutation) => "transmutatio",
+        Some(Operation::Repetition) => "repetitio",
+        None => "repetitio",
+    };
+    format!(
+        "{{\"jangkar\":\"{jangkar}\",\"kelas\":\"{kelas}\",\"satuan\":\"{satuan}\",\"operasi\":\"{operasi}\",\"minim_ulangan\":{},\"template\":[],\"catatan\":\"{}\"}}",
+        p.min_repeats,
+        p.note.as_deref().unwrap_or("")
+    )
+}
+
 /// Text token with its equality label + byte offset in the source unit.
 /// For Lexical, `label` = lowercased word; for Grammatical/Conceptual,
 /// `label` = POS tag / concept id from an external extractor (LLM/annotator).
@@ -821,5 +971,90 @@ mod tests {
         assert_eq!(p.class, ElementClass::Lexical);
         assert_eq!(p.min_repeats, 2);
         assert_eq!(p.operation, Some(Operation::Repetition));
+    }
+
+    #[test]
+    fn heuristic_compiles_anaphora_definition() {
+        let d = "Repetition of the same word or group of words at the \
+                 beginning of successive clauses.";
+        let draft = compile_definition(d).expect("anaphora should compile");
+        assert!(draft.confidence >= 0.85);
+        assert_eq!(draft.pattern.anchor, Anchor::Initial);
+        assert_eq!(draft.pattern.operation, Some(Operation::Repetition));
+        assert_eq!(draft.pattern.min_repeats, 2);
+    }
+
+    #[test]
+    fn heuristic_compiles_epistrophe_definition() {
+        let d = "Repetition of the same word or group of words at the ends \
+                 of successive clauses.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::Final);
+        assert_eq!(draft.pattern.operation, Some(Operation::Repetition));
+    }
+
+    #[test]
+    fn heuristic_compiles_tmesis_definition() {
+        let d = "The insertion of a word in between a word, cutting the \
+                 original word into two parts.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::Insertion);
+        assert_eq!(draft.pattern.grain, Some(Grain::Grapheme));
+        assert_eq!(draft.pattern.operation, Some(Operation::Addition));
+    }
+
+    #[test]
+    fn heuristic_compiles_concluding_diminution() {
+        let d = "A concluding representation that reduces the rhetorical \
+                 force of what precedes it.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::Final);
+        assert_eq!(draft.pattern.class, ElementClass::Conceptual);
+        assert_eq!(draft.pattern.operation, Some(Operation::Deletion));
+    }
+
+    #[test]
+    fn heuristic_compiles_below_expected_scale() {
+        let d = "A representation that is semantically or rhetorically lower \
+                 than the expected scale.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::WholeUnit);
+        assert_eq!(draft.pattern.class, ElementClass::Conceptual);
+        assert_eq!(draft.pattern.operation, Some(Operation::Deletion));
+    }
+
+    #[test]
+    fn heuristic_compiles_phrase_inversion() {
+        let d = "Repetition of a phrase with the order of words reversed.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.pattern.anchor, Anchor::WholeUnit);
+        assert_eq!(draft.pattern.operation, Some(Operation::Permutation));
+        assert_eq!(draft.pattern.class, ElementClass::Lexical);
+    }
+
+    #[test]
+    fn unknown_definition_falls_through_without_guessing() {
+        assert!(compile_definition("An obscure term for a mild oath.").is_none());
+    }
+
+    #[test]
+    fn sarva_bridge_emits_legacy_json() {
+        let p = FigurePattern {
+            name: String::new(),
+            template: vec![],
+            anchor: Anchor::CrossUnit,
+            class: ElementClass::Lexical,
+            min_repeats: 1,
+            grain: Some(Grain::Word),
+            operation: Some(Operation::Repetition),
+            note: None,
+        };
+        let j = ke_json_konvensi_sarva(&p);
+        assert!(j.contains("\"jangkar\":\"AntarUnit\""));
+        assert!(j.contains("\"kelas\":\"Leksikal\""));
+        assert!(j.contains("\"operasi\":\"repetitio\""));
+        // round-trips through the alias deserializer
+        let back: FigurePattern = serde_json::from_str(&j).unwrap();
+        assert_eq!(back.anchor, Anchor::CrossUnit);
     }
 }

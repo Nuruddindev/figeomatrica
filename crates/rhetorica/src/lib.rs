@@ -142,9 +142,14 @@ mod tests {
     }
 
     #[test]
-    fn geometrized_count_matches_seed() {
+    fn geometrized_dataset_grows_with_contributions() {
         let r = Rhetorica::embedded().unwrap();
-        assert_eq!(r.geometrized().count(), 9);
+        // The dataset is contributor-owned: it must always cover the core
+        // catalog and may legitimately grow beyond it (abating, anesis, ...).
+        assert!(
+            r.geometrized().count() >= FigurePattern::catalog().len(),
+            "dataset should cover at least the core catalog"
+        );
     }
 
     #[test]
