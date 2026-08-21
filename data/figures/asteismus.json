@@ -1,7 +1,49 @@
 {
-  "id": 113,
-  "name": "asteismus",
   "categories": [
     "Semantic Inversions"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Conceptual",
+    "grain": "unit",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: respons konsiliatoris meredam pertukaran kasar lewat canda (charientismus)",
+    "operation": "substitution",
+    "template": [],
+    "transforms": [
+      {
+        "axis": "intensity",
+        "direction": "down"
+      },
+      {
+        "axis": "social acceptability",
+        "direction": "up"
+      }
+    ]
+  },
+  "id": 113,
+  "name": "asteismus",
+  "examples": {
+    "positive": [
+      [
+        "You argue like a philosopher — everything and nothing.",
+        "Coming from the city's finest orator, I accept the honor."
+      ],
+      [
+        "Kamu bicara tanpa berhenti.",
+        "Dari seniman kata, itu pujian."
+      ]
+    ],
+    "negative": [
+      [
+        "You argue too much.",
+        "Fine, I will stop talking."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

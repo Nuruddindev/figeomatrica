@@ -110,6 +110,25 @@ fn terjemahkan(geo: &serde_json::Value) -> Option<serde_json::Value> {
     if let Some(t) = pick("template", "template") {
         out.insert("template".into(), t.clone());
     }
+    if let Some(arr) = pick("transforms", "transformasi").and_then(|v| v.as_array()) {
+        let mapped: Vec<serde_json::Value> = arr
+            .iter()
+            .filter_map(|x| {
+                let o = x.as_object()?;
+                let axis = o.get("axis").or_else(|| o.get("sumbu"))?.as_str()?;
+                let dir = o.get("direction").or_else(|| o.get("arah"))?.as_str()?;
+                let direction = match dir {
+                    "up" | "naik" => "up",
+                    "down" | "turun" => "down",
+                    _ => "neutral",
+                };
+                Some(serde_json::json!({ "axis": axis, "direction": direction }))
+            })
+            .collect();
+        if !mapped.is_empty() {
+            out.insert("transforms".into(), serde_json::Value::Array(mapped));
+        }
+    }
     if let Some(s) = as_str(pick("note", "catatan")) {
         out.insert("note".into(), serde_json::Value::String(s.into()));
     }

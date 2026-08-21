@@ -1,7 +1,49 @@
 {
-  "id": 139,
-  "name": "charientismus",
   "categories": [
     "of Understatement"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Conceptual",
+    "grain": "unit",
+    "min_repeats": 1,
+    "note": "respons konsiliatoris meredam pertukaran kasar lewat canda (keluarga understatement)",
+    "operation": "substitution",
+    "template": [],
+    "transforms": [
+      {
+        "axis": "intensity",
+        "direction": "down"
+      },
+      {
+        "axis": "social acceptability",
+        "direction": "up"
+      }
+    ]
+  },
+  "id": 139,
+  "name": "charientismus",
+  "examples": {
+    "positive": [
+      [
+        "Your driving is a menace to society.",
+        "At least I keep the pavement entertained."
+      ],
+      [
+        "Tugasmu berantakan sekali.",
+        "Setidaknya kaligrafinya konsisten."
+      ]
+    ],
+    "negative": [
+      [
+        "Your driving is dangerous.",
+        "I will drive more carefully from now on."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

@@ -5,12 +5,14 @@
 // Thesis: every rhetorical figure, if well defined, states an operational
 // geometry of text. Canonical form:
 //
-//     figure = OPERATION x ANCHOR x GRAIN x REPETITION
+//     figure = OPERATION x ANCHOR x GRAIN x REPETITION [+ ΔCOORDINATES]
 //
 //   - operation:  adjectio | detractio | immutatio | transmutatio | repetitio
 //                 (the four classical operae + repetition)
 //   - anchor:     initial | final | insertion | whole-unit | cross-unit
 //   - grain:      grapheme | word | phrase | unit | discourse
+//   - Δcoords:    signed shifts in rhetorical space — force↓, magnitude↑,
+//                 explicitness↓, social-acceptability↑, ... (open vocabulary)
 //
 // Example — antimetabole: "It is boring to eat; to sleep is fulfilling"
 //   → present-participle ~ infinitive | infinitive ~ present-participle
@@ -153,6 +155,37 @@ pub enum Operation {
     Ordering,
 }
 
+/// Direction of a shift along a rhetorical-space coordinate.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub enum Direction {
+    #[serde(alias = "naik", alias = "up")]
+    Up,
+    #[serde(alias = "turun", alias = "down")]
+    Down,
+    /// Order-type shifts: the arrangement changes without a signed magnitude.
+    #[serde(alias = "netral", alias = "neutral")]
+    Neutral,
+}
+
+/// A signed shift along one geometric coordinate — the axes of rhetorical
+/// space. Known vocabulary (open, versioned): magnitude, intensity, status,
+/// importance, force, explicitness, social acceptability, order, ...
+///
+/// Figures BIND coordinates; only genuinely new phenomena add axes. This is
+/// the anticipatory mapping layer: a new definition is classified by which
+/// coordinate it moves and how, before anything new is invented.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Transform {
+    pub axis: String,
+    pub direction: Direction,
+}
+
+impl Transform {
+    pub fn new(axis: &str, direction: Direction) -> Self {
+        Transform { axis: axis.to_string(), direction }
+    }
+}
+
 /// Geometry definition of one figure (data-driven; future source: the
 /// `geometri` column of the figures table).
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -174,6 +207,10 @@ pub struct FigurePattern {
     pub grain: Option<Grain>,
     #[serde(default, alias = "operasi", skip_serializing_if = "Option::is_none")]
     pub operation: Option<Operation>,
+    /// Signed coordinate shifts in rhetorical space (empty = purely
+    /// structural pattern).
+    #[serde(default, alias = "transformasi", skip_serializing_if = "Vec::is_empty")]
+    pub transforms: Vec<Transform>,
     #[serde(default, alias = "catatan", skip_serializing_if = "Option::is_none")]
     pub note: Option<String>,
 }
@@ -194,6 +231,7 @@ impl FigurePattern {
                 min_repeats: 2,
                 grain: Some(Grain::Word),
                 operation: Some(Operation::Repetition),
+                transforms: vec![],
                 note: None,
             },
             FigurePattern {
@@ -204,6 +242,7 @@ impl FigurePattern {
                 min_repeats: 2,
                 grain: Some(Grain::Word),
                 operation: Some(Operation::Repetition),
+                transforms: vec![],
                 note: None,
             },
             FigurePattern {
@@ -214,6 +253,7 @@ impl FigurePattern {
                 min_repeats: 2,
                 grain: Some(Grain::Word),
                 operation: Some(Operation::Repetition),
+                transforms: vec![],
                 note: Some("repetition at both ends of each unit; composite pattern".into()),
             },
             FigurePattern {
@@ -224,6 +264,7 @@ impl FigurePattern {
                 min_repeats: 1,
                 grain: Some(Grain::Word),
                 operation: Some(Operation::Repetition),
+                transforms: vec![],
                 note: None,
             },
             FigurePattern {
@@ -234,6 +275,7 @@ impl FigurePattern {
                 min_repeats: 2,
                 grain: Some(Grain::Word),
                 operation: Some(Operation::Repetition),
+                transforms: vec![],
                 note: Some("chained anadiplosis; >= 2 consecutive links".into()),
             },
             FigurePattern {
@@ -244,6 +286,7 @@ impl FigurePattern {
                 min_repeats: 1,
                 grain: Some(Grain::Phrase),
                 operation: Some(Operation::Permutation),
+                transforms: vec![],
                 note: None,
             },
             FigurePattern {
@@ -254,6 +297,7 @@ impl FigurePattern {
                 min_repeats: 1,
                 grain: Some(Grain::Phrase),
                 operation: Some(Operation::Permutation),
+                transforms: vec![],
                 note: None,
             },
             FigurePattern {
@@ -264,6 +308,7 @@ impl FigurePattern {
                 min_repeats: 1,
                 grain: Some(Grain::Grapheme),
                 operation: Some(Operation::Addition),
+                transforms: vec![],
                 note: Some("a word cut open, another inserted inside it".into()),
             },
             FigurePattern {
@@ -274,6 +319,7 @@ impl FigurePattern {
                 min_repeats: 1,
                 grain: Some(Grain::Phrase),
                 operation: Some(Operation::Addition),
+                transforms: vec![],
                 note: None,
             },
         ]
@@ -298,70 +344,94 @@ pub struct DraftGeometri {
     /// 0.0–1.0 heuristic confidence. >= 0.75 is usually safe to apply
     /// automatically; lower should wait for human confirmation.
     pub confidence: f32,
+    /// Which known family received the binding — "oh, ini di sini". Only
+    /// when NO family fits is a definition genuinely new and may warrant
+    /// extending the vocabulary (as `Ordering` did for abecedarian).
+    pub family: &'static str,
+}
+
+fn draft(anchor: Anchor, class: ElementClass, grain: Grain, op: Operation,
+         min_repeats: usize, confidence: f32, family: &'static str,
+         transforms: &[(&str, Direction)], catatan: &str) -> DraftGeometri {
+    DraftGeometri {
+        pattern: FigurePattern {
+            name: String::new(),
+            template: vec![],
+            anchor,
+            class,
+            min_repeats,
+            grain: Some(grain),
+            operation: Some(op),
+            transforms: transforms
+                .iter()
+                .map(|(axis, dir)| Transform::new(axis, *dir))
+                .collect(),
+            note: Some(format!("kompilasi heuristik: {catatan}")),
+        },
+        confidence,
+        family,
+    }
 }
 
 /// Deterministic prose-to-canonical compiler (heuristic stage).
 ///
-/// Scans a natural-language figure definition for geometric markers
-/// (position words, repetition, inversion, insertion, diminution...) and
-/// drafts the canonical form. This is Stage A: cheap, offline, auditable.
-/// Unmatched definitions return `None` — they wait for an LLM pass or a
-/// human, never get guessed.
+/// Anticipatory mapping over RHETORICAL SPACE:
 ///
-/// Rule coverage grows over time; unknown phrasing is expected to fall
-/// through rather than produce a wrong spec.
+/// ```text
+/// GENERAL STRATEGIES  = addition | subtraction | substitution |
+///                       transposition | repetition (+ ordering)
+/// GEOMETRIC COORDS    = magnitude | intensity | status | importance |
+///                       force | explicitness | social acceptability |
+///                       order | ...   (open vocabulary)
+/// FIGURE              = strategy x Δcoords x anchor x unit x locus x
+///                       repetition x constraints
+/// ```
+///
+/// A new definition is mapped INTO an existing family whenever possible;
+/// only when no family fits is it genuinely new — then a new binding or a
+/// new axis joins the vocabulary. Unmatched definitions return `None`:
+/// they wait for an LLM pass or a human, never get guessed.
 pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     let d = definition.to_lowercase();
-    let mut candidates: Vec<DraftGeometri> = Vec::new();
+    let mut c: Vec<DraftGeometri> = Vec::new();
 
-    let mut push = |anchor: Anchor, class: ElementClass, grain: Grain, op: Operation,
-                    min_repeats: usize, confidence: f32, catatan: &str| {
-        candidates.push(DraftGeometri {
-            pattern: FigurePattern {
-                name: String::new(),
-                template: vec![],
-                anchor,
-                class,
-                min_repeats,
-                grain: Some(grain),
-                operation: Some(op),
-                note: Some(format!("kompilasi heuristik: {catatan}")),
-            },
-            confidence,
-        });
-    };
-
-    // ── Repetition family ────────────────────────────────────────────
+    // ── REPETITION (positional recurrence) ───────────────────────────
     let rep = d.contains("repetit") || d.contains("repeat");
     let awal = d.contains("beginning") || d.contains("the start");
     let akhir = d.contains("end of") || d.contains("the end")
         || d.contains("conclusion of successive");
     if rep && awal && akhir {
-        push(Anchor::Initial, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             2, 0.80, "pengulangan di awal DAN akhir unit (symploce)");
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 2, 0.80, "repetition", &[],
+            "pengulangan di awal DAN akhir unit (symploce)"));
     } else if rep && (d.contains("beginning of successive") || d.contains("begins successive")
         || d.contains("at the beginning")) {
-        push(Anchor::Initial, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             2, 0.90, "pengulangan kata pembuka antar-unit (anaphora)");
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 2, 0.90, "repetition", &[],
+            "pengulangan kata pembuka antar-unit (anaphora)"));
     } else if rep && (d.contains("end of successive") || d.contains("ends of successive")
         || d.contains("at the end")) {
-        push(Anchor::Final, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             2, 0.90, "pengulangan kata penutup antar-unit (epistrophe)");
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 2, 0.90, "repetition", &[],
+            "pengulangan kata penutup antar-unit (epistrophe)"));
     }
     if d.contains("last word") && (d.contains("first word") || d.contains("next")) {
-        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             1, 0.85, "akhir unit menjadi awal unit berikut (anadiplosis)");
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 1, 0.85, "repetition", &[],
+            "akhir unit menjadi awal unit berikut (anadiplosis)"));
     }
     if (d.contains("chain") || d.contains("series of clauses")) && rep {
-        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             2, 0.70, "rantai pengulangan berturutan (gradatio/climax)");
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 2, 0.70, "repetition", &[],
+            "rantai pengulangan berturutan (gradatio/climax)"));
     }
     if rep && (d.contains("immediate repetition") || d.contains("repeated immediatel")) {
-        push(Anchor::WholeUnit, ElementClass::Lexical, Grain::Word, Operation::Repetition,
-             2, 0.70, "pengulangan langsung dalam satu unit (epizeuxis)");
+        c.push(draft(Anchor::WholeUnit, ElementClass::Lexical, Grain::Word,
+            Operation::Repetition, 2, 0.70, "repetition", &[],
+            "pengulangan langsung dalam satu unit (epizeuxis)"));
     }
 
-    // ── Inversion family ─────────────────────────────────────────────
+    // ── TRANSPOSITION (order rearrangement) ──────────────────────────
     if (d.contains("invers") || d.contains("reverse") || d.contains("reversal"))
         && (d.contains("order of word") || d.contains("order of phrase") || d.contains("phras")) {
         let kelas = if d.contains("meaning") || d.contains("concept") {
@@ -369,50 +439,87 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
         } else {
             ElementClass::Lexical
         };
-        push(Anchor::WholeUnit, kelas, Grain::Phrase, Operation::Permutation,
-             1, 0.80, "inversi/permutasi frasa (antimetabole/chiasmus)");
+        c.push(draft(Anchor::WholeUnit, kelas, Grain::Phrase,
+            Operation::Permutation, 1, 0.80, "transposition",
+            &[("order", Direction::Neutral)],
+            "inversi/permutasi frasa (antimetabole/chiasmus)"));
     }
 
-    // ── Insertion family ─────────────────────────────────────────────
+    // ── ADDITION (interpolation) ─────────────────────────────────────
     if d.contains("insert") && (d.contains("word") && (d.contains("within a word")
         || d.contains("into a word") || d.contains("middle of a word") || d.contains("cut"))) {
-        push(Anchor::Insertion, ElementClass::Lexical, Grain::Grapheme, Operation::Addition,
-             1, 0.75, "sisipan di dalam kata (tmesis)");
+        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Grain::Grapheme,
+            Operation::Addition, 1, 0.75, "addition", &[],
+            "sisipan di dalam kata (tmesis)"));
     } else if d.contains("interpolat") || d.contains("parenthetic")
         || (d.contains("insert") && (d.contains("sentence") || d.contains("clause"))) {
-        push(Anchor::Insertion, ElementClass::Lexical, Grain::Phrase, Operation::Addition,
-             1, 0.70, "penyela di tengah kalimat (parenthesis)");
+        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Grain::Phrase,
+            Operation::Addition, 1, 0.70, "addition", &[],
+            "penyela di tengah kalimat (parenthesis)"));
+    }
+    if d.contains("exaggerat") || d.contains("hyperbole") || d.contains("overstat") {
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Phrase,
+            Operation::Addition, 1, 0.65, "amplification",
+            &[("magnitude", Direction::Up)],
+            "melampaui baseline skala (hyperbole)"));
     }
 
-    // ── Conceptual diminution ────────────────────────────────────────
+    // ── SUBTRACTION / SUBSTITUTION (understatement: transformasi turun) ──
     let turun = d.contains("reduce") || d.contains("diminish") || d.contains("lessen")
         || d.contains("lower than") || d.contains("beneath the");
     if turun && d.contains("conclud") {
-        push(Anchor::Final, ElementClass::Conceptual, Grain::Discourse, Operation::Deletion,
-             1, 0.75, "penutup yang meredam gaya sebelumnya (abating/anesis)");
+        c.push(draft(Anchor::Final, ElementClass::Conceptual, Grain::Discourse,
+            Operation::Deletion, 1, 0.75, "understatement",
+            &[("force", Direction::Down)],
+            "penutup yang meredam gaya sebelumnya (abating/anesis)"));
     } else if turun && (d.contains("expected") || d.contains("anticipat")) {
-        push(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Discourse, Operation::Deletion,
-             1, 0.70, "di bawah skala ekspektasi konteks (abbaser)");
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Discourse,
+            Operation::Deletion, 1, 0.70, "understatement",
+            &[("status", Direction::Down)],
+            "di bawah skala ekspektasi konteks (abbaser)"));
+    }
+    if d.contains("mockery") || d.contains("conciliator")
+        || (d.contains("soften") && d.contains("harsh")) {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
+            Operation::Substitution, 1, 0.75, "understatement",
+            &[("intensity", Direction::Down), ("social acceptability", Direction::Up)],
+            "respons konsiliatoris meredam pertukaran kasar lewat canda (charientismus)"));
+    }
+    if d.contains("litotes") || ((d.contains("negat") || d.contains("deni"))
+        && (d.contains("opposite") || d.contains("extreme"))) {
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Word,
+            Operation::Substitution, 1, 0.70, "understatement",
+            &[("explicitness", Direction::Down), ("intensity", Direction::Down)],
+            "menegaskan lewat menyangkal lawan ekstrem (litotes)"));
+    }
+    if d.contains("belittle") || d.contains("meiosis") || d.contains("understat") {
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Phrase,
+            Operation::Deletion, 1, 0.65, "understatement",
+            &[("importance", Direction::Down)],
+            "mengecilkan makna dibanding baseline (meiosis)"));
     }
 
-    // ── Truncation / clipping / apocope ────────────────────────────────
+    // ── SUBTRACTION (structural truncation / apocope) ────────────────
     if d.contains("truncat") || d.contains("clipping") || d.contains("apocope")
         || d.contains("shorten") && (d.contains("remov") || d.contains("cut") || d.contains("delet"))
         || d.contains("final segment") || d.contains("terminal segment")
         || d.contains("removing the end") || d.contains("cut off the end") {
-        push(Anchor::Final, ElementClass::Lexical, Grain::Word, Operation::Deletion,
-             1, 0.80, "pemotongan segmen akhir kata (apocope/clipping)");
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Grain::Word,
+            Operation::Deletion, 1, 0.80, "truncation", &[],
+            "pemotongan segmen akhir kata (apocope/clipping)"));
     }
 
-    // ── Positional ordering (abecedarian family) ─────────────────────
+    // ── ORDER CORRESPONDENCE (abecedarian family) ────────────────────
     if d.contains("alphabet") || d.contains("successive letters")
         || d.contains("initial letters in order")
         || d.contains("letters follow") {
-        push(Anchor::CrossUnit, ElementClass::Lexical, Grain::Grapheme, Operation::Ordering,
-             1, 0.80, "huruf awal tiap unit mengikuti urutan referensi eksternal (abecedarian)");
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Grapheme,
+            Operation::Ordering, 1, 0.80, "ordering",
+            &[("order", Direction::Neutral)],
+            "huruf awal tiap unit mengikuti urutan referensi eksternal (abecedarian)"));
     }
 
-    candidates.into_iter().max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
+    c.into_iter().max_by(|a, b| a.confidence.partial_cmp(&b.confidence).unwrap())
 }
 
 /// Serialize a compiled pattern into the SARVA database JSON convention
@@ -450,11 +557,28 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         Some(Operation::Ordering) => "ordering",
         None => "repetitio",
     };
-    format!(
-        "{{\"jangkar\":\"{jangkar}\",\"kelas\":\"{kelas}\",\"satuan\":\"{satuan}\",\"operasi\":\"{operasi}\",\"minim_ulangan\":{},\"template\":[],\"catatan\":\"{}\"}}",
+    let arah = |d: Direction| match d {
+        Direction::Up => "naik",
+        Direction::Down => "turun",
+        Direction::Neutral => "netral",
+    };
+    let transformasi: Vec<String> = p
+        .transforms
+        .iter()
+        .map(|t| format!("{{\"sumbu\":\"{}\",\"arah\":\"{}\"}}", t.axis, arah(t.direction)))
+        .collect();
+    let mut json = format!(
+        "{{\"jangkar\":\"{jangkar}\",\"kelas\":\"{kelas}\",\"satuan\":\"{satuan}\",\"operasi\":\"{operasi}\",\"minim_ulangan\":{},\"template\":[]",
         p.min_repeats,
-        p.note.as_deref().unwrap_or("")
-    )
+    );
+    if !transformasi.is_empty() {
+        json.push_str(&format!(",\"transformasi\":[{}]", transformasi.join(",")));
+    }
+    if let Some(n) = p.note.as_deref() {
+        json.push_str(&format!(",\"catatan\":\"{n}\""));
+    }
+    json.push('}');
+    json
 }
 
 /// Text token with its equality label + byte offset in the source unit.
@@ -1078,6 +1202,44 @@ mod tests {
     }
 
     #[test]
+    fn heuristic_compiles_charientismus_understatement() {
+        let d = "A conciliatory response that transforms a harsh exchange \
+                 into a softened one through mockery.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.family, "understatement");
+        assert_eq!(draft.pattern.anchor, Anchor::CrossUnit);
+        assert_eq!(draft.pattern.operation, Some(Operation::Substitution));
+        // dua koordinat bergerak sekaligus: intensitas turun, penerimaan sosial naik
+        assert!(draft.pattern.transforms.contains(&Transform::new("intensity", Direction::Down)));
+        assert!(draft.pattern.transforms.contains(&Transform::new("social acceptability", Direction::Up)));
+    }
+
+    #[test]
+    fn heuristic_compiles_litotes() {
+        let d = "An assertion by way of negating the opposite extreme.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.family, "understatement");
+        assert!(draft.pattern.transforms.contains(&Transform::new("explicitness", Direction::Down)));
+    }
+
+    #[test]
+    fn heuristic_compiles_hyperbole_amplification() {
+        let d = "An exaggerated statement that overstates the magnitude of \
+                 its subject beyond the baseline.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.family, "amplification");
+        assert!(draft.pattern.transforms.contains(&Transform::new("magnitude", Direction::Up)));
+    }
+
+    #[test]
+    fn repetition_bindings_carry_family_tag() {
+        let d = "Repetition of the same word at the beginning of successive clauses.";
+        let draft = compile_definition(d).unwrap();
+        assert_eq!(draft.family, "repetition");
+        assert!(draft.pattern.transforms.is_empty(), "structural pattern has no coordinate shift");
+    }
+
+    #[test]
     fn unknown_definition_falls_through_without_guessing() {
         assert!(compile_definition("An obscure term for a mild oath.").is_none());
     }
@@ -1092,6 +1254,7 @@ mod tests {
             min_repeats: 1,
             grain: Some(Grain::Word),
             operation: Some(Operation::Repetition),
+            transforms: vec![],
             note: None,
         };
         let j = ke_json_konvensi_sarva(&p);
