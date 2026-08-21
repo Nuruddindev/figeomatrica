@@ -77,6 +77,33 @@ Patterns outside the matcher's current family (conceptual-class figures like
 chiasmus, insertions like tmesis) are welcome too — they route to maintainer
 review instead of automatic verification.
 
+### Setup on your computer (optional)
+
+You don't strictly need a local setup — editing the file through GitHub's
+web interface and letting CI validate is enough. But running the validator
+locally gives instant feedback while you iterate on examples.
+
+Requirements: [git](https://git-scm.com) and Rust (any recent stable).
+
+```bash
+# 1. Install Rust once (~5 minutes)
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# 2. Get the project
+git clone https://github.com/Nuruddindev/figeomatrica.git
+cd figeomatrica
+
+# 3. Verify everything works (should end in "test result: ok")
+cargo test --workspace
+
+# 4. While contributing: check your figure file instantly
+cargo run -p figeometrica-rhetorica --bin validate
+```
+
+That's all — pure Rust, no system libraries, no network access needed at
+runtime. Windows users: install Rust via [rustup.exe](https://rustup.rs)
+instead of the curl command.
+
 ## License
 
 MIT — see [LICENSE-MIT](LICENSE-MIT).
