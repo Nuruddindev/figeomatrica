@@ -119,6 +119,10 @@ where
         .collect())
 }
 
+pub mod signature;
+pub use signature::{
+    BindingStore, BindingVerdict, Constraints, FigureSignature, check_compatibility,
+};
 
 /// Operation performed on elements (canonical-form axis; the four classical
 /// operae plus repetition).
