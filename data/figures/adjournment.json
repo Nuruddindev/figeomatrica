@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Transferring argument to another time/place.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 26,
   "name": "adjournment"
 }

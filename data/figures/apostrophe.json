@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Turning aside to address absent person/abstraction.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 99,
   "name": "apostrophe"
 }

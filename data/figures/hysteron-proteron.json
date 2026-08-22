@@ -4,6 +4,9 @@
     "of Time"
   ],
   "definition": "Cart before horse; inversion of temporal/logical order.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 283,
   "name": "hysteron proteron"
 }

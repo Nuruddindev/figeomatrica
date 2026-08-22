@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Addition by annexing.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 31,
   "name": "adnexio"
 }

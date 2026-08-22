@@ -5,6 +5,9 @@
     "of Grammar"
   ],
   "definition": "One verb governing multiple clauses.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 433,
   "name": "zeugma"
 }

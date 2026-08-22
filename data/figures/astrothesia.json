@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Description of stars.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 114,
   "name": "astrothesia"
 }

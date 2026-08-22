@@ -3,6 +3,9 @@
     "of Sound"
   ],
   "definition": "Repetition of similar vowel sounds.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 109,
   "name": "assonance"
 }

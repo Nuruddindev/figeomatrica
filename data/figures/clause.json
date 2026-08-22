@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Grammatical clause.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 146,
   "name": "clause"
 }

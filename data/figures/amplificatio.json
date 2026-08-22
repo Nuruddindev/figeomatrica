@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Amplification; expanding a topic with grand language.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1062,
   "name": "amplificatio"
 }

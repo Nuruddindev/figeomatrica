@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Alliteration.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 269,
   "name": "homoeoprophoron"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Innuendo; implication.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 223,
   "name": "ennoia"
 }

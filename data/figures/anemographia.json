@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Description of winds.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 62,
   "name": "anemographia"
 }

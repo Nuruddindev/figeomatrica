@@ -8,6 +8,10 @@
     "of Omission"
   ],
   "definition": "Syncope is detractio applied to one or more letters, sounds, or syllables from the interior of a single word, removing a medial unit while preserving the word initial and final boundaries.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -53,5 +57,14 @@
     "template": []
   },
   "id": 410,
-  "name": "syncope"
+  "name": "syncope",
+  "signature": {
+    "anchor_id": "medial-segment",
+    "domain_id": "textual",
+    "locus_id": "medial",
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

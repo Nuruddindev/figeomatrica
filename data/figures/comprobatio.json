@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Complimenting audience to win favor (captatio).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 160,
   "name": "comprobatio"
 }

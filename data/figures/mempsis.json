@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Complaint.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 300,
   "name": "mempsis"
 }

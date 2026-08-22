@@ -1,6 +1,9 @@
 {
   "categories": [],
   "definition": "Studied carelessness; effortless nonchalance.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1065,
   "name": "sprezzatura"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Parenthesis? Actually near.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 341,
   "name": "pareuresis"
 }

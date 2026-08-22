@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Giving cause/reason for statement; also figure of reasoning.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 36,
   "name": "aetiologia"
 }

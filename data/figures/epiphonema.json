@@ -4,6 +4,9 @@
     "of Summary"
   ],
   "definition": "Pithy exclamatory sentence summing previous.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 235,
   "name": "epiphonema"
 }

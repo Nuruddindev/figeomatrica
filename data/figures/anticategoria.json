@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Recrimination; accusation turned back.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 70,
   "name": "anticategoria"
 }

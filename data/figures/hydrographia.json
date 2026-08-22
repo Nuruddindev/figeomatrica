@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Description of water.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 274,
   "name": "hydrographia"
 }

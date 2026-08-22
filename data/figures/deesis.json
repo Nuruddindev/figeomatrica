@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Prayer, invocation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 186,
   "name": "deesis"
 }

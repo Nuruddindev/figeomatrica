@@ -4,6 +4,9 @@
     "of Place"
   ],
   "definition": "Description of earth; chorographia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 263,
   "name": "geographia"
 }

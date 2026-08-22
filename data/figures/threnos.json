@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Threnos/threnody; lamentation; a dirge of mourning.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1057,
   "name": "threnos"
 }

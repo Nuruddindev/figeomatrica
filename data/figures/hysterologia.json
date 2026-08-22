@@ -4,6 +4,9 @@
     "of Interruption"
   ],
   "definition": "Hysteron proteron reversed order.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 282,
   "name": "hysterologia"
 }

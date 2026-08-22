@@ -8,6 +8,10 @@
     "of Balance"
   ],
   "definition": "Inverted parallelism AB BA of concepts (not necessarily same words).",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -40,5 +44,14 @@
     ]
   },
   "id": 140,
-  "name": "chiasmus"
+  "name": "chiasmus",
+  "signature": {
+    "anchor_id": "whole-unit",
+    "domain_id": "conceptual",
+    "locus_id": null,
+    "operation": "transmutatio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "phrase"
+  }
 }

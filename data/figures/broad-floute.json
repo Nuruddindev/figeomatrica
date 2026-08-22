@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Broad flout: mockery.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -47,5 +51,14 @@
     ]
   },
   "id": 125,
-  "name": "broad floute"
+  "name": "broad floute",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "conceptual",
+    "locus_id": "response",
+    "operation": "immutatio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

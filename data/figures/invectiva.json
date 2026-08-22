@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Invective; abusive denunciation of a person.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1054,
   "name": "invectiva"
 }

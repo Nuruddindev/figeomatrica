@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Feigned resignation or despair.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 90,
   "name": "apocarteresis"
 }

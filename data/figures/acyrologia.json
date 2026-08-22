@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Improper use of term; malapropism.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 18,
   "name": "acyrologia"
 }

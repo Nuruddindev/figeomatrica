@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Terse pointed saying; maxim.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 100,
   "name": "apothegm"
 }

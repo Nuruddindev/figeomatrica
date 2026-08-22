@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Clause added to adjacent clause.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 29,
   "name": "adjunctio"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Common affection; figure of pathos.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 148,
   "name": "coenotes"
 }

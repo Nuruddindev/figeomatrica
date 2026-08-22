@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Disjunctive reasoning listing alternatives.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 194,
   "name": "dialysis"
 }

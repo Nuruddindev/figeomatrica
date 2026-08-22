@@ -8,6 +8,10 @@
     "of Understatement"
   ],
   "definition": "Diminishing force; adding concluding sentence that reduces effect.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -38,5 +42,14 @@
     "operation": "deletion"
   },
   "id": 63,
-  "name": "anesis"
+  "name": "anesis",
+  "signature": {
+    "anchor_id": "final-segment",
+    "domain_id": "conceptual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

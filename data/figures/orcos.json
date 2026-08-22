@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "A figure of oath-taking or swearing, invoking divine witness to affirm the truth of a statement.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 321,
   "name": "orcos"
 }

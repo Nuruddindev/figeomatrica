@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Ambiguity arising from syntax.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 50,
   "name": "amphibologia"
 }

@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Explicit distinction of meanings to prevent ambiguity.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 207,
   "name": "distinctio"
 }

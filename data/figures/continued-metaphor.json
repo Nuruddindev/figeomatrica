@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Allegory.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 173,
   "name": "continued metaphor"
 }

@@ -3,6 +3,9 @@
     "of Substitution"
   ],
   "definition": "Explicit comparison using like/as.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 393,
   "name": "simile"
 }

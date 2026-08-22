@@ -4,6 +4,9 @@
     "of Irony"
   ],
   "definition": "Bitter cutting irony; amara irrisio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 385,
   "name": "sarcasmus"
 }

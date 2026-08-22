@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Harsh arrangement; ill composition.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 128,
   "name": "cacosyntheton"
 }

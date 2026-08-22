@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Arguing both sides of a question (in utramque partem); taking both parts in dispute.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 892,
   "name": "in utrumque partes"
 }

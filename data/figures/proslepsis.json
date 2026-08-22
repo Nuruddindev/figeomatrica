@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Prolepsis variant.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 369,
   "name": "proslepsis"
 }

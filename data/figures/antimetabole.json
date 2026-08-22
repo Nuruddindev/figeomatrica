@@ -8,6 +8,10 @@
     "of Balance"
   ],
   "definition": "Repetition of words in reverse order (AB BA) with same words.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -37,5 +41,14 @@
     ]
   },
   "id": 73,
-  "name": "antimetabole"
+  "name": "antimetabole",
+  "signature": {
+    "anchor_id": "whole-unit",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "transmutatio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "phrase"
+  }
 }

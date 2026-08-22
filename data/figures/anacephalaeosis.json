@@ -4,6 +4,9 @@
     "of Summary"
   ],
   "definition": "Recapitulation; summary of main points.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 52,
   "name": "anacephalaeosis"
 }

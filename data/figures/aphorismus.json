@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Definition with reservation; also aphorism.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 89,
   "name": "aphorismus"
 }

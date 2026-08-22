@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Contradiction in terms.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 72,
   "name": "antilogy"
 }

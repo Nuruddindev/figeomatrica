@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Description of tree.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 188,
   "name": "dendrographia"
 }

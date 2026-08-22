@@ -8,6 +8,10 @@
     "of Repetition"
   ],
   "definition": "Repetition of same word/phrase at beginning of successive clauses.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -42,5 +46,14 @@
     ]
   },
   "id": 59,
-  "name": "anaphora"
+  "name": "anaphora",
+  "signature": {
+    "anchor_id": "initial-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "repetitio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

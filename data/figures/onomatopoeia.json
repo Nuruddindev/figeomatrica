@@ -5,6 +5,9 @@
     "of Naming"
   ],
   "definition": "Word imitating sound.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 319,
   "name": "onomatopoeia"
 }

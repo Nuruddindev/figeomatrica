@@ -4,6 +4,9 @@
     "of Play"
   ],
   "definition": "Paronomasia: punning by similar sounding names (agnominatio).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 32,
   "name": "adnominatio"
 }

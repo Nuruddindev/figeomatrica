@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Having double meaning.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 49,
   "name": "ambiguous"
 }

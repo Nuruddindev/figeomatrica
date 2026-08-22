@@ -4,6 +4,9 @@
     "of Understatement"
   ],
   "definition": "Understatement by denying opposite.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 293,
   "name": "litotes"
 }

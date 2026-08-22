@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Proverb.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 342,
   "name": "paroemia"
 }

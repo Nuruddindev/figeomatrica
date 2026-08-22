@@ -3,6 +3,9 @@
     "of Balance"
   ],
   "definition": "Parallel structure; isocolon/parison.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 333,
   "name": "parallelism"
 }

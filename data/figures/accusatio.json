@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Direct accusation; figure of argument.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 15,
   "name": "accusatio"
 }

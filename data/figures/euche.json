@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Prayer/wish; optatio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 248,
   "name": "euche"
 }

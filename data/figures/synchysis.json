@@ -4,6 +4,9 @@
     "of Grammar"
   ],
   "definition": "Confused word order; hyperbaton.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 409,
   "name": "synchysis"
 }

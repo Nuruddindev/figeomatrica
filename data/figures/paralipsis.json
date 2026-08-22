@@ -4,6 +4,9 @@
     "of Irony"
   ],
   "definition": "Pretended omission (apophasis).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 332,
   "name": "paralipsis"
 }

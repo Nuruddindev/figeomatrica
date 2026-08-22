@@ -3,6 +3,9 @@
     "of Repetition"
   ],
   "definition": "Repetition middle of successive clauses.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 303,
   "name": "mesodiplosis"
 }

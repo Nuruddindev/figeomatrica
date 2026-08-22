@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Rhetorical question expecting no answer.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 245,
   "name": "erotema"
 }

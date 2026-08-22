@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Transferred epithet; metonymy.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 275,
   "name": "hypallage"
 }

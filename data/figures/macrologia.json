@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Long-windedness; pleonasm; vice.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 294,
   "name": "macrologia"
 }

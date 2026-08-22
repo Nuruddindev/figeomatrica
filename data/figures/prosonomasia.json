@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Paronomasia variant.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 370,
   "name": "prosonomasia"
 }

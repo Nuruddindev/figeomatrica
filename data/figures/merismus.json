@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Division into parts; distributio; enumeratio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 301,
   "name": "merismus"
 }

@@ -335,3 +335,53 @@ separate the figure from its neighbors.
 
 Sixty CANONICAL figures that are truly executable and verified outweigh
 454 green-labeled ones that are not.
+
+## 12. Public Ledger — dataset JSON & versi vocabulary
+
+Repo ini adalah permukaan kontribusi. SARVA adalah lab privat; di sini
+semua terekam sebagai file yang bisa diaudit CI.
+
+### 12.1 Skema figur (`data/figures/*.json`)
+
+Blok warisan (`geometry`, `examples`, `atribusi`) tetap. Blok kontrak
+ditambahkan tanpa menghapus yang lama:
+
+```json
+{
+  "name": "apocope",
+  "definition": "Cutting off final letter/syllable",
+  "geometry":   { "...": "blok warisan, dibiarkan" },
+  "signature": {
+    "domain_id": "textual",
+    "unit_id": "word",
+    "scope_id": null,
+    "anchor_id": "final-segment",
+    "operation": "detractio",
+    "payload_id": null,
+    "locus_id": null,
+    "result": null,
+    "constraints": {}
+  },
+  "epistemic": {
+    "status": "WITNESS_TESTED",
+    "legacy_status": null,
+    "note": "protokol deterministik lulus (mesin transformasi)"
+  }
+}
+```
+
+Aturan:
+- `signature` hanya boleh berisi slot dari manifest knowledge versi kanon.
+- `epistemic.status` WAJIB konsisten dengan bukti:
+  - `EXTRACTED` → signature ada, slot valid;
+  - `STRUCTURALLY_VALID` → ditambah bindings tidak INVALID;
+  - `WITNESS_TESTED` → ditambah protokol lulus (CI menjalankan ulang);
+  - `USER_ACCEPTED`/`CANONICAL` → hanya lewat merge oleh maintainer
+    (review PR = Meja Hakim publik).
+- Klaim status tanpa bukti = gagal CI. Inilah NO SILENT PROMOTION.
+
+### 12.2 Versi vocabulary (`data/knowledge/vN/`)
+
+Setiap perubahan slot/binding karena penemuan baru = folder versi baru.
+Versi tertinggi = kanon; versi lama abadi sebagai rekam eksperimen.
+Struktur & aturan lengkap: `data/knowledge/README.md`.

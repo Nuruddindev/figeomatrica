@@ -3,6 +3,9 @@
     "Semantic Inversions"
   ],
   "definition": "Saying opposite of what meant; dissimulatio; antiphrasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 291,
   "name": "irony"
 }

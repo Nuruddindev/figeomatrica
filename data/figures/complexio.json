@@ -4,6 +4,9 @@
     "of Summary"
   ],
   "definition": "Both anaphora and epistrophe combined; symploce.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 158,
   "name": "complexio"
 }

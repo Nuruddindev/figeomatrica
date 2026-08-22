@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Refutation by contrary argument.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 79,
   "name": "antirrhesis"
 }

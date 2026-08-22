@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Extension of syllable; prolongation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 200,
   "name": "diastole"
 }

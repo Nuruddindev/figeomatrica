@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Adopting premise.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 110,
   "name": "assumptio"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Distribution; division of genus into species (merismus).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 208,
   "name": "distributio"
 }

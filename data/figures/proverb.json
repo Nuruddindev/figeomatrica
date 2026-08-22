@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Paroemia/adage.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 377,
   "name": "proverb"
 }

@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Direct accusation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 135,
   "name": "categoria"
 }

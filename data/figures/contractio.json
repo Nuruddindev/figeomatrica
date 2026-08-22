@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Contraction; syncope.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -45,5 +49,14 @@
     "template": []
   },
   "id": 174,
-  "name": "contractio"
+  "name": "contractio",
+  "signature": {
+    "anchor_id": "medial-segment",
+    "domain_id": "textual",
+    "locus_id": "medial",
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

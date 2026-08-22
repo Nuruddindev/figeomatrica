@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Conclusion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 164,
   "name": "conclusio"
 }

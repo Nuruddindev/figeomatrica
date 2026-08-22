@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Paradigma: illustrative instance; inductive argument.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 253,
   "name": "example"
 }

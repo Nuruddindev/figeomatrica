@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Dubious; addubitatio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 209,
   "name": "doubtfull"
 }

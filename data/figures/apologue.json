@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Moral fable.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 94,
   "name": "apologue"
 }

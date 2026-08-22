@@ -30,6 +30,16 @@ pub struct Examples {
     pub negative: Vec<Vec<String>>,
 }
 
+/// CONTRACT.md §7 — posisi figur di tangga epistemik + catatan.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Epistemic {
+    pub status: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub legacy_status: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub note: Option<String>,
+}
+
 /// One figure entry of the theory base.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FigureEntry {
@@ -39,6 +49,12 @@ pub struct FigureEntry {
     /// Field name is English "geometry"; Indonesian "geometri" accepted for backward compat.
     #[serde(default, alias = "geometri")]
     pub geometry: Option<FigurePattern>,
+    /// CONTRACT §2 — geometric signature (blok kontrak; opsional).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub signature: Option<figeometrica_core::FigureSignature>,
+    /// CONTRACT §7/§12 — tangga epistemik (opsional).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub epistemic: Option<Epistemic>,
     #[serde(default)]
     pub categories: Vec<String>,
     /// Examples: English "examples" with "positive"/"negative"; Indonesian "contoh" with "positif"/"negatif" accepted.

@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Repetition same meaning; battologia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 422,
   "name": "tautologia"
 }

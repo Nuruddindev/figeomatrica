@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Dissuasion; advising against.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 187,
   "name": "dehortatio"
 }

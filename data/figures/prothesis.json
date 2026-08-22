@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Prothesis is adjectio applied at the initial boundary of a word, inserting one or more letters, sounds, or syllables before the existing sequence.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -53,5 +57,14 @@
     "template": []
   },
   "id": 375,
-  "name": "prothesis"
+  "name": "prothesis",
+  "signature": {
+    "anchor_id": "initial-segment",
+    "domain_id": "textual",
+    "locus_id": "initial",
+    "operation": "adjectio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

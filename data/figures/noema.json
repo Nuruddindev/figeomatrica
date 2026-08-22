@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Obscure subtle saying; figure where meaning not obvious.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 315,
   "name": "noema"
 }

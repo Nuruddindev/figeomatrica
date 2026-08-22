@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Example; induction.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 328,
   "name": "paradigma"
 }

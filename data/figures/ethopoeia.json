@@ -3,6 +3,9 @@
     "of Ethos"
   ],
   "definition": "Character portrayal; description of manners.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 246,
   "name": "ethopoeia"
 }

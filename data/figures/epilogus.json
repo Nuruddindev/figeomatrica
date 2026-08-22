@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Epilogue; peroratio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 233,
   "name": "epilogus"
 }

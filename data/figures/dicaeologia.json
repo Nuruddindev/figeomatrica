@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Excusing by necessity; admitting but justifying.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 203,
   "name": "dicaeologia"
 }

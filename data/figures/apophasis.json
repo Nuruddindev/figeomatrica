@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Affirming by apparent denial (paralipsis): I will not mention...",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 95,
   "name": "apophasis"
 }

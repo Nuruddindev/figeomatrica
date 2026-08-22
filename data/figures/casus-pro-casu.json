@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Substitution of case.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 130,
   "name": "casus pro casu"
 }

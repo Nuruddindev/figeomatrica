@@ -3,6 +3,9 @@
     "of Repetition"
   ],
   "definition": "Repetition of same word with different meaning or separated.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 359,
   "name": "ploce"
 }

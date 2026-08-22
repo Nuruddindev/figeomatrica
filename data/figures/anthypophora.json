@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Refuting objection with counter-question; hypophora variant.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 69,
   "name": "anthypophora"
 }

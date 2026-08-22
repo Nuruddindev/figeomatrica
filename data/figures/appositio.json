@@ -5,6 +5,9 @@
     "of Grammar"
   ],
   "definition": "Addition of appositive adjacent.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 102,
   "name": "appositio"
 }

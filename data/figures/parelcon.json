@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Redundant addition; pleonasm.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 338,
   "name": "parelcon"
 }

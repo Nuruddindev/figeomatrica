@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Rejection of argument with ridiculous comparison.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 201,
   "name": "diasyrmus"
 }

@@ -5,6 +5,9 @@
     "of Reasoning"
   ],
   "definition": "Division counting parts; distributio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 225,
   "name": "enumeratio"
 }

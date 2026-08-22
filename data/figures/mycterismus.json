@@ -4,6 +4,9 @@
     "of Irony"
   ],
   "definition": "Mocking sneer; covert sarcasm.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 314,
   "name": "mycterismus"
 }

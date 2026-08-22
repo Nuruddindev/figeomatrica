@@ -4,6 +4,9 @@
     "of Time"
   ],
   "definition": "Description of time/temporal circumstance.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 143,
   "name": "chronographia"
 }

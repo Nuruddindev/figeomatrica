@@ -4,6 +4,9 @@
     "of Summary"
   ],
   "definition": "Summary conclusion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 401,
   "name": "symperasma"
 }

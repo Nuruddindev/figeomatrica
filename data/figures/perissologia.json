@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Needless wordiness; macrologia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 353,
   "name": "perissologia"
 }

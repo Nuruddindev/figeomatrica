@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Gnome/sententia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 296,
   "name": "maxim"
 }

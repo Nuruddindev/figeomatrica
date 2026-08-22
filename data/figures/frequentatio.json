@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Accumulatio; heaping up.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 262,
   "name": "frequentatio"
 }

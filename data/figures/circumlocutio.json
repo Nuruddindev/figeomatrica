@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Circumlocution; periphrasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 144,
   "name": "circumlocutio"
 }

@@ -3,6 +3,9 @@
     "of Definition"
   ],
   "definition": "Paraphrase; rendering the same sense in other words (verse↔prose).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1060,
   "name": "metaphrasis"
 }

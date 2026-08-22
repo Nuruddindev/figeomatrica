@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Division of one syllable into two.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 192,
   "name": "diaeresis"
 }

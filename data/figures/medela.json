@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Remedy figure?",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 297,
   "name": "medela"
 }

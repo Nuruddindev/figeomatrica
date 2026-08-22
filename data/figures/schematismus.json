@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Figure? Using figure covertly.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 387,
   "name": "schematismus"
 }

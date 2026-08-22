@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Complete sentence; periodic structure.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 351,
   "name": "period"
 }

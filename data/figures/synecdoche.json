@@ -3,6 +3,9 @@
     "of Substitution"
   ],
   "definition": "Part for whole, whole for part, etc.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 412,
   "name": "synecdoche"
 }

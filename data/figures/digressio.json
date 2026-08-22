@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Digression; parekbasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 204,
   "name": "digressio"
 }

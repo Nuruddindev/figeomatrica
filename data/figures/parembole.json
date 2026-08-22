@@ -4,6 +4,9 @@
     "of Interruption"
   ],
   "definition": "Parenthesis inserted.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 339,
   "name": "parembole"
 }

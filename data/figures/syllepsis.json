@@ -6,6 +6,9 @@
     "of Grammar"
   ],
   "definition": "Word applying to two clauses differently (zeugma type).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 399,
   "name": "syllepsis"
 }

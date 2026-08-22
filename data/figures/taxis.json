@@ -4,6 +4,9 @@
     "of Order"
   ],
   "definition": "Arrangement; order.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 423,
   "name": "taxis"
 }

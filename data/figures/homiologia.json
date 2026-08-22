@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Tedious sameness; vice.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 268,
   "name": "homiologia"
 }

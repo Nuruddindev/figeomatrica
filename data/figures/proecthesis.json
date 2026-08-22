@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Justification preceding statement.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 366,
   "name": "proecthesis"
 }

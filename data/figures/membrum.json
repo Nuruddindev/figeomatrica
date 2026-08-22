@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Member; colon.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 299,
   "name": "membrum"
 }

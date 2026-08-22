@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Vivid description (enargia).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 190,
   "name": "descriptio"
 }

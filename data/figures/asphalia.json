@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Assuring safety.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 108,
   "name": "asphalia"
 }

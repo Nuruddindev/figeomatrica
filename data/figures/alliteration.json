@@ -3,6 +3,9 @@
     "of Sound"
   ],
   "definition": "Repetition of initial consonant sounds (paromoiosis/homoeoprophoron).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 45,
   "name": "alliteration"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Placing side by side two coordinates where one explains other.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 103,
   "name": "apposition"
 }

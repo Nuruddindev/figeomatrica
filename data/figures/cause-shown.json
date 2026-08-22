@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Aetiologia: giving cause.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 136,
   "name": "cause shown"
 }

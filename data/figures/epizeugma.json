@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "One verb governing clauses placed at end or beginning.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 243,
   "name": "epizeugma"
 }

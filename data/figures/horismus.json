@@ -4,6 +4,9 @@
     "of Reasoning"
   ],
   "definition": "Definition; distinctio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 273,
   "name": "horismus"
 }

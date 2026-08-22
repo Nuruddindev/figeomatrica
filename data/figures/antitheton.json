@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Same as antithesis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 85,
   "name": "antitheton"
 }

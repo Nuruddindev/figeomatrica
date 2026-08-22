@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Extension.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 421,
   "name": "tasis"
 }

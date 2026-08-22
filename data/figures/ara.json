@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Prayer for evil to befall (imprecation).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 104,
   "name": "ara"
 }

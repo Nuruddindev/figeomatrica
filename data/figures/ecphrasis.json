@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Vivid description bringing scene before eyes; enargia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 211,
   "name": "ecphrasis"
 }

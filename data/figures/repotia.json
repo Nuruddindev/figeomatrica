@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Repetition?",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 382,
   "name": "repotia"
 }

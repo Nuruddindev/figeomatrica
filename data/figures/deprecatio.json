@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Prayer to avert; deesis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 189,
   "name": "deprecatio"
 }

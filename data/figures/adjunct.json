@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Word added to qualify.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 28,
   "name": "adjunct"
 }

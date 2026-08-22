@@ -4,6 +4,9 @@
     "of Time"
   ],
   "definition": "Amplification, extending meaning.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 51,
   "name": "ampliatio"
 }

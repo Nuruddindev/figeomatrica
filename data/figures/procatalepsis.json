@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Anticipating and answering objection.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 363,
   "name": "procatalepsis"
 }

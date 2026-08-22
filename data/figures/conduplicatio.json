@@ -3,6 +3,9 @@
     "of Repetition"
   ],
   "definition": "Repetition of word in successive clause for amplification.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 167,
   "name": "conduplicatio"
 }

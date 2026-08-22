@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Inaccurate or obsolete word use.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 19,
   "name": "acyron"
 }

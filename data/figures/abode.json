@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Repetition of an argumentative anchor across multiple discourse positions, with intervening material permitted between occurrences.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -44,5 +48,14 @@
     "template": []
   },
   "id": 6,
-  "name": "abode"
+  "name": "abode",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "conceptual",
+    "locus_id": "distributed",
+    "operation": "repetitio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

@@ -8,6 +8,10 @@
     "of Understatement"
   ],
   "definition": "a concluding representation that reduces the rhetorical force of what precedes it.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -38,5 +42,14 @@
     "operation": "deletion"
   },
   "id": 1,
-  "name": "abating"
+  "name": "abating",
+  "signature": {
+    "anchor_id": "final-segment",
+    "domain_id": "conceptual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "discourse"
+  }
 }

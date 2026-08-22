@@ -4,6 +4,9 @@
     "of Parallelism"
   ],
   "definition": "Similar endings of words/clauses.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 272,
   "name": "homoioteleuton"
 }

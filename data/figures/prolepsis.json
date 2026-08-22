@@ -4,6 +4,9 @@
     "of Time"
   ],
   "definition": "Anticipation; procatalepsis; also taking future as already done.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 367,
   "name": "prolepsis"
 }

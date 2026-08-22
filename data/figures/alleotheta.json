@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Substitution of one case/tense for another; enallage.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 44,
   "name": "alleotheta"
 }

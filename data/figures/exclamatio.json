@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Ecphonesis; exclamation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 255,
   "name": "exclamatio"
 }

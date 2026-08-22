@@ -3,6 +3,9 @@
     "Vices"
   ],
   "definition": "Pleonasmus (pleonasm): redundansi ungkapan, menambah kata tak perlu demi makna.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 481,
   "name": "pleonasmus"
 }

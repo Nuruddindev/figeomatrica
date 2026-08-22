@@ -4,6 +4,9 @@
     "of Interruption"
   ],
   "definition": "Breaking off speech, leaving unfinished from emotion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 98,
   "name": "aposiopesis"
 }

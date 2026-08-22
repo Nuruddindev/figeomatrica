@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Apostrophe turning away.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 117,
   "name": "aversio"
 }

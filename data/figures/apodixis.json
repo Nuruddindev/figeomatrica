@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Proof from experience or evidence; demonstration.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 93,
   "name": "apodixis"
 }

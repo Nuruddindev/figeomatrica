@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Sharp dull; compositum ex contrariis; joining contradictory terms.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 322,
   "name": "oxymoron"
 }

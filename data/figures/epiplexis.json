@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Reproachful upbraiding to shame.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 236,
   "name": "epiplexis"
 }

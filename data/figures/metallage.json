@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Trope change.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 307,
   "name": "metallage"
 }

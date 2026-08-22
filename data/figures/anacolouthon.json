@@ -4,6 +4,9 @@
     "of Grammar"
   ],
   "definition": "Syntactic inconsistency; sentence breaking off changing construction.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 508,
   "name": "anacolouthon"
 }

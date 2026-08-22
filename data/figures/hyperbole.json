@@ -4,6 +4,9 @@
     "of Overstatement"
   ],
   "definition": "Exaggeration.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 277,
   "name": "hyperbole"
 }

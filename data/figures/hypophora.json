@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Asking question then answering; anthypophora.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 278,
   "name": "hypophora"
 }

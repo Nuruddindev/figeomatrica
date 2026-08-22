@@ -4,6 +4,9 @@
     "of Interruption"
   ],
   "definition": "Syntactic inconsistency; sentence breaking off changing construction.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 55,
   "name": "anacoluthon"
 }

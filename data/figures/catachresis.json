@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Strained metaphor; misuse (abusio).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 131,
   "name": "catachresis"
 }

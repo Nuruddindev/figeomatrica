@@ -3,6 +3,9 @@
     "of Understatement"
   ],
   "definition": "reframe(anchor, euphemistic_unit) → a socially or evaluatively softened representation of the anchor.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 250,
   "name": "euphemismus"
 }

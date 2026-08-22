@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Implying more than said.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 216,
   "name": "emphasis"
 }

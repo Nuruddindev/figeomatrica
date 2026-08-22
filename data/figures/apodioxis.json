@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Rejection of argument as absurd; bdelygmia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 92,
   "name": "apodioxis"
 }

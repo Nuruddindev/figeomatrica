@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Extended elaborate metaphor.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 161,
   "name": "conceit"
 }

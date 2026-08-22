@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Each clause has its own verb (opposite zeugma).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 281,
   "name": "hypozeuxis"
 }

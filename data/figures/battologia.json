@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Needless repetition; tautologia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 119,
   "name": "battologia"
 }

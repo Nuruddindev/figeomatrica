@@ -4,6 +4,9 @@
     "of Grammar"
   ],
   "definition": "Omission of conjunctions between clauses.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 115,
   "name": "asyndeton"
 }

@@ -5,6 +5,9 @@
     "of Interruption"
   ],
   "definition": "Self-correction (epanorthosis).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 178,
   "name": "correctio"
 }

@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Giving reason after statement (aetiologia).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 368,
   "name": "prosapodosis"
 }

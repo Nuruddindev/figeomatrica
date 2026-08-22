@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Unfigured expression.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 107,
   "name": "aschematiston"
 }

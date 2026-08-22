@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Vivid description; enargia; descriptio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 279,
   "name": "hypotyposis"
 }

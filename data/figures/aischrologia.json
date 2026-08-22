@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Obscene language; aeschrologia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 42,
   "name": "aischrologia"
 }

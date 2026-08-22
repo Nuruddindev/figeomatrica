@@ -3,6 +3,9 @@
     "of Omission"
   ],
   "definition": "Running quickly through; praeteritio; swiftly touching many points.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1058,
   "name": "percursio"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Topothesia: imaginary place.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 181,
   "name": "counterfait place"
 }

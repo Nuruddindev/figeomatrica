@@ -1,0 +1,271 @@
+{
+  "versi": 1,
+  "dibuat": "2026-08-23",
+  "sumber": "snapshot tabel knowledge SARVA vault pasca Fase 1-5 (CONTRACT.md v1)",
+  "catatan": "Versi TERTINGGI di folder ini adalah kanon. Versi lama abadi (immutable) sebagai rekam jejak eksperimen.",
+  "domains": [
+    {
+      "id": "textual",
+      "description": "Word-level and sub-word textual material"
+    },
+    {
+      "id": "entity",
+      "description": "Discourse entities and their attributes"
+    },
+    {
+      "id": "argumentative",
+      "description": "Arguments, theses, and their relations"
+    },
+    {
+      "id": "conceptual",
+      "description": "Conceptual/semantic material at discourse level"
+    }
+  ],
+  "units": [
+    {
+      "id": "grapheme",
+      "label": "Single written character or graph"
+    },
+    {
+      "id": "word",
+      "label": "Single lexical word"
+    },
+    {
+      "id": "phrase",
+      "label": "Multi-word phrase or collocation"
+    },
+    {
+      "id": "unit",
+      "label": "Discourse unit (clause/sentence)"
+    },
+    {
+      "id": "discourse",
+      "label": "Extended discourse segment"
+    },
+    {
+      "id": "syllable",
+      "label": "Spoken/written syllable within a word"
+    },
+    {
+      "id": "clause",
+      "label": "Single clause"
+    },
+    {
+      "id": "sentence",
+      "label": "Single sentence"
+    },
+    {
+      "id": "entity",
+      "label": "Discourse entity (person, thing, abstraction)"
+    },
+    {
+      "id": "character",
+      "label": "Dramatis persona / speaker-character"
+    },
+    {
+      "id": "argument",
+      "label": "Argumentative move or thesis"
+    },
+    {
+      "id": "concept",
+      "label": "Abstract concept or idea"
+    }
+  ],
+  "scopes": [
+    {
+      "id": "phonological-form",
+      "description": "Pronounced form of a word"
+    },
+    {
+      "id": "orthographic-form",
+      "description": "Written form of a word"
+    },
+    {
+      "id": "token-stream",
+      "description": "Linear stream of tokens"
+    },
+    {
+      "id": "representation",
+      "description": "Manner an entity is represented in discourse"
+    },
+    {
+      "id": "discourse",
+      "description": "Extended discourse structure hosting units"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "initial-segment",
+      "description": "Leftmost segment of the carrier"
+    },
+    {
+      "id": "final-segment",
+      "description": "Rightmost segment of the carrier"
+    },
+    {
+      "id": "medial-segment",
+      "description": "Interior segment of the carrier"
+    },
+    {
+      "id": "cross-boundary",
+      "description": "Boundary between adjacent carriers"
+    },
+    {
+      "id": "non-person",
+      "description": "Entity lacking personhood"
+    },
+    {
+      "id": "non-human",
+      "description": "Entity lacking humanity"
+    },
+    {
+      "id": "person",
+      "description": "Human person or persona slot"
+    },
+    {
+      "id": "character",
+      "description": "Speaker-character within discourse"
+    },
+    {
+      "id": "insertion-point",
+      "description": "Interior insertion slot within a carrier"
+    },
+    {
+      "id": "whole-unit",
+      "description": "The carrier as a whole rather than a sub-segment"
+    }
+  ],
+  "payloads": [
+    {
+      "id": "segment",
+      "description": "Phonological/graphemic segment"
+    },
+    {
+      "id": "letter",
+      "description": "Single written letter"
+    },
+    {
+      "id": "syllable",
+      "description": "Syllabic unit"
+    },
+    {
+      "id": "person",
+      "description": "Personhood / persona capacity"
+    },
+    {
+      "id": "human-attribute",
+      "description": "Attribute proper to humans"
+    },
+    {
+      "id": "characterological-attribute",
+      "description": "Trait defining a character's ethos"
+    },
+    {
+      "id": "preemptive-response",
+      "description": "Response supplied before an anticipated objection"
+    }
+  ],
+  "loci": [
+    {
+      "id": "every",
+      "description": "Every slot in the series carries the pattern"
+    },
+    {
+      "id": "response",
+      "description": "Second element of adjacency pair answers the first"
+    },
+    {
+      "id": "terminal",
+      "description": "Only the terminal occurrence of the series"
+    },
+    {
+      "id": "distributed",
+      "description": "Occurrences recur irregularly with intervening material"
+    },
+    {
+      "id": "clustered",
+      "description": "Occurrences adjacent or locally clustered"
+    },
+    {
+      "id": "initial",
+      "description": "Addressed at the left boundary of the carrier"
+    },
+    {
+      "id": "medial",
+      "description": "Interior of the carrier, between delimiting segments"
+    },
+    {
+      "id": "cross_unit",
+      "description": "Across the boundary of adjacent carriers"
+    },
+    {
+      "id": "alternating",
+      "description": "Successive elements follow an external reference order"
+    }
+  ],
+  "bindings": [
+    {
+      "domain_id": "textual",
+      "anchor_id": "initial-segment",
+      "operation_id": "detractio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "textual",
+      "anchor_id": "final-segment",
+      "operation_id": "detractio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "textual",
+      "anchor_id": "medial-segment",
+      "operation_id": "detractio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "textual",
+      "anchor_id": "cross-boundary",
+      "operation_id": "detractio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "textual",
+      "anchor_id": "initial-segment",
+      "operation_id": "adjectio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "textual",
+      "anchor_id": "medial-segment",
+      "operation_id": "adjectio",
+      "payload_id": "segment",
+      "status": "valid"
+    },
+    {
+      "domain_id": "entity",
+      "anchor_id": "non-person",
+      "operation_id": "adjectio",
+      "payload_id": "person",
+      "status": "valid"
+    },
+    {
+      "domain_id": "entity",
+      "anchor_id": "non-human",
+      "operation_id": "adjectio",
+      "payload_id": "human-attribute",
+      "status": "valid"
+    },
+    {
+      "domain_id": "entity",
+      "anchor_id": "person",
+      "operation_id": "adjectio",
+      "payload_id": "characterological-attribute",
+      "status": "valid"
+    }
+  ]
+}

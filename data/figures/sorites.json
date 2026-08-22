@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Chain syllogism; climax of arguments.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 396,
   "name": "sorites"
 }

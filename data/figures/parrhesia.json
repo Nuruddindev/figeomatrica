@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Frankness; speaking boldly.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 347,
   "name": "parrhesia"
 }

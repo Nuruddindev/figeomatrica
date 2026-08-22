@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Incongruous juxtaposition?",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 267,
   "name": "heterogenium"
 }

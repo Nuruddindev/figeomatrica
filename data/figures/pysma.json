@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Questioning with many questions; erotema series.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 379,
   "name": "pysma"
 }

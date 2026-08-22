@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Comparison; simile.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 156,
   "name": "comparatio"
 }

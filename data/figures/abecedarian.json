@@ -8,6 +8,10 @@
     "of Repetition"
   ],
   "definition": "order(sequence, alphabetic_index) → a sequence whose successive elements are anchored to successive positions in the alphabet.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -39,5 +43,14 @@
     "template": []
   },
   "id": 3,
-  "name": "abecedarian"
+  "name": "abecedarian",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "ordering",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "grapheme"
+  }
 }

@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Proverbial saying of folk wisdom.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 20,
   "name": "adage"
 }

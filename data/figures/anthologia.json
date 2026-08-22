@@ -1,6 +1,9 @@
 {
   "categories": [],
   "definition": "Anthologia; gathering flowers — collecting beautiful passages.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1063,
   "name": "anthologia"
 }

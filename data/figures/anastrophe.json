@@ -3,6 +3,9 @@
     "of Substitution"
   ],
   "definition": "Inversion of usual word order for emphasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 61,
   "name": "anastrophe"
 }

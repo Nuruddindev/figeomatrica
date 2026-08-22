@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Affirmation figure.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 37,
   "name": "affirmatio"
 }

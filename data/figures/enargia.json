@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Vividness; clarity bringing before eyes.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 219,
   "name": "enargia"
 }

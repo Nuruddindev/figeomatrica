@@ -8,6 +8,10 @@
     "of Omission"
   ],
   "definition": "Truncate(word, terminal_segment) → a shortened word form produced by removing its final segment.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -36,5 +40,14 @@
     "template": []
   },
   "id": 4,
-  "name": "abcisio"
+  "name": "abcisio",
+  "signature": {
+    "anchor_id": "final-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

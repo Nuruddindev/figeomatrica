@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Explanatory addition; epexegesis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 230,
   "name": "epergesis"
 }

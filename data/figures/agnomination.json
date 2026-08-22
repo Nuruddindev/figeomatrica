@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Same as agnominatio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 41,
   "name": "agnomination"
 }

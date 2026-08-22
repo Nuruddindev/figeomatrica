@@ -9,6 +9,10 @@
     "of Interruption"
   ],
   "definition": "Insertion of a word into the middle of another word or phrase, cutting it apart (e.g., abso-bloody-lutely).",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -40,5 +44,14 @@
     "template": []
   },
   "id": 425,
-  "name": "tmesis"
+  "name": "tmesis",
+  "signature": {
+    "anchor_id": "insertion-point",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "adjectio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

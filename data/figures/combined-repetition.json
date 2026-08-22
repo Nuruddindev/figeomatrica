@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Multiple repetition schemes together.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 150,
   "name": "combined repetition"
 }

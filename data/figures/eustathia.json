@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Stability claim.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 251,
   "name": "eustathia"
 }

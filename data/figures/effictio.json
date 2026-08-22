@@ -3,6 +3,9 @@
     "of Ethos"
   ],
   "definition": "Portraiture; description of physical appearance.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 213,
   "name": "effictio"
 }

@@ -3,6 +3,9 @@
     "Vices"
   ],
   "definition": "Cacophaton; an offensive or obscene-sounding word.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1064,
   "name": "cacophaton"
 }

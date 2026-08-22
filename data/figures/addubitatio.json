@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Feigned doubt about what to say or do; aporia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 22,
   "name": "addubitatio"
 }

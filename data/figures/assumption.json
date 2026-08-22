@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Taking for granted.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 111,
   "name": "assumption"
 }

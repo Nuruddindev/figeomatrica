@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "English for catachresis or abusio: improper use of word.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 8,
   "name": "abuse"
 }

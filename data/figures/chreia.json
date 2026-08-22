@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Brief anecdote illustrating point; use of maxim.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 142,
   "name": "chreia"
 }

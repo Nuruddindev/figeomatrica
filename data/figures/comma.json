@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Short clause; cutted comma short phrase.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 151,
   "name": "comma"
 }

@@ -4,6 +4,9 @@
     "of Place"
   ],
   "definition": "Description of place (true).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 426,
   "name": "topographia"
 }

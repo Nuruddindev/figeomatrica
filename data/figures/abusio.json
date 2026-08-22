@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Misapplication of word (catachresis), especially metaphor forced.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 9,
   "name": "abusio"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Asserting as true.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 38,
   "name": "affirmation"
 }

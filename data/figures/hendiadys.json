@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "One idea expressed by two nouns with 'and' instead of noun+adj.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 266,
   "name": "hendiadys"
 }

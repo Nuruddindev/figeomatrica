@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Reasoning with self; asking then answering; anthypophora.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 380,
   "name": "ratiocinatio"
 }

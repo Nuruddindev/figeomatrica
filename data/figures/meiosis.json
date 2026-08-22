@@ -4,6 +4,9 @@
     "of Understatement"
   ],
   "definition": "Understatement; litotes; tapinosis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 298,
   "name": "meiosis"
 }

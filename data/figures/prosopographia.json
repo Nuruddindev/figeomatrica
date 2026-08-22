@@ -3,6 +3,9 @@
     "of Ethos"
   ],
   "definition": "Description of person; effictio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 371,
   "name": "prosopographia"
 }

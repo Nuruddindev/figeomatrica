@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Same as epistrophe; repetition at end.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 83,
   "name": "antistrophe"
 }

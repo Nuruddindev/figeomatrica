@@ -9,6 +9,10 @@
     "of Parallelism"
   ],
   "definition": "Arrangement by increasing force; also anadiplosis chain; gradatio.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -39,5 +43,14 @@
     "template": []
   },
   "id": 147,
-  "name": "climax"
+  "name": "climax",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "repetitio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

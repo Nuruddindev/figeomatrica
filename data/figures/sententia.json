@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Maxim; gnome; aphorism with moral.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 391,
   "name": "sententia"
 }

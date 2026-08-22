@@ -3,6 +3,9 @@
     "Semantic Inversions"
   ],
   "definition": "Representing person as inanimate.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 75,
   "name": "antipersonification"
 }

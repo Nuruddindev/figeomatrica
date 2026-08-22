@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Peroration conclusion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 349,
   "name": "perclusio"
 }

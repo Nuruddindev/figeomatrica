@@ -4,6 +4,9 @@
     "of Irony"
   ],
   "definition": "Use of word opposite of its true meaning, irony.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 76,
   "name": "antiphrasis"
 }

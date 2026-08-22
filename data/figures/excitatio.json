@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Incitement.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 254,
   "name": "excitatio"
 }

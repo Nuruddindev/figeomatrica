@@ -3,6 +3,9 @@
     "of Omission"
   ],
   "definition": "Omission of word(s) understood.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 215,
   "name": "ellipsis"
 }

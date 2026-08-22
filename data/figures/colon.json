@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Clause member.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 149,
   "name": "colon"
 }

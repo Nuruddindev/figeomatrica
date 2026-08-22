@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Articulus: short pithy phrases.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 184,
   "name": "cutted comma"
 }

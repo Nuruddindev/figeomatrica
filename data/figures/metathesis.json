@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Transposition of letters.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 311,
   "name": "metathesis"
 }

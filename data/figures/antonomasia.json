@@ -5,6 +5,9 @@
     "of Substitution"
   ],
   "definition": "Substitution of epithet for name or name for epithet; prononominatio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 86,
   "name": "antonomasia"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Offering reward for following advice alongside threat.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 80,
   "name": "antisagoge"
 }

@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Alliteration? Actually excessive alliteration.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 343,
   "name": "paroemion"
 }

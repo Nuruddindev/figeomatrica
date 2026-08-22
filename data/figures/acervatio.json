@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Heaping up arguments/examples without conjunction.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 16,
   "name": "acervatio"
 }

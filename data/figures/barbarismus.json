@@ -3,6 +3,9 @@
     "Vices"
   ],
   "definition": "Barbarismus (barbarism): penggunaan kata asing/buatan atau tidak baku; vice.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 480,
   "name": "barbarismus"
 }

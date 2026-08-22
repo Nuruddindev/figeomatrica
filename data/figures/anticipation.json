@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Prolepsis: anticipating objection (procatalepsis).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 71,
   "name": "anticipation"
 }

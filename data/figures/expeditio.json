@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Eliminating alternatives then affirming remainder.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 259,
   "name": "expeditio"
 }

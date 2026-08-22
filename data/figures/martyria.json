@@ -3,6 +3,9 @@
     "of Ethos"
   ],
   "definition": "Testimony based on own experience.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 295,
   "name": "martyria"
 }

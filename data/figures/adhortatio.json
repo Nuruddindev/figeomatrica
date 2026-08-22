@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Exhortation, vehement urging.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 23,
   "name": "adhortatio"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Self-contradictory statements.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 289,
   "name": "inter se pugnantia"
 }

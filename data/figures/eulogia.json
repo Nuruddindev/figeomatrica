@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Eulogy; praise.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 249,
   "name": "eulogia"
 }

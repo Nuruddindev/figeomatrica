@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Bombastic speech; verborum bombus.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 122,
   "name": "bomphiologia"
 }

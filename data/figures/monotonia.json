@@ -3,6 +3,9 @@
     "Vices"
   ],
   "definition": "Monotonia; monotony; lack of variation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1068,
   "name": "monotonia"
 }

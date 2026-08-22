@@ -3,6 +3,9 @@
     "of Grammar"
   ],
   "definition": "Schema or figura; a figure of speech — any artful deviation in language; synonym of schematismus.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1053,
   "name": "schema or figura"
 }

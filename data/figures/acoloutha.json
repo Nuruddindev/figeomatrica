@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Incoherent syntactic sequence; anacoluthon.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 11,
   "name": "acoloutha"
 }

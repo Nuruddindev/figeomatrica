@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Feigned doubt/deliberation where speaker asks where to begin.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 97,
   "name": "aporia"
 }

@@ -3,6 +3,9 @@
     "of Pathos"
   ],
   "definition": "Exclamatio; exclamation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 210,
   "name": "ecphonesis"
 }

@@ -4,6 +4,9 @@
     "of Wordplay"
   ],
   "definition": "Repeating word with different meaning (equivocation).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 64,
   "name": "antanaclasis"
 }

@@ -3,6 +3,9 @@
     "of Description"
   ],
   "definition": "Description of action; enargia subtype.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 362,
   "name": "pragmatographia"
 }

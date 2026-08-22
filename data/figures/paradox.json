@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Seemingly self-contradictory but true.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 329,
   "name": "paradox"
 }

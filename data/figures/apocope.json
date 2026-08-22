@@ -8,6 +8,10 @@
     "of Omission"
   ],
   "definition": "Cutting off final letter/syllable",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -56,5 +60,14 @@
     "template": []
   },
   "id": 91,
-  "name": "apocope"
+  "name": "apocope",
+  "signature": {
+    "anchor_id": "final-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

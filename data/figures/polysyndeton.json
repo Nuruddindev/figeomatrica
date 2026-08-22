@@ -4,6 +4,9 @@
     "of Grammar"
   ],
   "definition": "Multiple conjunctions; conjunctio/dialyton.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 361,
   "name": "polysyndeton"
 }

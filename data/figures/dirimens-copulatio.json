@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Conjunction that continues by denying contrary.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 206,
   "name": "dirimens copulatio"
 }

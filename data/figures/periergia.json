@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Over-elaborate, fussy style; vice.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 350,
   "name": "periergia"
 }

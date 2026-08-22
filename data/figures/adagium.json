@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Latin for adage/proverb.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 21,
   "name": "adagium"
 }

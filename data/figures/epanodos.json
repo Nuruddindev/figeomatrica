@@ -4,6 +4,9 @@
     "of Summary"
   ],
   "definition": "Repetition of words in reverse? Recapitulation with detail.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 227,
   "name": "epanodos"
 }

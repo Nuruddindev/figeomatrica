@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Understanding; figure of thought.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 196,
   "name": "dianoea"
 }

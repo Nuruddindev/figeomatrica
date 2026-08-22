@@ -8,6 +8,10 @@
     "of Repetition"
   ],
   "definition": "Repetition of the same word/phrase at the beginning AND the same word/phrase at the end of successive clauses; combination of anaphora and epistrophe (complexio).",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -36,5 +40,14 @@
     "template": []
   },
   "id": 402,
-  "name": "symploce"
+  "name": "symploce",
+  "signature": {
+    "anchor_id": "initial-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "repetitio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

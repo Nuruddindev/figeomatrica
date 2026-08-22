@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Argument from opposite; antithesis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 175,
   "name": "contrarium"
 }

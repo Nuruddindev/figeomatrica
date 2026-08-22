@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Syllogism.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 400,
   "name": "syllogismus"
 }

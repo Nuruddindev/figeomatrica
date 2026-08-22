@@ -3,6 +3,9 @@
     "of Play"
   ],
   "definition": "Urbanitas; urbanity; refined wit of educated city dwellers.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1069,
   "name": "urbanitas"
 }

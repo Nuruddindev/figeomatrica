@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Recalling past; reminiscence.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 57,
   "name": "anamnesis"
 }

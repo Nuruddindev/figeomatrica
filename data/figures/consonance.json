@@ -3,6 +3,9 @@
     "of Sound"
   ],
   "definition": "Repetition of consonant sounds.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 170,
   "name": "consonance"
 }

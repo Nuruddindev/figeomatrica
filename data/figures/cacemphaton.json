@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Harsh sounding or indecent double entendre.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 126,
   "name": "cacemphaton"
 }

@@ -8,6 +8,10 @@
     "of Understatement"
   ],
   "definition": "a conciliatory response that transforms a harsh exchange into a softened one through mockery.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -46,5 +50,14 @@
     ]
   },
   "id": 139,
-  "name": "charientismus"
+  "name": "charientismus",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "conceptual",
+    "locus_id": null,
+    "operation": "immutatio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

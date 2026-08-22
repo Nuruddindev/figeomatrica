@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Apophasis/paralipsis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 101,
   "name": "apparent refusal"
 }

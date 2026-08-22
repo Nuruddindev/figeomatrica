@@ -3,6 +3,9 @@
     "of Arrangement"
   ],
   "definition": "Transition; metabasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 429,
   "name": "transitio"
 }

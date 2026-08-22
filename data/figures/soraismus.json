@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Mixing languages; barbarism.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 395,
   "name": "soraismus"
 }

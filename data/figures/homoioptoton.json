@@ -4,6 +4,9 @@
     "of Parallelism"
   ],
   "definition": "Similar case endings; like homoeoteleuton but cases.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 271,
   "name": "homoioptoton"
 }

@@ -4,6 +4,9 @@
     "of Grammar"
   ],
   "definition": "General transposition; departure from natural order.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 276,
   "name": "hyperbaton"
 }

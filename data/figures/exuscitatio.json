@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Awakening; excitatio.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 261,
   "name": "exuscitatio"
 }

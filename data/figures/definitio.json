@@ -3,6 +3,9 @@
     "of Definition"
   ],
   "definition": "Definition; defining a word or thing.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1059,
   "name": "definitio"
 }

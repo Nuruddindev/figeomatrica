@@ -4,6 +4,9 @@
     "of Refutation"
   ],
   "definition": "Refutation; cross-examination.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 214,
   "name": "elenchus"
 }

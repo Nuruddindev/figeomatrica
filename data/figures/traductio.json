@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Polyptoton? Repeating same word in different forms or same word.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 428,
   "name": "traductio"
 }

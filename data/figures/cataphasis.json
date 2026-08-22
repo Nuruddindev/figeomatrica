@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Affirmation; assertion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 133,
   "name": "cataphasis"
 }

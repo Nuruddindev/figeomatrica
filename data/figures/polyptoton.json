@@ -4,6 +4,9 @@
     "of Play"
   ],
   "definition": "Repetition of same root in different cases/inflections.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 360,
   "name": "polyptoton"
 }

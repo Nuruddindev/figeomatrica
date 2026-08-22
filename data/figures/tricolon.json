@@ -4,6 +4,9 @@
     "of Parallelism"
   ],
   "definition": "Three parallel members; triple.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 431,
   "name": "tricolon"
 }

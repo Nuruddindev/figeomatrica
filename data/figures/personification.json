@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Prosopopoeia; giving human qualities.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 356,
   "name": "personification"
 }

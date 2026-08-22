@@ -5,6 +5,9 @@
     "of Division"
   ],
   "definition": "Numbered ordering (first, second...).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 252,
   "name": "eutrepismus"
 }

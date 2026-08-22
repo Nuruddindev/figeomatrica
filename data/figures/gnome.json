@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Maxim; sententia; proverb.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 264,
   "name": "gnome"
 }

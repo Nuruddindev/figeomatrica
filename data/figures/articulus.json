@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Single words separated by pauses; asyndeton short clauses.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 105,
   "name": "articulus"
 }

@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Pistis; proof/evidence; faith/assurance.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1070,
   "name": "pistis"
 }

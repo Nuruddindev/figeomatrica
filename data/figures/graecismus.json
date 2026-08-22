@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Greek idiom.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 265,
   "name": "graecismus"
 }

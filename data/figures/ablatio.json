@@ -8,6 +8,10 @@
     "of Omission"
   ],
   "definition": "Omission of initial letter/syllable (aphaeresis); metaplasm cutting beginning.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -44,5 +48,14 @@
     "template": []
   },
   "id": 5,
-  "name": "ablatio"
+  "name": "ablatio",
+  "signature": {
+    "anchor_id": "initial-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }

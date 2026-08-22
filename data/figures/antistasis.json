@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Repeating word in different sense; antanaclasis.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 81,
   "name": "antistasis"
 }

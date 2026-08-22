@@ -4,6 +4,9 @@
     "of Parallelism"
   ],
   "definition": "Parallel clauses of equal length; parison.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 292,
   "name": "isocolon"
 }

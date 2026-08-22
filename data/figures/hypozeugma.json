@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Zeugma with governing word at end (adjunctio?).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 280,
   "name": "hypozeugma"
 }

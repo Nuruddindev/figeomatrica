@@ -3,6 +3,9 @@
     "of Substitution"
   ],
   "definition": "Sustained metaphor continued through whole sentences/discourse; trope of inversion.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 43,
   "name": "allegory"
 }

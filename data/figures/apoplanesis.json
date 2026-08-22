@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Digressive avoidance.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 96,
   "name": "apoplanesis"
 }

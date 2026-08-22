@@ -4,6 +4,9 @@
     "of Substitution"
   ],
   "definition": "Reference to something or someone by naming one of its attributes.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 312,
   "name": "metonymy"
 }

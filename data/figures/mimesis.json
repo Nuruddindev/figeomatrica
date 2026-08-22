@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Imitation of another's speech/manner.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 313,
   "name": "mimesis"
 }

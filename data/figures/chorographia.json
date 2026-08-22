@@ -4,6 +4,9 @@
     "of Place"
   ],
   "definition": "Description of particular place/region.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 141,
   "name": "chorographia"
 }

@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Apposition.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 335,
   "name": "parathesis"
 }

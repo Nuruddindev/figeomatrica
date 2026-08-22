@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Verse where first letters of lines form word/message.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 17,
   "name": "acrostic"
 }

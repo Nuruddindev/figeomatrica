@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Argument offering two alternatives (corneus).",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 205,
   "name": "dilemma"
 }

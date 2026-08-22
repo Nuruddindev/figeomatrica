@@ -4,6 +4,9 @@
     "Vices"
   ],
   "definition": "Affectation; vicious imitation.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 129,
   "name": "cacozelia"
 }

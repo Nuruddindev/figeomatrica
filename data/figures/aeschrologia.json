@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Shameful or obscene speech.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 35,
   "name": "aeschrologia"
 }

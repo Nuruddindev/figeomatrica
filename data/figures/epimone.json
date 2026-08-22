@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Persistent repetition of the same argumentative plea in substantially the same verbal form.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -39,5 +43,14 @@
     "template": []
   },
   "id": 234,
-  "name": "epimone"
+  "name": "epimone",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "conceptual",
+    "locus_id": "clustered",
+    "operation": "repetitio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "unit"
+  }
 }

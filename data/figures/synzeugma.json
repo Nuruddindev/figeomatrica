@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Same as hypozeugma?",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 417,
   "name": "synzeugma"
 }

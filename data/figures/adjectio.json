@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Addition figure; general term for adding words.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 25,
   "name": "adjectio"
 }

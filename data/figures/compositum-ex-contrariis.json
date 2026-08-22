@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Composed of contraries; oxymoron.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 159,
   "name": "compositum ex contrariis"
 }

@@ -4,6 +4,9 @@
     "of Place"
   ],
   "definition": "Description of imaginary place; counterfeit place.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 427,
   "name": "topothesia"
 }

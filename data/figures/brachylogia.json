@@ -3,6 +3,9 @@
     "of Omission"
   ],
   "definition": "Conciseness; omission of connectives.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 124,
   "name": "brachylogia"
 }

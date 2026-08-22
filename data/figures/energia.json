@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Vigor; enargia.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 221,
   "name": "energia"
 }

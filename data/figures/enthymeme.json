@@ -3,6 +3,9 @@
     "of Reasoning"
   ],
   "definition": "Rhetorical syllogism from probable premises.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 224,
   "name": "enthymeme"
 }

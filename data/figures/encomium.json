@@ -3,6 +3,9 @@
     "of Amplification"
   ],
   "definition": "Praise; panegyric.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 220,
   "name": "encomium"
 }

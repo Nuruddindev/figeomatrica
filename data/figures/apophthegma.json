@@ -1,6 +1,9 @@
 {
   "categories": [],
   "definition": "Aphorism; a short, pointed saying; apothegm.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 1055,
   "name": "apophthegma"
 }

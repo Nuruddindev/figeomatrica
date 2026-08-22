@@ -8,6 +8,10 @@
     "of Understatement"
   ],
   "definition": "a representation that is semantically or rhetorically lower than the expected scale.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -35,5 +39,14 @@
     "operation": "deletion"
   },
   "id": 2,
-  "name": "abbaser"
+  "name": "abbaser",
+  "signature": {
+    "anchor_id": "whole-unit",
+    "domain_id": "conceptual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "discourse"
+  }
 }

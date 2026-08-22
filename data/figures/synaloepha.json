@@ -8,6 +8,10 @@
     "of Amplification"
   ],
   "definition": "Synaloepha is detractio across a word boundary, collapsing two adjacent vowel units belonging to neighboring words by omitting one of them.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "STRUCTURALLY_VALID"
+  },
   "examples": {
     "negative": [
       [
@@ -49,5 +53,14 @@
     "template": []
   },
   "id": 404,
-  "name": "synaloepha"
+  "name": "synaloepha",
+  "signature": {
+    "anchor_id": "cross-boundary",
+    "domain_id": "textual",
+    "locus_id": "cross_unit",
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "grapheme"
+  }
 }

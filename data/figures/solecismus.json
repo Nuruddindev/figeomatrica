@@ -5,6 +5,9 @@
     "Vices"
   ],
   "definition": "Grammatical error; vice.",
+  "epistemic": {
+    "status": "PROSE_ONLY"
+  },
   "id": 394,
   "name": "solecismus"
 }

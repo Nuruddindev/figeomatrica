@@ -8,6 +8,10 @@
     "of Omission"
   ],
   "definition": "Detractio applied to an initial segment of a word, removing one or more letters, sounds, or syllables from its left boundary while preserving the remaining sequence.",
+  "epistemic": {
+    "legacy_status": "legacy_green",
+    "status": "WITNESS_TESTED"
+  },
   "examples": {
     "negative": [
       [
@@ -44,5 +48,14 @@
     "template": []
   },
   "id": 88,
-  "name": "aphaeresis"
+  "name": "aphaeresis",
+  "signature": {
+    "anchor_id": "initial-segment",
+    "domain_id": "textual",
+    "locus_id": null,
+    "operation": "detractio",
+    "payload_id": null,
+    "scope_id": null,
+    "unit_id": "word"
+  }
 }
