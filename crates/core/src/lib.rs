@@ -124,6 +124,15 @@ pub use signature::{
     BindingStore, BindingVerdict, Constraints, FigureSignature, check_compatibility,
 };
 
+/// CONTRACT.md §8 — deterministic witness engine (positive + guided
+/// negative batteries, structural check, inverse test) for textual domains.
+pub mod witness;
+pub use witness::{
+    Expectation, GenerationOutcome, InferredTransform, InverseVerdict, ProtocolCheck,
+    ProtocolReport, TextWitness, Violation, WitnessKind, generate_deterministic,
+    infer_transform, inverse_test, run_protocol, satisfies,
+};
+
 /// Operation performed on elements (canonical-form axis; the four classical
 /// operae plus repetition).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
