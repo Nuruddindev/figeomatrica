@@ -1,19 +1,23 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Omission"
   ],
-  "geometry": {
-    "anchor": "Final",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: pemotongan segmen awal/akhir/tengah kata (apocope/aphaeresis/syncope/clipping)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 91,
-  "name": "apocope",
   "examples": {
+    "negative": [
+      [
+        "Photograph",
+        "photography"
+      ],
+      [
+        "Laboratory",
+        "laboratorian"
+      ]
+    ],
     "positive": [
       [
         "Photograph",
@@ -27,21 +31,17 @@
         "Mathematics",
         "math"
       ]
-    ],
-    "negative": [
-      [
-        "Photograph",
-        "photography"
-      ],
-      [
-        "Laboratory",
-        "laboratorian"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Final",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: pemotongan segmen akhir kata (apocope/clipping)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 91,
+  "name": "apocope"
 }

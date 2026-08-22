@@ -539,6 +539,13 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
              "penambahan di awal kata (prothesis)"));
     }
 
+    if d.contains("apocope") || d.contains("apocope")
+        || d.contains("omission of") && (d.contains("final") || d.contains("cutting off"))
+        || d.contains("cutting off") && (d.contains("final") || d.contains("end"))
+        || (d.contains("omission of") || d.contains("cutting off")) && (d.contains("final") || d.contains("end")) {
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.80, "truncation", Some("medial"), &[],
+            "pemotongan segmen akhir kata (apocope)"));
+    }
     if d.contains("truncat") || d.contains("clipping") || d.contains("apocope") || d.contains("aphaeresis")
         || d.contains("shorten") && (d.contains("remov") || d.contains("cut") || d.contains("delet"))
         || d.contains("final segment") || d.contains("terminal segment")
