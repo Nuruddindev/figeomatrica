@@ -1,7 +1,47 @@
 {
-  "id": 174,
-  "name": "contractio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "geometry": {
+    "anchor": "Final",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: pemotongan segmen awal/akhir/tengah kata (apocope/aphaeresis/syncope/clipping)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 174,
+  "name": "contractio",
+  "examples": {
+    "positive": [
+      [
+        "Don't",
+        "Do not"
+      ],
+      [
+        "Can't",
+        "Can not"
+      ],
+      [
+        "Won't",
+        "Will not"
+      ]
+    ],
+    "negative": [
+      [
+        "Don't",
+        "Do not"
+      ],
+      [
+        "Can't",
+        "Can not"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

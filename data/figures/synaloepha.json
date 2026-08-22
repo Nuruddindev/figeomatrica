@@ -1,7 +1,52 @@
 {
-  "id": 404,
-  "name": "synaloepha",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "grapheme",
+    "locus": "cross_unit",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan vokal di batas kata (synaloepha)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 404,
+  "name": "synaloepha",
+  "examples": {
+    "positive": [
+      [
+        "De amore",
+        "Damore"
+      ],
+      [
+        "De aqua",
+        "Daqua"
+      ],
+      [
+        "La alma",
+        "Lalma"
+      ],
+      [
+        "Po eta",
+        "Poeta"
+      ]
+    ],
+    "negative": [
+      [
+        "De amore",
+        "De amore"
+      ],
+      [
+        "La alma",
+        "La alma"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

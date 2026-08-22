@@ -1,8 +1,48 @@
 {
-  "id": 229,
-  "name": "epenthesis",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penambahan di tengah kata (epenthesis)",
+    "operation": "addition",
+    "template": []
+  },
+  "id": 229,
+  "name": "epenthesis",
+  "examples": {
+    "positive": [
+      [
+        "Athlete",
+        "Ath-uh-lete"
+      ],
+      [
+        "Hamster",
+        "Ham-pster"
+      ],
+      [
+        "Something",
+        "Some-thing"
+      ]
+    ],
+    "negative": [
+      [
+        "Athlete",
+        "Ath-le-te"
+      ],
+      [
+        "Hamster",
+        "Ham-ster"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

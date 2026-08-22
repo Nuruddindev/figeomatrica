@@ -1,7 +1,47 @@
 {
-  "id": 5,
-  "name": "ablatio",
   "categories": [
     "of Omission"
-  ]
+  ],
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 5,
+  "name": "ablatio",
+  "examples": {
+    "positive": [
+      [
+        "History",
+        "istory"
+      ],
+      [
+        "Ape",
+        "pe"
+      ],
+      [
+        "Omission",
+        "mission"
+      ]
+    ],
+    "negative": [
+      [
+        "Apple",
+        "pple"
+      ],
+      [
+        "Orange",
+        "range"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

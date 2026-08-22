@@ -1,7 +1,55 @@
 {
-  "id": 410,
-  "name": "syncope",
   "categories": [
     "of Omission"
-  ]
+  ],
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 410,
+  "name": "syncope",
+  "examples": {
+    "positive": [
+      [
+        "Photograph",
+        "photo"
+      ],
+      [
+        "Laboratory",
+        "lab"
+      ],
+      [
+        "Family",
+        "fam'ly"
+      ],
+      [
+        "Every",
+        "ev'ry"
+      ],
+      [
+        "Evening",
+        "ev'ning"
+      ]
+    ],
+    "negative": [
+      [
+        "Photograph",
+        "photography"
+      ],
+      [
+        "Laboratory",
+        "laboratorian"
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
