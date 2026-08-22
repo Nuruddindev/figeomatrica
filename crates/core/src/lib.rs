@@ -455,18 +455,6 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
             "inversi/permutasi frasa (antimetabole/chiasmus)"));
     }
 
-    // ── PROTHESIS / EPENTHESIS (addition at boundaries/within word) ──
-    if d.contains("prothesis") || (d.contains("adjectio") && d.contains("initial") && d.contains("boundary") && d.contains("insert"))
-        || d.contains("prothesis") {
-        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Addition,
-             1, 0.80, "addition", Some("every_slot"), &[], "penambahan di awal kata (prothesis)"));
-    }
-    if d.contains("epenthesis") || (d.contains("adjectio") && d.contains("interior") && d.contains("insert"))
-        || d.contains("epenthesis") {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("word"), Operation::Addition,
-             1, 0.80, "addition", None, &[], "penambahan di tengah kata (epenthesis)"));
-    }
-
     // ── ADDITION (interpolation) ─────────────────────────────────────
     if d.contains("insert") && (d.contains("word") && (d.contains("within a word")
         || d.contains("into a word") || d.contains("middle of a word") || d.contains("cut"))) {
@@ -518,17 +506,36 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
         c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("grapheme"), Operation::Deletion, 1, 0.85, "truncation", Some("cross_unit"), &[],
             "penghilangan vokal di batas kata (synaloepha)"));
     }
-    // ── APHAERESIS / PROTHESIS (initial boundary operations) ─────────
+        // ── SYNCOPE (medial deletion) ───────────────────────────────
+    if d.contains("syncope") || (d.contains("mid") && (d.contains("cut") || d.contains("omit") || d.contains("remov"))) {
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.86, "truncation", Some("medial"), &[],
+            "pemotongan segmen tengah kata (syncope)"));
+    }
+
+    // ── PROTHESIS / EPENTHESIS (addition at boundaries/within word) ──
+    if d.contains("prothesis") || (d.contains("adjectio") && d.contains("initial") && d.contains("boundary") && d.contains("insert"))
+        || d.contains("prothesis") {
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Addition,
+             1, 0.80, "addition", Some("every_slot"), &[], "penambahan di awal kata (prothesis)"));
+    }
+    if d.contains("epenthesis") || (d.contains("adjectio") && d.contains("interior") && d.contains("insert"))
+        || d.contains("epenthesis") {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("word"), Operation::Addition,
+             1, 0.80, "addition", Some("medial"), &[],
+             "penambahan di tengah kata (epenthesis)"));
+    }
+
+    // ── APHAERESIS (initial boundary deletion) ─────────────────────────
     if d.contains("aphaeresis") || d.contains("aphaeresis")
-        || d.contains("detractio") && (d.contains("initial") || d.contains("beginning") || d.contains("left boundary"))
-        || d.contains("adjectio") && (d.contains("initial") && (d.contains("boundary") || d.contains("beginning"))) {
+        || (d.contains("detractio") || d.contains("remov") || d.contains("omission") || d.contains("cut") || d.contains("omit"))
+        && (d.contains("initial") || d.contains("beginning") || d.contains("left boundary")) {
         c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.85, "truncation", None, &[],
             "penghilangan segmen awal kata (aphaeresis)"));
     }
     if d.contains("prothesis") || (d.contains("adjectio") && d.contains("initial") && d.contains("boundary") && d.contains("insert"))
         || d.contains("prothesis") {
         c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Addition,
-             1, 0.80, "addition", Some("every_slot"), &[],
+             1, 0.80, "addition", Some("initial"), &[],
              "penambahan di awal kata (prothesis)"));
     }
 
@@ -614,6 +621,7 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
             "terminal" => "ujung",
             "distributed" => "tersebar",
             "clustered" => "berumpun",
+            "medial" => "tengah",
             other => other,
         };
         obj["locus"] = serde_json::json!(v);
