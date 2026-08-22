@@ -130,7 +130,8 @@ pub mod witness;
 pub use witness::{
     Expectation, GenerationOutcome, InferredTransform, InverseVerdict, ProtocolCheck,
     ProtocolReport, TextWitness, Violation, WitnessKind, generate_deterministic,
-    infer_transform, inverse_test, run_protocol, satisfies,
+    infer_transform, inverse_test, run_protocol, run_protocol_auto, run_protocol_pola,
+    satisfies, satisfies_pola,
 };
 
 /// Operation performed on elements (canonical-form axis; the four classical

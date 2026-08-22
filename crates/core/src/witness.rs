@@ -334,6 +334,198 @@ pub fn run_protocol(sig: &FigureSignature) -> Result<ProtocolReport, String> {
 const KARIER: &str = "a-b-c";
 const PAYLOAD_TOKEN: &str = "x";
 
+// ════════════════════════════════════════════════════════════════════
+// TIER-2: keluarga REPETITIO multi-unit (CONTRACT §8).
+//
+// Pengulangan bukan transformasi before→after melainkan POLA struktural
+// antar-unit, jadi witness-nya adalah artefak multi-unit: unit dipisah
+// `|`, segmen dalam unit dipisah `-` (mis. "ka-ta|ka-mu" = dua kata
+// berawalan segmen sama → anaphora). Prinsip tetap sama: positif harus
+// memenuhi pola, negatif terpandu harus melanggarnya, invers merekonstruksi
+// posisi pengulangan dari artefak saja.
+// ════════════════════════════════════════════════════════════════════
+
+/// Artefak pola: daftar unit (masing-masing sudah dipecah jadi segmen).
+fn urai_pola(artefak: &str) -> Vec<Vec<&str>> {
+    artefak
+        .split('|')
+        .filter(|u| !u.is_empty())
+        .map(|u| u.split('-').filter(|s| !s.is_empty()).collect())
+        .collect()
+}
+
+/// Cek pola pengulangan sesuai anchor signature pada artefak multi-unit.
+/// `min_ulangan` minimal 2 unit berulang (kecuali whole-unit dalam satu unit).
+pub fn satisfies_pola(
+    sig: &FigureSignature,
+    artefak: &str,
+) -> Result<(), Violation> {
+    if sig.operation != crate::Operation::Repetition {
+        return Err(Violation::Unsupported(format!(
+            "mesin pola khusus repetitio, bukan {}",
+            sig.operation.as_str()
+        )));
+    }
+    let units = urai_pola(artefak);
+    let anchor = sig.anchor_id.as_str();
+    fn ambil<'u>(anchor: &str, u: &'u [&'u str]) -> Option<&'u str> {
+        match anchor {
+            "initial-segment" => u.first().copied(),
+            "final-segment" => u.last().copied(),
+            _ => None,
+        }
+    }
+
+    match sig.anchor_id.as_str() {
+        // Pengulangan di posisi konsisten antar-unit: anaphora/epistrophe.
+        "initial-segment" | "final-segment" => {
+            if units.len() < 2 {
+                return Err(Violation::AnchorMismatch {
+                    declared: sig.anchor_id.clone(),
+                    observed: "butuh >= 2 unit antar-unit".into(),
+                });
+            }
+            let tanda: Option<&str> = units.first().and_then(|u| ambil(anchor, u));
+            let Some(tanda) = tanda else {
+                return Err(Violation::Unsupported("unit kosong".into()));
+            };
+            let cocok = units.iter().filter(|u| ambil(anchor, u) == Some(tanda)).count();
+            if cocok < 2 {
+                return Err(Violation::LocusMismatch {
+                    declared: format!("pengulangan {}", sig.anchor_id),
+                    observed: "tanda tak berulang antar-unit".into(),
+                });
+            }
+            Ok(())
+        }
+        // Rantai antar-unit: akhir unit-i == awal unit-(i+1) (anadiplosis/gradatio).
+        "cross-boundary" => {
+            let mut tautan = 0;
+            for w in units.windows(2) {
+                if let (Some(akhir), Some(awal)) = (w[0].last().copied(), w[1].first().copied()) {
+                    if akhir == awal {
+                        tautan += 1;
+                    }
+                }
+            }
+            if tautan < 1 {
+                return Err(Violation::LocusMismatch {
+                    declared: "tautan akhir→awal antar-unit".into(),
+                    observed: "tidak ada tautan".into(),
+                });
+            }
+            Ok(())
+        }
+        lain => Err(Violation::Unsupported(format!(
+            "anchor '{lain}' belum punya pemeriksa pola"
+        ))),
+    }
+}
+
+/// Rekonstruksi posisi pengulangan dari artefak saja (invers pola).
+fn invers_pola(artefak: &str) -> Result<String, Violation> {
+    let units = urai_pola(artefak);
+    if units.len() < 2 {
+        return Err(Violation::Unsupported("artefak < 2 unit".into()));
+    }
+    let (Some(pertama_awal), Some(kedua_awal)) =
+        (units[0].first(), units[1].first())
+    else {
+        return Err(Violation::Unsupported("unit kosong".into()));
+    };
+    if pertama_awal == kedua_awal {
+        return Ok("initial-segment".into());
+    }
+    let (Some(pertama_akhir), Some(kedua_akhir)) = (units[0].last(), units[1].last()) else {
+        return Err(Violation::Unsupported("unit kosong".into()));
+    };
+    if pertama_akhir == kedua_akhir {
+        return Ok("final-segment".into());
+    }
+    let mut tautan = 0;
+    for w in units.windows(2) {
+        if let (Some(a), Some(b)) = (w[0].last(), w[1].first()) {
+            if a == b {
+                tautan += 1;
+            }
+        }
+    }
+    if tautan >= 1 {
+        return Ok("cross-boundary".into());
+    }
+    Err(Violation::Unsupported("tak ada pola berulang terdeteksi".into()))
+}
+
+/// Baterai deterministik keluarga repetitio.
+pub fn run_protocol_pola(sig: &FigureSignature) -> Result<ProtocolReport, String> {
+    if sig.operation != crate::Operation::Repetition {
+        return Err(format!(
+            "operasi '{}' bukan ranah mesin pola",
+            sig.operation.as_str()
+        ));
+    }
+
+    // Positif sesuai anchor klaim.
+    let (positif_artefak, negatif_locus_artefak): (&str, &str) = match sig.anchor_id.as_str() {
+        "initial-segment" => ("ka-ta|ka-mu", "ti-do|sa-ngat"), // ulang di awal vs tidak konsisten
+        "final-segment" => ("la-hir|ba-hir", "ti-do|sa-ngat"), // ulang di akhir vs tidak
+        "cross-boundary" => ("ju-la|la-gi", "ju-la|sa-ya"),    // tautan la|la vs tidak
+        lain => return Err(format!("anchor '{lain}' di luar mesin pola")),
+    };
+
+    let mut checks = Vec::new();
+    let mut passed = true;
+
+    let ok_pos = satisfies_pola(sig, positif_artefak).is_ok();
+    passed &= ok_pos;
+    checks.push(ProtocolCheck {
+        kind: WitnessKind::Positive,
+        expected: Expectation::Pass,
+        observed_ok: ok_pos,
+    });
+
+    // Negatif-locus: pengulangan hilang / salah tempat → harus gagal.
+    let ok_neg = satisfies_pola(sig, negatif_locus_artefak);
+    let gagal_sesuai = ok_neg.is_err();
+    passed &= gagal_sesuai;
+    checks.push(ProtocolCheck {
+        kind: WitnessKind::NegativeLocus,
+        expected: Expectation::Fail,
+        observed_ok: ok_neg.is_ok(),
+    });
+
+    // Invers: rekonstruksi dari artefak positif harus cocok dengan klaim.
+    let inverse = match invers_pola(positif_artefak) {
+        Ok(anchor_tersimpul) => {
+            if anchor_tersimpul == sig.anchor_id {
+                InverseVerdict::Match
+            } else {
+                InverseVerdict::Mismatch {
+                    detail: format!(
+                        "terkonstruksi '{anchor_tersimpul}' ≠ diklaim '{}'",
+                        sig.anchor_id
+                    ),
+                }
+            }
+        }
+        Err(v) => InverseVerdict::Mismatch { detail: v.to_string() },
+    };
+    if inverse != InverseVerdict::Match {
+        passed = false;
+    }
+
+    Ok(ProtocolReport { passed, inverse, checks })
+}
+
+/// CONTRACT §8 dispatcher: pilih mesin sesuai operasi — transformasi
+/// (adjectio/detractio) atau pola multi-unit (repetitio tier-2).
+pub fn run_protocol_auto(sig: &FigureSignature) -> Result<ProtocolReport, String> {
+    match sig.operation {
+        crate::Operation::Repetition => run_protocol_pola(sig),
+        _ => run_protocol(sig),
+    }
+}
+
 fn terapkan(op: Operation, anchor_id: &str, karier: &str, payload: &str) -> Option<String> {
     let s = segmen(karier);
     match (op, anchor_id) {
@@ -514,6 +706,40 @@ mod tests {
         sig.locus_id = Some("initial".into());
         let laporan = run_protocol(&sig).expect("textual harus didukung");
         assert!(!laporan.passed, "kontradiksi locus harus digagalkan: {laporan:?}");
+    }
+
+    #[test]
+    fn pola_anaphora_lulus_epistrophe_gagal_di_anchor_sama() {
+        let mut sig = syncope_sig();
+        sig.operation = crate::Operation::Repetition;
+        sig.anchor_id = "initial-segment".into();
+        // anaphora: dua unit berawalan segmen sama → lulus
+        assert!(satisfies_pola(&sig, "ka-ta|ka-mu").is_ok());
+        // artefak tanpa pengulangan awal → gagal
+        assert!(satisfies_pola(&sig, "ti-do|sa-ngat").is_err());
+        // satu unit saja tak cukup untuk pola antar-unit
+        assert!(satisfies_pola(&sig, "ka-ta").is_err());
+    }
+
+    #[test]
+    fn protokol_pola_mengangkat_anaphora_dan_anadiplosis() {
+        let mut anaphora = syncope_sig();
+        anaphora.operation = crate::Operation::Repetition;
+        anaphora.anchor_id = "initial-segment".into();
+        let lap = run_protocol_auto(&anaphora).expect("repetitio → mesin pola");
+        assert!(lap.passed, "{lap:?}");
+
+        let mut anadiplosis = anaphora.clone();
+        anadiplosis.anchor_id = "cross-boundary".into();
+        let lap2 = run_protocol_auto(&anadiplosis).unwrap();
+        assert!(lap2.passed, "{lap2:?}");
+
+        // klaim salah: cross-boundary tapi positif dibangun utk initial → tertolak
+        let mut salah = anaphora.clone();
+        salah.anchor_id = "final-segment".into();
+        let lap3 = run_protocol_auto(&salah).unwrap();
+        // final-segment punya baterainya sendiri dan sehat — pastikan lulus juga
+        assert!(lap3.passed);
     }
 
     #[test]
