@@ -455,6 +455,18 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
             "inversi/permutasi frasa (antimetabole/chiasmus)"));
     }
 
+    // ── PROTHESIS / EPENTHESIS (addition at boundaries/within word) ──
+    if d.contains("prothesis") || (d.contains("adjectio") && d.contains("initial") && d.contains("boundary") && d.contains("insert"))
+        || d.contains("prothesis") {
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Addition,
+             1, 0.80, "addition", Some("every_slot"), &[], "penambahan di awal kata (prothesis)"));
+    }
+    if d.contains("epenthesis") || (d.contains("adjectio") && d.contains("interior") && d.contains("insert"))
+        || d.contains("epenthesis") {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("word"), Operation::Addition,
+             1, 0.80, "addition", None, &[], "penambahan di tengah kata (epenthesis)"));
+    }
+
     // ── ADDITION (interpolation) ─────────────────────────────────────
     if d.contains("insert") && (d.contains("word") && (d.contains("within a word")
         || d.contains("into a word") || d.contains("middle of a word") || d.contains("cut"))) {
@@ -502,12 +514,36 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     }
 
     // ── SUBTRACTION (structural truncation / apocope) ────────────────
-    if d.contains("truncat") || d.contains("clipping") || d.contains("apocope")
+    if d.contains("synaloepha") || d.contains("synaloeph") {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("grapheme"), Operation::Deletion, 1, 0.85, "truncation", Some("cross_unit"), &[],
+            "penghilangan vokal di batas kata (synaloepha)"));
+    }
+    // ── APHAERESIS / PROTHESIS (initial boundary operations) ─────────
+    if d.contains("aphaeresis") || d.contains("aphaeresis")
+        || d.contains("detractio") && (d.contains("initial") || d.contains("beginning") || d.contains("left boundary"))
+        || d.contains("adjectio") && (d.contains("initial") && (d.contains("boundary") || d.contains("beginning"))) {
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.85, "truncation", None, &[],
+            "penghilangan segmen awal kata (aphaeresis)"));
+    }
+    if d.contains("prothesis") || (d.contains("adjectio") && d.contains("initial") && d.contains("boundary") && d.contains("insert"))
+        || d.contains("prothesis") {
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Addition,
+             1, 0.80, "addition", Some("every_slot"), &[],
+             "penambahan di awal kata (prothesis)"));
+    }
+
+    if d.contains("truncat") || d.contains("clipping") || d.contains("apocope") || d.contains("aphaeresis")
         || d.contains("shorten") && (d.contains("remov") || d.contains("cut") || d.contains("delet"))
         || d.contains("final segment") || d.contains("terminal segment")
-        || d.contains("removing the end") || d.contains("cut off the end") {
+        || d.contains("removing the end") || d.contains("cut off the end") || d.contains("cut off") && d.contains("final")
+        || d.contains("omission of") && (d.contains("final") || d.contains("initial") || d.contains("letter") || d.contains("syllable"))
+        || d.contains("omission of final") || d.contains("omission of initial")
+        || d.contains("cutting") && (d.contains("beginning") || d.contains("initial") || d.contains("end") || d.contains("middle") || d.contains("mid"))
+        || d.contains("cut off") && (d.contains("beginning") || d.contains("initial") || d.contains("end") || d.contains("final"))
+        || d.contains("cutting off") && (d.contains("beginning") || d.contains("initial") || d.contains("end") || d.contains("final"))
+        || d.contains("syncope") || d.contains("mid") && (d.contains("cut") || d.contains("omit") || d.contains("remov")) {
         c.push(draft(Anchor::Final, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.80, "truncation", None, &[],
-            "pemotongan segmen akhir kata (apocope/clipping)"));
+            "pemotongan segmen awal/akhir/tengah kata (apocope/aphaeresis/syncope/clipping)"));
     }
 
     // ── ORDER CORRESPONDENCE (abecedarian family) ────────────────────
