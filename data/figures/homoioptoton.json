@@ -1,8 +1,9 @@
 {
-  "id": 271,
-  "name": "homoioptoton",
   "categories": [
     "of Amplification",
     "of Parallelism"
-  ]
+  ],
+  "definition": "Similar case endings; like homoeoteleuton but cases.",
+  "id": 271,
+  "name": "homoioptoton"
 }

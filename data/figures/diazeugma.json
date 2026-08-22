@@ -1,8 +1,9 @@
 {
-  "id": 202,
-  "name": "diazeugma",
   "categories": [
     "of Amplification",
     "of Parallelism"
-  ]
+  ],
+  "definition": "Diazeugma - figure of rhetoric from Silva Rhetoricae (rhetoric.byu.edu). See definition in Silva.",
+  "id": 202,
+  "name": "diazeugma"
 }

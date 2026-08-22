@@ -1,19 +1,24 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Omission"
   ],
-  "geometry": {
-    "anchor": "Initial",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 88,
-  "name": "aphaeresis",
+  "definition": "Detractio applied to an initial segment of a word, removing one or more letters, sounds, or syllables from its left boundary while preserving the remaining sequence.",
   "examples": {
+    "negative": [
+      [
+        "Apple",
+        "pple"
+      ],
+      [
+        "Orange",
+        "range"
+      ]
+    ],
     "positive": [
       [
         "History",
@@ -27,21 +32,17 @@
         "Omission",
         "mission"
       ]
-    ],
-    "negative": [
-      [
-        "Apple",
-        "pple"
-      ],
-      [
-        "Orange",
-        "range"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 88,
+  "name": "aphaeresis"
 }

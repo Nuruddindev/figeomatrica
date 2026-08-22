@@ -1,7 +1,8 @@
 {
-  "id": 36,
-  "name": "aetiologia",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Giving cause/reason for statement; also figure of reasoning.",
+  "id": 36,
+  "name": "aetiologia"
 }

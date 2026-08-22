@@ -1,16 +1,21 @@
 {
-  "id": 147,
-  "name": "climax",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification",
     "of Parallelism"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Arrangement by increasing force; also anadiplosis chain; gradatio.",
   "examples": {
+    "negative": [
+      [
+        "Hope brings conviction.",
+        "Action brings results."
+      ]
+    ],
     "positive": [
       [
         "The first is hope.",
@@ -22,21 +27,17 @@
         "Harapan membawa keyakinan.",
         "Keyakinan membawa tindakan."
       ]
-    ],
-    "negative": [
-      [
-        "Hope brings conviction.",
-        "Action brings results."
-      ]
     ]
   },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "repetition",
     "min_repeats": 2,
-    "template": [],
-    "note": "rantai anadiplosis >=2 (gradatio)"
-  }
+    "note": "rantai anadiplosis >=2 (gradatio)",
+    "operation": "repetition",
+    "template": []
+  },
+  "id": 147,
+  "name": "climax"
 }

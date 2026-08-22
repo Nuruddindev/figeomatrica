@@ -1,7 +1,8 @@
 {
-  "id": 300,
-  "name": "mempsis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Complaint.",
+  "id": 300,
+  "name": "mempsis"
 }

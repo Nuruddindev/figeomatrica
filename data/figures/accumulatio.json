@@ -1,8 +1,9 @@
 {
-  "id": 13,
-  "name": "accumulatio",
   "categories": [
     "of Amplification",
     "of Summary"
-  ]
+  ],
+  "definition": "Gathering points made earlier into forceful climax; summary amplification.",
+  "id": 13,
+  "name": "accumulatio"
 }

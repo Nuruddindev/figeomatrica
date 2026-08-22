@@ -1,7 +1,8 @@
 {
-  "id": 1062,
-  "name": "amplificatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Amplification; expanding a topic with grand language.",
+  "id": 1062,
+  "name": "amplificatio"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 62,
-  "name": "anemographia",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Description of winds.",
+  "id": 62,
+  "name": "anemographia"
 }

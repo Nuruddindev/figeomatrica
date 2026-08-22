@@ -1,7 +1,8 @@
 {
-  "id": 328,
-  "name": "paradigma",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Example; induction.",
+  "id": 328,
+  "name": "paradigma"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 160,
-  "name": "comprobatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Complimenting audience to win favor (captatio).",
+  "id": 160,
+  "name": "comprobatio"
 }

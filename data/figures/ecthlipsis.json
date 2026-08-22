@@ -1,7 +1,31 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Omission"
   ],
+  "definition": "Elision; synaloepha.",
+  "examples": {
+    "negative": [
+      [
+        "Normal text",
+        "Normal text"
+      ]
+    ],
+    "positive": [
+      [
+        "De amore",
+        "Damore"
+      ],
+      [
+        "De aqua",
+        "Daqua"
+      ]
+    ]
+  },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Lexical",
@@ -13,28 +37,5 @@
     "template": []
   },
   "id": 212,
-  "name": "ecthlipsis",
-  "examples": {
-    "positive": [
-      [
-        "De amore",
-        "Damore"
-      ],
-      [
-        "De aqua",
-        "Daqua"
-      ]
-    ],
-    "negative": [
-      [
-        "Normal text",
-        "Normal text"
-      ]
-    ]
-  },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "name": "ecthlipsis"
 }

@@ -1,15 +1,20 @@
 {
-  "id": 402,
-  "name": "symploce",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Repetition"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Repetition of the same word/phrase at the beginning AND the same word/phrase at the end of successive clauses; combination of anaphora and epistrophe (complexio).",
   "examples": {
+    "negative": [
+      [
+        "I was young and free.",
+        "I was old and bound."
+      ]
+    ],
     "positive": [
       [
         "When I was young, I was free.",
@@ -19,21 +24,17 @@
         "Ketika muda, aku merdeka.",
         "Ketika tua, aku merdeka."
       ]
-    ],
-    "negative": [
-      [
-        "I was young and free.",
-        "I was old and bound."
-      ]
     ]
   },
   "geometry": {
     "anchor": "Initial",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "repetition",
     "min_repeats": 2,
-    "template": [],
-    "note": "awal DAN akhir unit berturut (anaphora+epistrophe)"
-  }
+    "note": "awal DAN akhir unit berturut (anaphora+epistrophe)",
+    "operation": "repetition",
+    "template": []
+  },
+  "id": 402,
+  "name": "symploce"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 10,
-  "name": "abusion",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Same as abusio/catachresis.",
+  "id": 10,
+  "name": "abusion"
 }

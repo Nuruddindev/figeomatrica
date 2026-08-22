@@ -1,7 +1,8 @@
 {
-  "id": 75,
-  "name": "antipersonification",
   "categories": [
     "Semantic Inversions"
-  ]
+  ],
+  "definition": "Representing person as inanimate.",
+  "id": 75,
+  "name": "antipersonification"
 }

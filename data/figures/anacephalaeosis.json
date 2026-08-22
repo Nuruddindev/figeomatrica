@@ -1,8 +1,9 @@
 {
-  "id": 52,
-  "name": "anacephalaeosis",
   "categories": [
     "of Amplification",
     "of Summary"
-  ]
+  ],
+  "definition": "Recapitulation; summary of main points.",
+  "id": 52,
+  "name": "anacephalaeosis"
 }

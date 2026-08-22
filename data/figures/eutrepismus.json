@@ -1,9 +1,10 @@
 {
-  "id": 252,
-  "name": "eutrepismus",
   "categories": [
     "of Amplification",
     "of Order",
     "of Division"
-  ]
+  ],
+  "definition": "Numbered ordering (first, second...).",
+  "id": 252,
+  "name": "eutrepismus"
 }

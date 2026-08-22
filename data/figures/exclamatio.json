@@ -1,7 +1,8 @@
 {
-  "id": 255,
-  "name": "exclamatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Ecphonesis; exclamation.",
+  "id": 255,
+  "name": "exclamatio"
 }

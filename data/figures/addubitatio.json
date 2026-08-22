@@ -1,7 +1,8 @@
 {
-  "id": 22,
-  "name": "addubitatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Feigned doubt about what to say or do; aporia.",
+  "id": 22,
+  "name": "addubitatio"
 }

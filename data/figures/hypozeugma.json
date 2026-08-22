@@ -1,7 +1,8 @@
 {
-  "id": 280,
-  "name": "hypozeugma",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Zeugma with governing word at end (adjunctio?).",
+  "id": 280,
+  "name": "hypozeugma"
 }

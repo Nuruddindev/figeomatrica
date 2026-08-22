@@ -1,7 +1,8 @@
 {
-  "id": 26,
-  "name": "adjournment",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Transferring argument to another time/place.",
+  "id": 26,
+  "name": "adjournment"
 }

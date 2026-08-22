@@ -7,6 +7,7 @@
   "categories": [
     "of Omission"
   ],
+  "definition": "Truncate(word, terminal_segment) → a shortened word form produced by removing its final segment.",
   "examples": {
     "negative": [
       [

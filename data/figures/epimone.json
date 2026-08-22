@@ -1,7 +1,33 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification"
   ],
+  "definition": "Persistent repetition of the same argumentative plea in substantially the same verbal form.",
+  "examples": {
+    "negative": [
+      [
+        "Do not go gentle into that night.",
+        "Speak softly at the door.",
+        "Sleep well tonight."
+      ]
+    ],
+    "positive": [
+      [
+        "Do not go gentle into that night.",
+        "Do not go gentle into that night."
+      ],
+      [
+        "Turunlah ke jalan!",
+        "Turunlah ke jalan!",
+        "Turunlah ke jalan!"
+      ]
+    ]
+  },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Conceptual",
@@ -13,30 +39,5 @@
     "template": []
   },
   "id": 234,
-  "name": "epimone",
-  "examples": {
-    "positive": [
-      [
-        "Do not go gentle into that night.",
-        "Do not go gentle into that night."
-      ],
-      [
-        "Turunlah ke jalan!",
-        "Turunlah ke jalan!",
-        "Turunlah ke jalan!"
-      ]
-    ],
-    "negative": [
-      [
-        "Do not go gentle into that night.",
-        "Speak softly at the door.",
-        "Sleep well tonight."
-      ]
-    ]
-  },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "name": "epimone"
 }

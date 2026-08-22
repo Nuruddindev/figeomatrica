@@ -1,7 +1,8 @@
 {
-  "id": 114,
-  "name": "astrothesia",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Description of stars.",
+  "id": 114,
+  "name": "astrothesia"
 }

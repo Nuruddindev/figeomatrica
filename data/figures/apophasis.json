@@ -1,8 +1,9 @@
 {
-  "id": 95,
-  "name": "apophasis",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Affirming by apparent denial (paralipsis): I will not mention...",
+  "id": 95,
+  "name": "apophasis"
 }

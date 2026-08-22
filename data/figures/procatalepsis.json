@@ -1,8 +1,9 @@
 {
-  "id": 363,
-  "name": "procatalepsis",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Anticipating and answering objection.",
+  "id": 363,
+  "name": "procatalepsis"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 393,
-  "name": "simile",
   "categories": [
     "of Substitution"
-  ]
+  ],
+  "definition": "Explicit comparison using like/as.",
+  "id": 393,
+  "name": "simile"
 }

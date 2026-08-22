@@ -1,7 +1,8 @@
 {
-  "id": 110,
-  "name": "assumptio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Adopting premise.",
+  "id": 110,
+  "name": "assumptio"
 }

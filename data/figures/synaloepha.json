@@ -1,20 +1,24 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification"
   ],
-  "geometry": {
-    "anchor": "CrossUnit",
-    "class": "Lexical",
-    "grain": "grapheme",
-    "locus": "cross_unit",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: penghilangan vokal di batas kata (synaloepha)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 404,
-  "name": "synaloepha",
+  "definition": "Synaloepha is detractio across a word boundary, collapsing two adjacent vowel units belonging to neighboring words by omitting one of them.",
   "examples": {
+    "negative": [
+      [
+        "De amore",
+        "De amore"
+      ],
+      [
+        "La alma",
+        "La alma"
+      ]
+    ],
     "positive": [
       [
         "De amore",
@@ -32,21 +36,18 @@
         "Po eta",
         "Poeta"
       ]
-    ],
-    "negative": [
-      [
-        "De amore",
-        "De amore"
-      ],
-      [
-        "La alma",
-        "La alma"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "grapheme",
+    "locus": "cross_unit",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan vokal di batas kata (synaloepha)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 404,
+  "name": "synaloepha"
 }

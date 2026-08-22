@@ -1,7 +1,8 @@
 {
-  "id": 295,
-  "name": "martyria",
   "categories": [
     "of Ethos"
-  ]
+  ],
+  "definition": "Testimony based on own experience.",
+  "id": 295,
+  "name": "martyria"
 }

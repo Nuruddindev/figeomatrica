@@ -1,8 +1,9 @@
 {
-  "id": 314,
-  "name": "mycterismus",
   "categories": [
     "Semantic Inversions",
     "of Irony"
-  ]
+  ],
+  "definition": "Mocking sneer; covert sarcasm.",
+  "id": 314,
+  "name": "mycterismus"
 }

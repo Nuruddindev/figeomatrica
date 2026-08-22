@@ -1,7 +1,8 @@
 {
-  "id": 200,
-  "name": "diastole",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Extension of syllable; prolongation.",
+  "id": 200,
+  "name": "diastole"
 }

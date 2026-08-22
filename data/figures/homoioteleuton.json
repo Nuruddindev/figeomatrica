@@ -1,8 +1,9 @@
 {
-  "id": 272,
-  "name": "homoioteleuton",
   "categories": [
     "of Sound",
     "of Parallelism"
-  ]
+  ],
+  "definition": "Similar endings of words/clauses.",
+  "id": 272,
+  "name": "homoioteleuton"
 }

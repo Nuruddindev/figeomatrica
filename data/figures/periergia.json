@@ -1,8 +1,9 @@
 {
-  "id": 350,
-  "name": "periergia",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Over-elaborate, fussy style; vice.",
+  "id": 350,
+  "name": "periergia"
 }

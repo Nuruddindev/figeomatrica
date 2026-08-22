@@ -1,7 +1,8 @@
 {
-  "id": 371,
-  "name": "prosopographia",
   "categories": [
     "of Ethos"
-  ]
+  ],
+  "definition": "Description of person; effictio.",
+  "id": 371,
+  "name": "prosopographia"
 }

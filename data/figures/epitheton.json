@@ -1,7 +1,8 @@
 {
-  "id": 239,
-  "name": "epitheton",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Epithet; attributive adjective.",
+  "id": 239,
+  "name": "epitheton"
 }

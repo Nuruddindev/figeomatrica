@@ -1,7 +1,8 @@
 {
-  "id": 224,
-  "name": "enthymeme",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Rhetorical syllogism from probable premises.",
+  "id": 224,
+  "name": "enthymeme"
 }

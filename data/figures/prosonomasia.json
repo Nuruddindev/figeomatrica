@@ -1,7 +1,8 @@
 {
-  "id": 370,
-  "name": "prosonomasia",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Paronomasia variant.",
+  "id": 370,
+  "name": "prosonomasia"
 }

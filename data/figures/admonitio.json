@@ -1,7 +1,8 @@
 {
-  "id": 30,
-  "name": "admonitio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Warning, admonition.",
+  "id": 30,
+  "name": "admonitio"
 }

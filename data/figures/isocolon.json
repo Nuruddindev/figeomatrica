@@ -1,8 +1,9 @@
 {
-  "id": 292,
-  "name": "isocolon",
   "categories": [
     "of Balance",
     "of Parallelism"
-  ]
+  ],
+  "definition": "Parallel clauses of equal length; parison.",
+  "id": 292,
+  "name": "isocolon"
 }

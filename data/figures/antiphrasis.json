@@ -1,8 +1,9 @@
 {
-  "id": 76,
-  "name": "antiphrasis",
   "categories": [
     "Semantic Inversions",
     "of Irony"
-  ]
+  ],
+  "definition": "Use of word opposite of its true meaning, irony.",
+  "id": 76,
+  "name": "antiphrasis"
 }

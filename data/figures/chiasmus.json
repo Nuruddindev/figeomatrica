@@ -1,23 +1,14 @@
 {
-  "id": 140,
-  "name": "chiasmus",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Balance"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Inverted parallelism AB BA of concepts (not necessarily same words).",
   "examples": {
-    "positive": [
-      [
-        "It is boring to eat; to sleep is fulfilling."
-      ],
-      [
-        "He dotes on doubting, but suspects strong love."
-      ]
-    ],
     "negative": [
       [
         "It is boring to eat and fulfilling to sleep."
@@ -25,19 +16,29 @@
       [
         "To eat is boring; to sleep is fulfilling."
       ]
+    ],
+    "positive": [
+      [
+        "It is boring to eat; to sleep is fulfilling."
+      ],
+      [
+        "He dotes on doubting, but suspects strong love."
+      ]
     ]
   },
   "geometry": {
     "anchor": "WholeUnit",
     "class": "Conceptual",
     "grain": "phrase",
-    "operation": "permutation",
     "min_repeats": 1,
+    "operation": "permutation",
     "template": [
       "A",
       "B",
       "B",
       "A"
     ]
-  }
+  },
+  "id": 140,
+  "name": "chiasmus"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 38,
-  "name": "affirmation",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Asserting as true.",
+  "id": 38,
+  "name": "affirmation"
 }

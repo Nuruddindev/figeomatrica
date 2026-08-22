@@ -1,7 +1,31 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Understatement"
   ],
+  "definition": "a conciliatory response that transforms a harsh exchange into a softened one through mockery.",
+  "examples": {
+    "negative": [
+      [
+        "Your driving is dangerous.",
+        "I will drive more carefully from now on."
+      ]
+    ],
+    "positive": [
+      [
+        "Your driving is a menace to society.",
+        "At least I keep the pavement entertained."
+      ],
+      [
+        "Tugasmu berantakan sekali.",
+        "Setidaknya kaligrafinya konsisten."
+      ]
+    ]
+  },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Conceptual",
@@ -22,28 +46,5 @@
     ]
   },
   "id": 139,
-  "name": "charientismus",
-  "examples": {
-    "positive": [
-      [
-        "Your driving is a menace to society.",
-        "At least I keep the pavement entertained."
-      ],
-      [
-        "Tugasmu berantakan sekali.",
-        "Setidaknya kaligrafinya konsisten."
-      ]
-    ],
-    "negative": [
-      [
-        "Your driving is dangerous.",
-        "I will drive more carefully from now on."
-      ]
-    ]
-  },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "name": "charientismus"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 167,
-  "name": "conduplicatio",
   "categories": [
     "of Repetition"
-  ]
+  ],
+  "definition": "Repetition of word in successive clause for amplification.",
+  "id": 167,
+  "name": "conduplicatio"
 }

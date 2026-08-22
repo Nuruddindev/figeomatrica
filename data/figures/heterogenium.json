@@ -1,8 +1,9 @@
 {
-  "id": 267,
-  "name": "heterogenium",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Incongruous juxtaposition?",
+  "id": 267,
+  "name": "heterogenium"
 }

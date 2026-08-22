@@ -1,9 +1,10 @@
 {
-  "id": 394,
-  "name": "solecismus",
   "categories": [
     "of Amplification",
     "of Grammar",
     "Vices"
-  ]
+  ],
+  "definition": "Grammatical error; vice.",
+  "id": 394,
+  "name": "solecismus"
 }

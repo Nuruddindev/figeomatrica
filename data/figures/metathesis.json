@@ -1,7 +1,8 @@
 {
-  "id": 311,
-  "name": "metathesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Transposition of letters.",
+  "id": 311,
+  "name": "metathesis"
 }

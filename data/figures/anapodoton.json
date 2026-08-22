@@ -1,8 +1,9 @@
 {
-  "id": 60,
-  "name": "anapodoton",
   "categories": [
     "of Amplification",
     "of Grammar"
-  ]
+  ],
+  "definition": "Leaving clause unfinished; anacoluthon.",
+  "id": 60,
+  "name": "anapodoton"
 }

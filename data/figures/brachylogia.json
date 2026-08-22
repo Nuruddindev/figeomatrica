@@ -1,7 +1,8 @@
 {
-  "id": 124,
-  "name": "brachylogia",
   "categories": [
     "of Omission"
-  ]
+  ],
+  "definition": "Conciseness; omission of connectives.",
+  "id": 124,
+  "name": "brachylogia"
 }

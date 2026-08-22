@@ -1,8 +1,9 @@
 {
-  "id": 273,
-  "name": "horismus",
   "categories": [
     "of Definition",
     "of Reasoning"
-  ]
+  ],
+  "definition": "Definition; distinctio.",
+  "id": 273,
+  "name": "horismus"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 396,
-  "name": "sorites",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Chain syllogism; climax of arguments.",
+  "id": 396,
+  "name": "sorites"
 }

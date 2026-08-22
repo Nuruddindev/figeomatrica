@@ -1,7 +1,8 @@
 {
-  "id": 220,
-  "name": "encomium",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Praise; panegyric.",
+  "id": 220,
+  "name": "encomium"
 }

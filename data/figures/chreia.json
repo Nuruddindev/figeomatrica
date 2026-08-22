@@ -1,7 +1,8 @@
 {
-  "id": 142,
-  "name": "chreia",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Brief anecdote illustrating point; use of maxim.",
+  "id": 142,
+  "name": "chreia"
 }

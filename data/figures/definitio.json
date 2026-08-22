@@ -1,7 +1,8 @@
 {
-  "id": 1059,
-  "name": "definitio",
   "categories": [
     "of Definition"
-  ]
+  ],
+  "definition": "Definition; defining a word or thing.",
+  "id": 1059,
+  "name": "definitio"
 }

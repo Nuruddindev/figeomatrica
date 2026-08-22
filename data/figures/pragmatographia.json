@@ -1,7 +1,8 @@
 {
-  "id": 362,
-  "name": "pragmatographia",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Description of action; enargia subtype.",
+  "id": 362,
+  "name": "pragmatographia"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 138,
-  "name": "characterismus",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Description of character (ethopoeia).",
+  "id": 138,
+  "name": "characterismus"
 }

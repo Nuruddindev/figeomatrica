@@ -1,7 +1,8 @@
 {
-  "id": 23,
-  "name": "adhortatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Exhortation, vehement urging.",
+  "id": 23,
+  "name": "adhortatio"
 }

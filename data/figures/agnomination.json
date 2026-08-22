@@ -1,7 +1,8 @@
 {
-  "id": 41,
-  "name": "agnomination",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Same as agnominatio.",
+  "id": 41,
+  "name": "agnomination"
 }

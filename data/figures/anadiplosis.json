@@ -1,15 +1,20 @@
 {
-  "id": 56,
-  "name": "anadiplosis",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Repetition"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Repetition of last word of previous clause at beginning of next; type of climax.",
   "examples": {
+    "negative": [
+      [
+        "There is light.",
+        "Darkness hides everything."
+      ]
+    ],
     "positive": [
       [
         "There is light.",
@@ -19,23 +24,19 @@
         "Ada cahaya.",
         "Cahaya menerangi segalanya."
       ]
-    ],
-    "negative": [
-      [
-        "There is light.",
-        "Darkness hides everything."
-      ]
     ]
   },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "repetition",
     "min_repeats": 1,
+    "operation": "repetition",
     "template": [
       "A",
       "A"
     ]
-  }
+  },
+  "id": 56,
+  "name": "anadiplosis"
 }

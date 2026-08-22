@@ -1,7 +1,8 @@
 {
-  "id": 429,
-  "name": "transitio",
   "categories": [
     "of Arrangement"
-  ]
+  ],
+  "definition": "Transition; metabasis.",
+  "id": 429,
+  "name": "transitio"
 }

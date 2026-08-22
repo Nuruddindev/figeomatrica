@@ -1,7 +1,8 @@
 {
-  "id": 40,
-  "name": "agnominatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Paronomasia, punning on similar words.",
+  "id": 40,
+  "name": "agnominatio"
 }

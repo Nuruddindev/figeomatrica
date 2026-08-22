@@ -1,7 +1,8 @@
 {
-  "id": 250,
-  "name": "euphemismus",
   "categories": [
     "of Understatement"
-  ]
+  ],
+  "definition": "reframe(anchor, euphemistic_unit) → a socially or evaluatively softened representation of the anchor.",
+  "id": 250,
+  "name": "euphemismus"
 }

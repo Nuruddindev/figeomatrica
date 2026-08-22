@@ -7,6 +7,7 @@
   "categories": [
     "of Repetition"
   ],
+  "definition": "order(sequence, alphabetic_index) → a sequence whose successive elements are anchored to successive positions in the alphabet.",
   "examples": {
     "negative": [
       [

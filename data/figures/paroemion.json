@@ -1,8 +1,9 @@
 {
-  "id": 343,
-  "name": "paroemion",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Alliteration? Actually excessive alliteration.",
+  "id": 343,
+  "name": "paroemion"
 }

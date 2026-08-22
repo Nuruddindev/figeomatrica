@@ -1,8 +1,9 @@
 {
-  "id": 119,
-  "name": "battologia",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Needless repetition; tautologia.",
+  "id": 119,
+  "name": "battologia"
 }

@@ -1,8 +1,9 @@
 {
-  "id": 51,
-  "name": "ampliatio",
   "categories": [
     "of Amplification",
     "of Time"
-  ]
+  ],
+  "definition": "Amplification, extending meaning.",
+  "id": 51,
+  "name": "ampliatio"
 }

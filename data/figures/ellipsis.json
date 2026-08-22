@@ -1,7 +1,8 @@
 {
-  "id": 215,
-  "name": "ellipsis",
   "categories": [
     "of Omission"
-  ]
+  ],
+  "definition": "Omission of word(s) understood.",
+  "id": 215,
+  "name": "ellipsis"
 }

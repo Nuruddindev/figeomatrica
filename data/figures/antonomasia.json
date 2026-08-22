@@ -1,9 +1,10 @@
 {
-  "id": 86,
-  "name": "antonomasia",
   "categories": [
     "of Definition",
     "of Naming",
     "of Substitution"
-  ]
+  ],
+  "definition": "Substitution of epithet for name or name for epithet; prononominatio.",
+  "id": 86,
+  "name": "antonomasia"
 }

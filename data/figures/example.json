@@ -1,7 +1,8 @@
 {
-  "id": 253,
-  "name": "example",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Paradigma: illustrative instance; inductive argument.",
+  "id": 253,
+  "name": "example"
 }

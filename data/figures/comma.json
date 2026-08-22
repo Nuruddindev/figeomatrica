@@ -1,7 +1,8 @@
 {
-  "id": 151,
-  "name": "comma",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Short clause; cutted comma short phrase.",
+  "id": 151,
+  "name": "comma"
 }

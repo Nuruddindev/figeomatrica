@@ -1,7 +1,8 @@
 {
-  "id": 100,
-  "name": "apothegm",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Terse pointed saying; maxim.",
+  "id": 100,
+  "name": "apothegm"
 }

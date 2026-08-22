@@ -1,7 +1,8 @@
 {
-  "id": 162,
-  "name": "concessio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Conceding point to strengthen; epitrope.",
+  "id": 162,
+  "name": "concessio"
 }

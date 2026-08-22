@@ -1,8 +1,9 @@
 {
-  "id": 141,
-  "name": "chorographia",
   "categories": [
     "of Description",
     "of Place"
-  ]
+  ],
+  "definition": "Description of particular place/region.",
+  "id": 141,
+  "name": "chorographia"
 }

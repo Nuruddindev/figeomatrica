@@ -1,7 +1,8 @@
 {
-  "id": 123,
-  "name": "brachiepia",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Brevity; brachylogia.",
+  "id": 123,
+  "name": "brachiepia"
 }

@@ -1,9 +1,10 @@
 {
-  "id": 433,
-  "name": "zeugma",
   "categories": [
     "of Amplification",
     "of Parallelism",
     "of Grammar"
-  ]
+  ],
+  "definition": "One verb governing multiple clauses.",
+  "id": 433,
+  "name": "zeugma"
 }

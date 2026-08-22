@@ -1,7 +1,8 @@
 {
-  "id": 288,
-  "name": "interrogatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Rhetorical question; erotema.",
+  "id": 288,
+  "name": "interrogatio"
 }

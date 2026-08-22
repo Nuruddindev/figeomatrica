@@ -1,7 +1,8 @@
 {
-  "id": 1070,
-  "name": "pistis",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Pistis; proof/evidence; faith/assurance.",
+  "id": 1070,
+  "name": "pistis"
 }

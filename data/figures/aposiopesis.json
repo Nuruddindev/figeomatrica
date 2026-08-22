@@ -1,8 +1,9 @@
 {
-  "id": 98,
-  "name": "aposiopesis",
   "categories": [
     "of Omission",
     "of Interruption"
-  ]
+  ],
+  "definition": "Breaking off speech, leaving unfinished from emotion.",
+  "id": 98,
+  "name": "aposiopesis"
 }

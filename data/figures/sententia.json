@@ -1,7 +1,8 @@
 {
-  "id": 391,
-  "name": "sententia",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Maxim; gnome; aphorism with moral.",
+  "id": 391,
+  "name": "sententia"
 }

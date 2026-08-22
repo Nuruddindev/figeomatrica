@@ -1,7 +1,8 @@
 {
-  "id": 57,
-  "name": "anamnesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Recalling past; reminiscence.",
+  "id": 57,
+  "name": "anamnesis"
 }

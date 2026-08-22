@@ -1,8 +1,9 @@
 {
-  "id": 18,
-  "name": "acyrologia",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Improper use of term; malapropism.",
+  "id": 18,
+  "name": "acyrologia"
 }

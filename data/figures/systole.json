@@ -1,7 +1,8 @@
 {
-  "id": 418,
-  "name": "systole",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Shortening syllable; opposite diastole.",
+  "id": 418,
+  "name": "systole"
 }

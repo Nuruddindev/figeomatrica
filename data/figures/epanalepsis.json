@@ -1,7 +1,31 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Repetition"
   ],
+  "definition": "Repetition of initial word after intervening matter; also same as anadiplosis?",
+  "examples": {
+    "negative": [
+      [
+        "The king is dead.",
+        "Long live the king."
+      ]
+    ],
+    "positive": [
+      [
+        "The king is dead, long live the king.",
+        "The king is dead, long live the king."
+      ],
+      [
+        "Raja mati, hidup raja.",
+        "Raja mati, hidup raja."
+      ]
+    ]
+  },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Conceptual",
@@ -13,28 +37,5 @@
     "template": []
   },
   "id": 226,
-  "name": "epanalepsis",
-  "examples": {
-    "positive": [
-      [
-        "The king is dead, long live the king.",
-        "The king is dead, long live the king."
-      ],
-      [
-        "Raja mati, hidup raja.",
-        "Raja mati, hidup raja."
-      ]
-    ],
-    "negative": [
-      [
-        "The king is dead.",
-        "Long live the king."
-      ]
-    ]
-  },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "name": "epanalepsis"
 }

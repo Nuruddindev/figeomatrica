@@ -1,7 +1,8 @@
 {
-  "id": 29,
-  "name": "adjunctio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Clause added to adjacent clause.",
+  "id": 29,
+  "name": "adjunctio"
 }

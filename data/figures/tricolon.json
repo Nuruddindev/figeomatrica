@@ -1,8 +1,9 @@
 {
-  "id": 431,
-  "name": "tricolon",
   "categories": [
     "of Balance",
     "of Parallelism"
-  ]
+  ],
+  "definition": "Three parallel members; triple.",
+  "id": 431,
+  "name": "tricolon"
 }

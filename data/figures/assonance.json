@@ -1,7 +1,8 @@
 {
-  "id": 109,
-  "name": "assonance",
   "categories": [
     "of Sound"
-  ]
+  ],
+  "definition": "Repetition of similar vowel sounds.",
+  "id": 109,
+  "name": "assonance"
 }

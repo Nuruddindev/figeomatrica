@@ -1,7 +1,8 @@
 {
-  "id": 74,
-  "name": "antimetathesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Antithesis of opposites.",
+  "id": 74,
+  "name": "antimetathesis"
 }

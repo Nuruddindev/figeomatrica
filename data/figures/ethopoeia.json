@@ -1,7 +1,8 @@
 {
-  "id": 246,
-  "name": "ethopoeia",
   "categories": [
     "of Ethos"
-  ]
+  ],
+  "definition": "Character portrayal; description of manners.",
+  "id": 246,
+  "name": "ethopoeia"
 }

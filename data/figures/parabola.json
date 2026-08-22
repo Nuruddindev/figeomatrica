@@ -1,7 +1,8 @@
 {
-  "id": 325,
-  "name": "parabola",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Parable; comparison.",
+  "id": 325,
+  "name": "parabola"
 }

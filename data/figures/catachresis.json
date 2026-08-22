@@ -1,8 +1,9 @@
 {
-  "id": 131,
-  "name": "catachresis",
   "categories": [
     "of Substitution",
     "Vices"
-  ]
+  ],
+  "definition": "Strained metaphor; misuse (abusio).",
+  "id": 131,
+  "name": "catachresis"
 }

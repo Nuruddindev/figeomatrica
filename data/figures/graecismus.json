@@ -1,8 +1,9 @@
 {
-  "id": 265,
-  "name": "graecismus",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Greek idiom.",
+  "id": 265,
+  "name": "graecismus"
 }

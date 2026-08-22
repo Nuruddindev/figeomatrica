@@ -1,7 +1,8 @@
 {
-  "id": 1056,
-  "name": "aparithmesis",
   "categories": [
     "of Division"
-  ]
+  ],
+  "definition": "Enumerating; listing the parts; arithmetic.",
+  "id": 1056,
+  "name": "aparithmesis"
 }

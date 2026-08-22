@@ -1,7 +1,8 @@
 {
-  "id": 48,
-  "name": "ambiguitas",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Ambiguity, amphibologia.",
+  "id": 48,
+  "name": "ambiguitas"
 }

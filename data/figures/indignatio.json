@@ -1,7 +1,8 @@
 {
-  "id": 285,
-  "name": "indignatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Indignation; pathos.",
+  "id": 285,
+  "name": "indignatio"
 }

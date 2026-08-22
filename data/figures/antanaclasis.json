@@ -1,8 +1,9 @@
 {
-  "id": 64,
-  "name": "antanaclasis",
   "categories": [
     "of Amplification",
     "of Wordplay"
-  ]
+  ],
+  "definition": "Repeating word with different meaning (equivocation).",
+  "id": 64,
+  "name": "antanaclasis"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 27,
-  "name": "adjudicatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Logical deduction or sentence.",
+  "id": 27,
+  "name": "adjudicatio"
 }

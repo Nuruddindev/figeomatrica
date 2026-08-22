@@ -8,6 +8,7 @@
     "of Amplification",
     "Vices"
   ],
+  "definition": "Epenthesis is adjectio applied within the interior of a word, inserting one or more letters, sounds, or syllables between existing segments while preserving the original boundary segments.",
   "examples": {
     "negative": [
       [
@@ -38,7 +39,7 @@
     "anchor": "CrossUnit",
     "class": "Lexical",
     "grain": "word",
-    "locus": "tengah",
+    "locus": "medial",
     "min_repeats": 1,
     "note": "kompilasi heuristik: penambahan di tengah kata (epenthesis)",
     "operation": "addition",

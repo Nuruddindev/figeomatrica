@@ -1,7 +1,8 @@
 {
-  "id": 256,
-  "name": "excursus",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Digression.",
+  "id": 256,
+  "name": "excursus"
 }

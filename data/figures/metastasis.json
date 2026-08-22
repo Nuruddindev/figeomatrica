@@ -1,8 +1,9 @@
 {
-  "id": 310,
-  "name": "metastasis",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Shifting blame; translative stasis.",
+  "id": 310,
+  "name": "metastasis"
 }

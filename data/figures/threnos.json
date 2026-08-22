@@ -1,7 +1,8 @@
 {
-  "id": 1057,
-  "name": "threnos",
   "categories": [
     "of Pathos"
-  ]
+  ],
+  "definition": "Threnos/threnody; lamentation; a dirge of mourning.",
+  "id": 1057,
+  "name": "threnos"
 }

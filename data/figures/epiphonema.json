@@ -1,8 +1,9 @@
 {
-  "id": 235,
-  "name": "epiphonema",
   "categories": [
     "of Amplification",
     "of Summary"
-  ]
+  ],
+  "definition": "Pithy exclamatory sentence summing previous.",
+  "id": 235,
+  "name": "epiphonema"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 1068,
-  "name": "monotonia",
   "categories": [
     "Vices"
-  ]
+  ],
+  "definition": "Monotonia; monotony; lack of variation.",
+  "id": 1068,
+  "name": "monotonia"
 }

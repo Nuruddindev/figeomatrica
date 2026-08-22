@@ -1,7 +1,8 @@
 {
-  "id": 230,
-  "name": "epergesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Explanatory addition; epexegesis.",
+  "id": 230,
+  "name": "epergesis"
 }

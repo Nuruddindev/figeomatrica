@@ -1,10 +1,11 @@
 {
-  "id": 399,
-  "name": "syllepsis",
   "categories": [
     "of Amplification",
     "of Wordplay",
     "of Parallelism",
     "of Grammar"
-  ]
+  ],
+  "definition": "Word applying to two clauses differently (zeugma type).",
+  "id": 399,
+  "name": "syllepsis"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 299,
-  "name": "membrum",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Member; colon.",
+  "id": 299,
+  "name": "membrum"
 }

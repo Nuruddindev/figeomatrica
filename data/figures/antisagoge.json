@@ -1,7 +1,8 @@
 {
-  "id": 80,
-  "name": "antisagoge",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Offering reward for following advice alongside threat.",
+  "id": 80,
+  "name": "antisagoge"
 }

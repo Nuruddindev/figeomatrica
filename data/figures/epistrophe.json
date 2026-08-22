@@ -1,15 +1,20 @@
 {
-  "id": 237,
-  "name": "epistrophe",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Repetition"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Repetition of same word at end of successive clauses; conversio/antistrophe.",
   "examples": {
+    "negative": [
+      [
+        "I work hard.",
+        "You work fast."
+      ]
+    ],
     "positive": [
       [
         "I work hard.",
@@ -19,24 +24,20 @@
         "Saya bekerja keras.",
         "Kamu bekerja keras."
       ]
-    ],
-    "negative": [
-      [
-        "I work hard.",
-        "You work fast."
-      ]
     ]
   },
   "geometry": {
     "anchor": "Final",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "repetition",
     "min_repeats": 2,
+    "operation": "repetition",
     "template": [
       "A",
       "*",
       "A"
     ]
-  }
+  },
+  "id": 237,
+  "name": "epistrophe"
 }

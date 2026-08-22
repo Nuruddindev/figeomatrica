@@ -1,8 +1,9 @@
 {
-  "id": 312,
-  "name": "metonymy",
   "categories": [
     "of Naming",
     "of Substitution"
-  ]
+  ],
+  "definition": "Reference to something or someone by naming one of its attributes.",
+  "id": 312,
+  "name": "metonymy"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 1060,
-  "name": "metaphrasis",
   "categories": [
     "of Definition"
-  ]
+  ],
+  "definition": "Paraphrase; rendering the same sense in other words (verse↔prose).",
+  "id": 1060,
+  "name": "metaphrasis"
 }

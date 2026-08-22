@@ -1,7 +1,8 @@
 {
-  "id": 380,
-  "name": "ratiocinatio",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Reasoning with self; asking then answering; anthypophora.",
+  "id": 380,
+  "name": "ratiocinatio"
 }

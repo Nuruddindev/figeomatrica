@@ -1,8 +1,9 @@
 {
-  "id": 19,
-  "name": "acyron",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Inaccurate or obsolete word use.",
+  "id": 19,
+  "name": "acyron"
 }

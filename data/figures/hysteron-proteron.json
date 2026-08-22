@@ -1,8 +1,9 @@
 {
-  "id": 283,
-  "name": "hysteron proteron",
   "categories": [
     "of Amplification",
     "of Time"
-  ]
+  ],
+  "definition": "Cart before horse; inversion of temporal/logical order.",
+  "id": 283,
+  "name": "hysteron proteron"
 }

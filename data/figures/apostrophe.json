@@ -1,7 +1,8 @@
 {
-  "id": 99,
-  "name": "apostrophe",
   "categories": [
     "of Pathos"
-  ]
+  ],
+  "definition": "Turning aside to address absent person/abstraction.",
+  "id": 99,
+  "name": "apostrophe"
 }

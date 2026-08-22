@@ -1,25 +1,16 @@
 {
-  "id": 340,
-  "name": "parenthesis",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification",
     "of Definition",
     "of Interruption"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Insertion interrupting sentence.",
   "examples": {
-    "positive": [
-      [
-        "The truth (and only the truth) will set you free."
-      ],
-      [
-        "Semua orang tahu hal itu (kecuali dia) sejak lama."
-      ]
-    ],
     "negative": [
       [
         "The truth will set you free."
@@ -27,15 +18,25 @@
       [
         "Semua orang tahu hal itu sejak lama."
       ]
+    ],
+    "positive": [
+      [
+        "The truth (and only the truth) will set you free."
+      ],
+      [
+        "Semua orang tahu hal itu (kecuali dia) sejak lama."
+      ]
     ]
   },
   "geometry": {
     "anchor": "Insertion",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "addition",
     "min_repeats": 1,
-    "template": [],
-    "note": "sisipan penyela kalimat"
-  }
+    "note": "sisipan penyela kalimat",
+    "operation": "addition",
+    "template": []
+  },
+  "id": 340,
+  "name": "parenthesis"
 }

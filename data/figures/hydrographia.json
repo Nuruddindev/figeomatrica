@@ -1,7 +1,8 @@
 {
-  "id": 274,
-  "name": "hydrographia",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Description of water.",
+  "id": 274,
+  "name": "hydrographia"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 16,
-  "name": "acervatio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Heaping up arguments/examples without conjunction.",
+  "id": 16,
+  "name": "acervatio"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 216,
-  "name": "emphasis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Implying more than said.",
+  "id": 216,
+  "name": "emphasis"
 }

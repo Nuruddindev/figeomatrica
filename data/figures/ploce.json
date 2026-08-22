@@ -1,7 +1,8 @@
 {
-  "id": 359,
-  "name": "ploce",
   "categories": [
     "of Repetition"
-  ]
+  ],
+  "definition": "Repetition of same word with different meaning or separated.",
+  "id": 359,
+  "name": "ploce"
 }

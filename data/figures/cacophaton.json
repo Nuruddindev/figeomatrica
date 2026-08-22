@@ -1,7 +1,8 @@
 {
-  "id": 1064,
-  "name": "cacophaton",
   "categories": [
     "Vices"
-  ]
+  ],
+  "definition": "Cacophaton; an offensive or obscene-sounding word.",
+  "id": 1064,
+  "name": "cacophaton"
 }

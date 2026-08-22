@@ -1,7 +1,8 @@
 {
-  "id": 21,
-  "name": "adagium",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Latin for adage/proverb.",
+  "id": 21,
+  "name": "adagium"
 }

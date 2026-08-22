@@ -1,8 +1,9 @@
 {
-  "id": 70,
-  "name": "anticategoria",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Recrimination; accusation turned back.",
+  "id": 70,
+  "name": "anticategoria"
 }

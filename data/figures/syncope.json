@@ -7,6 +7,7 @@
   "categories": [
     "of Omission"
   ],
+  "definition": "Syncope is detractio applied to one or more letters, sounds, or syllables from the interior of a single word, removing a medial unit while preserving the word initial and final boundaries.",
   "examples": {
     "negative": [
       [
@@ -45,7 +46,7 @@
     "anchor": "Final",
     "class": "Lexical",
     "grain": "word",
-    "locus": "tengah",
+    "locus": "medial",
     "min_repeats": 1,
     "note": "kompilasi heuristik: pemotongan segmen tengah kata (syncope)",
     "operation": "deletion",

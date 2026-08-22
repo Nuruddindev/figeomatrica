@@ -1,7 +1,8 @@
 {
-  "id": 191,
-  "name": "diacope",
   "categories": [
     "of Repetition"
-  ]
+  ],
+  "definition": "Repetition with word(s) between; tmesis of same word.",
+  "id": 191,
+  "name": "diacope"
 }

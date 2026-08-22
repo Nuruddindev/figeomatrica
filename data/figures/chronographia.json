@@ -1,8 +1,9 @@
 {
-  "id": 143,
-  "name": "chronographia",
   "categories": [
     "of Description",
     "of Time"
-  ]
+  ],
+  "definition": "Description of time/temporal circumstance.",
+  "id": 143,
+  "name": "chronographia"
 }

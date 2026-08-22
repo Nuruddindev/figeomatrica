@@ -1,7 +1,8 @@
 {
-  "id": 81,
-  "name": "antistasis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Repeating word in different sense; antanaclasis.",
+  "id": 81,
+  "name": "antistasis"
 }

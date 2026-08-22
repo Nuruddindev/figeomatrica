@@ -1,7 +1,8 @@
 {
-  "id": 266,
-  "name": "hendiadys",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "One idea expressed by two nouns with 'and' instead of noun+adj.",
+  "id": 266,
+  "name": "hendiadys"
 }

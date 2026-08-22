@@ -1,7 +1,8 @@
 {
-  "id": 164,
-  "name": "conclusio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Conclusion.",
+  "id": 164,
+  "name": "conclusio"
 }

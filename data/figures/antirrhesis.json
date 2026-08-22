@@ -1,8 +1,9 @@
 {
-  "id": 79,
-  "name": "antirrhesis",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Refutation by contrary argument.",
+  "id": 79,
+  "name": "antirrhesis"
 }

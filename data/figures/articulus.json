@@ -1,7 +1,8 @@
 {
-  "id": 105,
-  "name": "articulus",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Single words separated by pauses; asyndeton short clauses.",
+  "id": 105,
+  "name": "articulus"
 }

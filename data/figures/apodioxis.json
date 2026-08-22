@@ -1,8 +1,9 @@
 {
-  "id": 92,
-  "name": "apodioxis",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Rejection of argument as absurd; bdelygmia.",
+  "id": 92,
+  "name": "apodioxis"
 }

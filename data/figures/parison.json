@@ -1,7 +1,8 @@
 {
-  "id": 1061,
-  "name": "parison",
   "categories": [
     "of Balance"
-  ]
+  ],
+  "definition": "Parallel structure of clauses; isocolon.",
+  "id": 1061,
+  "name": "parison"
 }

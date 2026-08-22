@@ -1,15 +1,20 @@
 {
-  "id": 2,
-  "name": "abbaser",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Understatement"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "a representation that is semantically or rhetorically lower than the expected scale.",
   "examples": {
+    "negative": [
+      [
+        "The general described the fallen heroes.",
+        "The nation bowed in silence."
+      ]
+    ],
     "positive": [
       [
         "Presiden membacakan pidato kenegaraan di depan dewan.",
@@ -19,20 +24,16 @@
         "The general described the fallen heroes.",
         "\"Anyway, lunch?\""
       ]
-    ],
-    "negative": [
-      [
-        "The general described the fallen heroes.",
-        "The nation bowed in silence."
-      ]
     ]
   },
   "geometry": {
     "anchor": "WholeUnit",
     "class": "Conceptual",
     "grain": "discourse",
-    "operation": "deletion",
     "min_repeats": 1,
-    "note": "dinilai relatif terhadap skala ekspektasi yang dibangun konteks sebelumnya"
-  }
+    "note": "dinilai relatif terhadap skala ekspektasi yang dibangun konteks sebelumnya",
+    "operation": "deletion"
+  },
+  "id": 2,
+  "name": "abbaser"
 }

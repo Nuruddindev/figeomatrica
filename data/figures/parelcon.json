@@ -1,8 +1,9 @@
 {
-  "id": 338,
-  "name": "parelcon",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Redundant addition; pleonasm.",
+  "id": 338,
+  "name": "parelcon"
 }

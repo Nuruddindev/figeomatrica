@@ -1,9 +1,10 @@
 {
-  "id": 102,
-  "name": "appositio",
   "categories": [
     "of Amplification",
     "of Interruption",
     "of Grammar"
-  ]
+  ],
+  "definition": "Addition of appositive adjacent.",
+  "id": 102,
+  "name": "appositio"
 }

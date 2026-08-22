@@ -1,8 +1,9 @@
 {
-  "id": 245,
-  "name": "erotema",
   "categories": [
     "of Pathos",
     "of Refutation"
-  ]
+  ],
+  "definition": "Rhetorical question expecting no answer.",
+  "id": 245,
+  "name": "erotema"
 }

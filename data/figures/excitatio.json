@@ -1,8 +1,9 @@
 {
-  "id": 254,
-  "name": "excitatio",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Incitement.",
+  "id": 254,
+  "name": "excitatio"
 }

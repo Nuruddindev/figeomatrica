@@ -9,7 +9,8 @@
 //! Usage:
 //!   1. Export the dump from your SARVA vault:
 //!      sqlite3 -readonly "file:$HOME/.local/share/sarva/sarva_vault.db?mode=ro" \
-//!        "SELECT json_group_array(json_object('id',id,'name',name,'geometri',geometri)) \
+//!        "SELECT json_group_array(json_object('id',id,'name',name,\
+//!         'definition',definition,'geometri',geometri)) \
 //!         FROM figures WHERE definition IS NOT NULL;" > /tmp/sarva_dump.json
 //!   2. Run: cargo run -p figeometrica-rhetorica --bin sinkron -- /tmp/sarva_dump.json
 //!   3. Review with: git diff && cargo run -p figeometrica-rhetorica --bin validate
@@ -31,6 +32,8 @@ fn slug(name: &str) -> String {
 #[derive(serde::Deserialize)]
 struct DumpEntry {
     name: String,
+    #[serde(default)]
+    definition: Option<String>,
     geometri: Option<serde_json::Value>,
 }
 
@@ -136,6 +139,7 @@ fn terjemahkan(geo: &serde_json::Value) -> Option<serde_json::Value> {
             "ujung" => "terminal",
             "tersebar" => "distributed",
             "berumpun" => "clustered",
+            "tengah" => "medial",
             other => other,
         };
         out.insert("locus".into(), serde_json::Value::String(v.into()));
@@ -172,23 +176,28 @@ fn main() {
     let mut no_file = 0usize;
 
     for e in &entries {
-        // Only sync figures that actually carry geometry in SARVA.
-        let Some(geo) = e.geometri.as_ref().filter(|g| !g.is_null()) else {
-            skipped += 1;
-            continue;
-        };
-        let Some(translated) = terjemahkan(geo) else {
-            eprintln!("⚠ {}: geometri tidak bisa diterjemahkan, dilewati", e.name);
-            skipped += 1;
-            continue;
-        };
         let path = dataset_dir.join(format!("{}.json", slug(&e.name)));
         if !path.exists() {
             no_file += 1;
             continue;
         }
-        if apply(&path, &translated) {
-            println!("↺ {}: geometry copied from SARVA", e.name);
+        // Geometry is optional; a definition alone still syncs.
+        let translated = match e.geometri.as_ref().filter(|g| !g.is_null()) {
+            Some(geo) => match terjemahkan(geo) {
+                Some(t) => Some(t),
+                None => {
+                    eprintln!("⚠ {}: geometri tidak bisa diterjemahkan, dilewati", e.name);
+                    None
+                }
+            },
+            None => None,
+        };
+        if translated.is_none() && e.definition.is_none() {
+            skipped += 1;
+            continue;
+        }
+        if apply(&path, translated.as_ref().unwrap_or(&serde_json::Value::Null), e.definition.as_deref()) {
+            println!("↺ {}: geometry/definition copied from SARVA", e.name);
             updated += 1;
         } else {
             skipped += 1;
@@ -201,14 +210,32 @@ fn main() {
     }
 }
 
-/// Overwrite only the `geometry` field when it actually differs.
-fn apply(path: &Path, geometry_new: &serde_json::Value) -> bool {
+/// Overwrite the `geometry` and `definition` fields when they differ.
+fn apply(
+    path: &Path,
+    geometry_new: &serde_json::Value,
+    definition_new: Option<&str>,
+) -> bool {
     let raw = fs::read_to_string(path).expect("dataset file readable");
     let mut v: serde_json::Value = serde_json::from_str(&raw).expect("valid dataset JSON");
-    if v.get("geometry").map(|g| g == geometry_new).unwrap_or(false) {
+    let geo_equal = match geometry_new {
+        serde_json::Value::Null => true, // no geometry upstream — leave untouched
+        g => v.get("geometry").map(|x| x == g).unwrap_or(false),
+    };
+    let def_equal = match (v.get("definition"), definition_new) {
+        (Some(a), Some(b)) => a.as_str() == Some(b),
+        (None, None) => true,
+        _ => false,
+    };
+    if geo_equal && def_equal {
         return false;
     }
-    v["geometry"] = geometry_new.clone();
+    if !geo_equal {
+        v["geometry"] = geometry_new.clone();
+    }
+    if let Some(d) = definition_new {
+        v["definition"] = serde_json::Value::String(d.to_string());
+    }
     // Drop the legacy Indonesian key so the entry never carries both
     // (serde treats field+alias as one target → duplicate-field error).
     if let Some(obj) = v.as_object_mut() {

@@ -1,7 +1,8 @@
 {
-  "id": 372,
-  "name": "prosopopoeia",
   "categories": [
     "of Pathos"
-  ]
+  ],
+  "definition": "The construction of a non-person entity as a person-like agent, speaker, interlocutor, or embodied persona.",
+  "id": 372,
+  "name": "prosopopoeia"
 }

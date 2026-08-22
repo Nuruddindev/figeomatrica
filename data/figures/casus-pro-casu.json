@@ -1,7 +1,8 @@
 {
-  "id": 130,
-  "name": "casus pro casu",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Substitution of case.",
+  "id": 130,
+  "name": "casus pro casu"
 }

@@ -1,9 +1,10 @@
 {
-  "id": 346,
-  "name": "paronomasia",
   "categories": [
     "of Amplification",
     "of Wordplay",
     "of Play"
-  ]
+  ],
+  "definition": "Punning; adnominatio.",
+  "id": 346,
+  "name": "paronomasia"
 }

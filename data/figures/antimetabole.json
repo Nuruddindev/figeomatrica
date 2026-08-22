@@ -1,15 +1,19 @@
 {
-  "id": 73,
-  "name": "antimetabole",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Balance"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Repetition of words in reverse order (AB BA) with same words.",
   "examples": {
+    "negative": [
+      [
+        "He lives to eat and drinks to live."
+      ]
+    ],
     "positive": [
       [
         "Fair is foul, and foul is fair."
@@ -17,24 +21,21 @@
       [
         "Jangan hidup untuk makan, tapi makan untuk hidup."
       ]
-    ],
-    "negative": [
-      [
-        "He lives to eat and drinks to live."
-      ]
     ]
   },
   "geometry": {
     "anchor": "WholeUnit",
     "class": "Lexical",
     "grain": "phrase",
-    "operation": "permutation",
     "min_repeats": 1,
+    "operation": "permutation",
     "template": [
       "A",
       "B",
       "B",
       "A"
     ]
-  }
+  },
+  "id": 73,
+  "name": "antimetabole"
 }

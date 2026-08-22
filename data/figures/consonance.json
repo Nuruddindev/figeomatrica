@@ -1,7 +1,8 @@
 {
-  "id": 170,
-  "name": "consonance",
   "categories": [
     "of Sound"
-  ]
+  ],
+  "definition": "Repetition of consonant sounds.",
+  "id": 170,
+  "name": "consonance"
 }

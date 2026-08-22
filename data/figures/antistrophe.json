@@ -1,7 +1,8 @@
 {
-  "id": 83,
-  "name": "antistrophe",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Same as epistrophe; repetition at end.",
+  "id": 83,
+  "name": "antistrophe"
 }

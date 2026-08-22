@@ -1,7 +1,8 @@
 {
-  "id": 415,
-  "name": "synthesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Composition; arrangement.",
+  "id": 415,
+  "name": "synthesis"
 }

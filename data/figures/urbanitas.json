@@ -1,7 +1,8 @@
 {
-  "id": 1069,
-  "name": "urbanitas",
   "categories": [
     "of Play"
-  ]
+  ],
+  "definition": "Urbanitas; urbanity; refined wit of educated city dwellers.",
+  "id": 1069,
+  "name": "urbanitas"
 }

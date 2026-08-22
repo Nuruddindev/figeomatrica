@@ -1,8 +1,9 @@
 {
-  "id": 332,
-  "name": "paralipsis",
   "categories": [
     "of Amplification",
     "of Irony"
-  ]
+  ],
+  "definition": "Pretended omission (apophasis).",
+  "id": 332,
+  "name": "paralipsis"
 }

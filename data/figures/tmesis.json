@@ -1,30 +1,32 @@
 {
-  "id": 425,
-  "name": "tmesis",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification",
     "of Interruption"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Insertion of a word into the middle of another word or phrase, cutting it apart (e.g., abso-bloody-lutely).",
   "examples": {
-    "positive": [
-      [
-        "What place so instant to be abso-bloody-lutely noble?"
-      ],
-      [
-        "Kata itu sungguh tak masuk logika."
-      ]
-    ],
     "negative": [
       [
         "That is absolutely noble."
       ],
       [
         "I cannot possibly agree."
+      ],
+      [
+        "Kata itu sungguh tak masuk logika."
+      ]
+    ],
+    "positive": [
+      [
+        "What place so instant to be abso-bloody-lutely noble?"
+      ],
+      [
+        "Kata itu sungguh menya-nggak-mungkin-hkan logika."
       ]
     ]
   },
@@ -32,9 +34,11 @@
     "anchor": "Insertion",
     "class": "Lexical",
     "grain": "word",
-    "operation": "addition",
     "min_repeats": 1,
-    "template": [],
-    "note": "sisip di tengah kata/frasa"
-  }
+    "note": "sisip di tengah kata/frasa",
+    "operation": "addition",
+    "template": []
+  },
+  "id": 425,
+  "name": "tmesis"
 }

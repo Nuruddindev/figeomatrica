@@ -1,8 +1,9 @@
 {
-  "id": 293,
-  "name": "litotes",
   "categories": [
     "of Refutation",
     "of Understatement"
-  ]
+  ],
+  "definition": "Understatement by denying opposite.",
+  "id": 293,
+  "name": "litotes"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 194,
-  "name": "dialysis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Disjunctive reasoning listing alternatives.",
+  "id": 194,
+  "name": "dialysis"
 }

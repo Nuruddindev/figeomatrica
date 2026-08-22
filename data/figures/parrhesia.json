@@ -1,8 +1,9 @@
 {
-  "id": 347,
-  "name": "parrhesia",
   "categories": [
     "of Ethos",
     "Vices"
-  ]
+  ],
+  "definition": "Frankness; speaking boldly.",
+  "id": 347,
+  "name": "parrhesia"
 }

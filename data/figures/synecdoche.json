@@ -1,7 +1,8 @@
 {
-  "id": 412,
-  "name": "synecdoche",
   "categories": [
     "of Substitution"
-  ]
+  ],
+  "definition": "Part for whole, whole for part, etc.",
+  "id": 412,
+  "name": "synecdoche"
 }

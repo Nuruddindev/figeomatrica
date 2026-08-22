@@ -1,7 +1,8 @@
 {
-  "id": 211,
-  "name": "ecphrasis",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Vivid description bringing scene before eyes; enargia.",
+  "id": 211,
+  "name": "ecphrasis"
 }

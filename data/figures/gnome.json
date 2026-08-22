@@ -1,7 +1,8 @@
 {
-  "id": 264,
-  "name": "gnome",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Maxim; sententia; proverb.",
+  "id": 264,
+  "name": "gnome"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 341,
-  "name": "pareuresis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Parenthesis? Actually near.",
+  "id": 341,
+  "name": "pareuresis"
 }

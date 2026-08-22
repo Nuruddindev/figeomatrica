@@ -1,7 +1,8 @@
 {
-  "id": 188,
-  "name": "dendrographia",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Description of tree.",
+  "id": 188,
+  "name": "dendrographia"
 }

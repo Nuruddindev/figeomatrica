@@ -1,7 +1,8 @@
 {
-  "id": 221,
-  "name": "energia",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Vigor; enargia.",
+  "id": 221,
+  "name": "energia"
 }

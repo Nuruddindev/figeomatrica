@@ -1,7 +1,8 @@
 {
-  "id": 149,
-  "name": "colon",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Clause member.",
+  "id": 149,
+  "name": "colon"
 }

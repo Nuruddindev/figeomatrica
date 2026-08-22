@@ -1,8 +1,9 @@
 {
-  "id": 401,
-  "name": "symperasma",
   "categories": [
     "of Amplification",
     "of Summary"
-  ]
+  ],
+  "definition": "Summary conclusion.",
+  "id": 401,
+  "name": "symperasma"
 }

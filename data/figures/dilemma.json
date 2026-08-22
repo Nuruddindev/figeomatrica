@@ -1,7 +1,8 @@
 {
-  "id": 205,
-  "name": "dilemma",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Argument offering two alternatives (corneus).",
+  "id": 205,
+  "name": "dilemma"
 }

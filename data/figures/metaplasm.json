@@ -1,7 +1,8 @@
 {
-  "id": 309,
-  "name": "metaplasm",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Altering letters/syllables.",
+  "id": 309,
+  "name": "metaplasm"
 }

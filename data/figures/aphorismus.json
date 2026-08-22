@@ -1,7 +1,8 @@
 {
-  "id": 89,
-  "name": "aphorismus",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Definition with reservation; also aphorism.",
+  "id": 89,
+  "name": "aphorismus"
 }

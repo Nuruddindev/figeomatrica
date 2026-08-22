@@ -1,7 +1,8 @@
 {
-  "id": 407,
-  "name": "syncategorema",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Word with no meaning alone (like conjunction).",
+  "id": 407,
+  "name": "syncategorema"
 }

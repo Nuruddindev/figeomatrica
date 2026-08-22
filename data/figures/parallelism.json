@@ -1,7 +1,8 @@
 {
-  "id": 333,
-  "name": "parallelism",
   "categories": [
     "of Balance"
-  ]
+  ],
+  "definition": "Parallel structure; isocolon/parison.",
+  "id": 333,
+  "name": "parallelism"
 }

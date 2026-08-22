@@ -1,7 +1,8 @@
 {
-  "id": 45,
-  "name": "alliteration",
   "categories": [
     "of Sound"
-  ]
+  ],
+  "definition": "Repetition of initial consonant sounds (paromoiosis/homoeoprophoron).",
+  "id": 45,
+  "name": "alliteration"
 }

@@ -1,8 +1,9 @@
 {
-  "id": 32,
-  "name": "adnominatio",
   "categories": [
     "of Amplification",
     "of Play"
-  ]
+  ],
+  "definition": "Paronomasia: punning by similar sounding names (agnominatio).",
+  "id": 32,
+  "name": "adnominatio"
 }

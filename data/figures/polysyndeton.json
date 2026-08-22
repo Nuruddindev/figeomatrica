@@ -1,8 +1,9 @@
 {
-  "id": 361,
-  "name": "polysyndeton",
   "categories": [
     "of Omission",
     "of Grammar"
-  ]
+  ],
+  "definition": "Multiple conjunctions; conjunctio/dialyton.",
+  "id": 361,
+  "name": "polysyndeton"
 }

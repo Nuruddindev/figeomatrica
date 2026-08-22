@@ -1,8 +1,9 @@
 {
-  "id": 385,
-  "name": "sarcasmus",
   "categories": [
     "Semantic Inversions",
     "of Irony"
-  ]
+  ],
+  "definition": "Bitter cutting irony; amara irrisio.",
+  "id": 385,
+  "name": "sarcasmus"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 231,
-  "name": "epexegesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Additional explanation of what preceded.",
+  "id": 231,
+  "name": "epexegesis"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 192,
-  "name": "diaeresis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Division of one syllable into two.",
+  "id": 192,
+  "name": "diaeresis"
 }

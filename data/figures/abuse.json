@@ -1,7 +1,8 @@
 {
-  "id": 8,
-  "name": "abuse",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "English for catachresis or abusio: improper use of word.",
+  "id": 8,
+  "name": "abuse"
 }

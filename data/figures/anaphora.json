@@ -1,15 +1,21 @@
 {
-  "id": 59,
-  "name": "anaphora",
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Repetition"
   ],
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  },
+  "definition": "Repetition of same word/phrase at beginning of successive clauses.",
   "examples": {
+    "negative": [
+      [
+        "He came.",
+        "They saw.",
+        "It ended."
+      ]
+    ],
     "positive": [
       [
         "We came.",
@@ -21,25 +27,20 @@
         "Kami melihat.",
         "Kami menaklukkan."
       ]
-    ],
-    "negative": [
-      [
-        "He came.",
-        "They saw.",
-        "It ended."
-      ]
     ]
   },
   "geometry": {
     "anchor": "Initial",
     "class": "Lexical",
     "grain": "unit",
-    "operation": "repetition",
     "min_repeats": 2,
+    "operation": "repetition",
     "template": [
       "A",
       "*",
       "A"
     ]
-  }
+  },
+  "id": 59,
+  "name": "anaphora"
 }

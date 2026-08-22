@@ -1,8 +1,9 @@
 {
-  "id": 55,
-  "name": "anacoluthon",
   "categories": [
     "of Amplification",
     "of Interruption"
-  ]
+  ],
+  "definition": "Syntactic inconsistency; sentence breaking off changing construction.",
+  "id": 55,
+  "name": "anacoluthon"
 }

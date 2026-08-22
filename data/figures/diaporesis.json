@@ -1,7 +1,8 @@
 {
-  "id": 198,
-  "name": "diaporesis",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "A deliberative figure in which the speaker considers various alternatives or arguments, also called diaporesis or aporia.",
+  "id": 198,
+  "name": "diaporesis"
 }

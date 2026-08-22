@@ -1,8 +1,9 @@
 {
-  "id": 201,
-  "name": "diasyrmus",
   "categories": [
     "of Amplification",
     "of Refutation"
-  ]
+  ],
+  "definition": "Rejection of argument with ridiculous comparison.",
+  "id": 201,
+  "name": "diasyrmus"
 }

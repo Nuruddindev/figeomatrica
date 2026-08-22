@@ -1,19 +1,24 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Omission"
   ],
-  "geometry": {
-    "anchor": "Initial",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 5,
-  "name": "ablatio",
+  "definition": "Omission of initial letter/syllable (aphaeresis); metaplasm cutting beginning.",
   "examples": {
+    "negative": [
+      [
+        "Apple",
+        "pple"
+      ],
+      [
+        "Orange",
+        "range"
+      ]
+    ],
     "positive": [
       [
         "History",
@@ -27,21 +32,17 @@
         "Omission",
         "mission"
       ]
-    ],
-    "negative": [
-      [
-        "Apple",
-        "pple"
-      ],
-      [
-        "Orange",
-        "range"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "word",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 5,
+  "name": "ablatio"
 }

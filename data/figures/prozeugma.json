@@ -1,7 +1,8 @@
 {
-  "id": 378,
-  "name": "prozeugma",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Zeugma with verb in first clause.",
+  "id": 378,
+  "name": "prozeugma"
 }

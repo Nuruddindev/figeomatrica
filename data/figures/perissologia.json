@@ -1,8 +1,9 @@
 {
-  "id": 353,
-  "name": "perissologia",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Needless wordiness; macrologia.",
+  "id": 353,
+  "name": "perissologia"
 }

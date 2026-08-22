@@ -1,7 +1,8 @@
 {
-  "id": 381,
-  "name": "repetitio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "General repetition.",
+  "id": 381,
+  "name": "repetitio"
 }

@@ -1,7 +1,8 @@
 {
-  "id": 190,
-  "name": "descriptio",
   "categories": [
     "of Description"
-  ]
+  ],
+  "definition": "Vivid description (enargia).",
+  "id": 190,
+  "name": "descriptio"
 }

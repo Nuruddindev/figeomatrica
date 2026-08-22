@@ -1,7 +1,8 @@
 {
-  "id": 20,
-  "name": "adage",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Proverbial saying of folk wisdom.",
+  "id": 20,
+  "name": "adage"
 }

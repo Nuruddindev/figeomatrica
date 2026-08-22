@@ -1,7 +1,8 @@
 {
-  "id": 304,
-  "name": "mesozeugma",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Zeugma with governing verb middle.",
+  "id": 304,
+  "name": "mesozeugma"
 }

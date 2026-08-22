@@ -1,8 +1,9 @@
 {
-  "id": 263,
-  "name": "geographia",
   "categories": [
     "of Description",
     "of Place"
-  ]
+  ],
+  "definition": "Description of earth; chorographia.",
+  "id": 263,
+  "name": "geographia"
 }

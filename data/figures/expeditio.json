@@ -1,8 +1,9 @@
 {
-  "id": 259,
-  "name": "expeditio",
   "categories": [
     "of Reasoning",
     "of Refutation"
-  ]
+  ],
+  "definition": "Eliminating alternatives then affirming remainder.",
+  "id": 259,
+  "name": "expeditio"
 }

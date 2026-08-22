@@ -1,7 +1,8 @@
 {
-  "id": 31,
-  "name": "adnexio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Addition by annexing.",
+  "id": 31,
+  "name": "adnexio"
 }

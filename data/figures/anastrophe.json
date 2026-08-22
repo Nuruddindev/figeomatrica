@@ -1,7 +1,8 @@
 {
-  "id": 61,
-  "name": "anastrophe",
   "categories": [
     "of Substitution"
-  ]
+  ],
+  "definition": "Inversion of usual word order for emphasis.",
+  "id": 61,
+  "name": "anastrophe"
 }

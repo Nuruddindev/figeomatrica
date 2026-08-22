@@ -1,7 +1,8 @@
 {
-  "id": 207,
-  "name": "distinctio",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Explicit distinction of meanings to prevent ambiguity.",
+  "id": 207,
+  "name": "distinctio"
 }

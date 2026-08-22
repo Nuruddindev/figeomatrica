@@ -1,8 +1,9 @@
 {
-  "id": 50,
-  "name": "amphibologia",
   "categories": [
     "of Amplification",
     "Vices"
-  ]
+  ],
+  "definition": "Ambiguity arising from syntax.",
+  "id": 50,
+  "name": "amphibologia"
 }

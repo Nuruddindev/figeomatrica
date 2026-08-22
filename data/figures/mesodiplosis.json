@@ -1,7 +1,8 @@
 {
-  "id": 303,
-  "name": "mesodiplosis",
   "categories": [
     "of Repetition"
-  ]
+  ],
+  "definition": "Repetition middle of successive clauses.",
+  "id": 303,
+  "name": "mesodiplosis"
 }

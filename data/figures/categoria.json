@@ -1,7 +1,8 @@
 {
-  "id": 135,
-  "name": "categoria",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Direct accusation.",
+  "id": 135,
+  "name": "categoria"
 }

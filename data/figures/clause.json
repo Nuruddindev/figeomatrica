@@ -1,7 +1,8 @@
 {
-  "id": 146,
-  "name": "clause",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Grammatical clause.",
+  "id": 146,
+  "name": "clause"
 }

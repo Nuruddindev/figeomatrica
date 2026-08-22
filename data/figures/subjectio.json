@@ -1,7 +1,8 @@
 {
-  "id": 397,
-  "name": "subjectio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Hypophora: subjecting question then answering.",
+  "id": 397,
+  "name": "subjectio"
 }

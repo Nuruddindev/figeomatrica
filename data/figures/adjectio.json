@@ -1,7 +1,8 @@
 {
-  "id": 25,
-  "name": "adjectio",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "definition": "Addition figure; general term for adding words.",
+  "id": 25,
+  "name": "adjectio"
 }

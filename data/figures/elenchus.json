@@ -1,8 +1,9 @@
 {
-  "id": 214,
-  "name": "elenchus",
   "categories": [
     "of Reasoning",
     "of Refutation"
-  ]
+  ],
+  "definition": "Refutation; cross-examination.",
+  "id": 214,
+  "name": "elenchus"
 }

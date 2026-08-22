@@ -1,7 +1,8 @@
 {
-  "id": 1054,
-  "name": "invectiva",
   "categories": [
     "of Pathos"
-  ]
+  ],
+  "definition": "Invective; abusive denunciation of a person.",
+  "id": 1054,
+  "name": "invectiva"
 }

@@ -1,8 +1,9 @@
 {
-  "id": 282,
-  "name": "hysterologia",
   "categories": [
     "of Substitution",
     "of Interruption"
-  ]
+  ],
+  "definition": "Hysteron proteron reversed order.",
+  "id": 282,
+  "name": "hysterologia"
 }

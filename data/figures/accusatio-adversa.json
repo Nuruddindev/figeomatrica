@@ -1,7 +1,8 @@
 {
-  "id": 14,
-  "name": "accusatio adversa",
   "categories": [
     "of Reasoning"
-  ]
+  ],
+  "definition": "Turning accusation back on accuser (anticategoria).",
+  "id": 14,
+  "name": "accusatio adversa"
 }

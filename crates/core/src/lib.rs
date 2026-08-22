@@ -622,16 +622,9 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         obj["transformasi"] = serde_json::Value::Array(p.transforms.iter().map(|t| serde_json::json!({"sumbu": t.axis, "arah": arah(t.direction)})).collect());
     }
     if let Some(l) = &p.locus_id {
-        let v = match l.as_str() {
-            "every" => "setiap",
-            "response" => "respons",
-            "terminal" => "ujung",
-            "distributed" => "tersebar",
-            "clustered" => "berumpun",
-            "medial" => "tengah",
-            other => other,
-        };
-        obj["locus"] = serde_json::json!(v);
+        // Canonical latin id everywhere — matches the knowledge tables
+        // (loci.id); no per-consumer translation.
+        obj["locus"] = serde_json::json!(l);
     }
     if let Some(n) = p.note.as_deref() {
         obj["catatan"] = serde_json::json!(n);

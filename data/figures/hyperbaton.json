@@ -1,8 +1,9 @@
 {
-  "id": 276,
-  "name": "hyperbaton",
   "categories": [
     "of Substitution",
     "of Grammar"
-  ]
+  ],
+  "definition": "General transposition; departure from natural order.",
+  "id": 276,
+  "name": "hyperbaton"
 }

@@ -1,8 +1,9 @@
 {
-  "id": 423,
-  "name": "taxis",
   "categories": [
     "of Arrangement",
     "of Order"
-  ]
+  ],
+  "definition": "Arrangement; order.",
+  "id": 423,
+  "name": "taxis"
 }

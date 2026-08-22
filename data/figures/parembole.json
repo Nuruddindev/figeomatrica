@@ -1,8 +1,9 @@
 {
-  "id": 339,
-  "name": "parembole",
   "categories": [
     "of Amplification",
     "of Interruption"
-  ]
+  ],
+  "definition": "Parenthesis inserted.",
+  "id": 339,
+  "name": "parembole"
 }
