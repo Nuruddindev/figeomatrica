@@ -1,20 +1,24 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification",
     "Vices"
   ],
-  "geometry": {
-    "anchor": "CrossUnit",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: penambahan di tengah kata (epenthesis)",
-    "operation": "addition",
-    "template": []
-  },
-  "id": 229,
-  "name": "epenthesis",
   "examples": {
+    "negative": [
+      [
+        "Athlete",
+        "Ath-le-te"
+      ],
+      [
+        "Hamster",
+        "Ham-ster"
+      ]
+    ],
     "positive": [
       [
         "Athlete",
@@ -28,21 +32,18 @@
         "Something",
         "Some-thing"
       ]
-    ],
-    "negative": [
-      [
-        "Athlete",
-        "Ath-le-te"
-      ],
-      [
-        "Hamster",
-        "Ham-ster"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Lexical",
+    "grain": "word",
+    "locus": "medial",
+    "min_repeats": 1,
+    "note": "insertion in word interior (epenthesis)",
+    "operation": "addition",
+    "template": []
+  },
+  "id": 229,
+  "name": "epenthesis"
 }

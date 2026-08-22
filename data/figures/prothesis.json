@@ -1,19 +1,23 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification"
   ],
-  "geometry": {
-    "anchor": "Initial",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: penghilangan segmen awal kata (aphaeresis)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 375,
-  "name": "prothesis",
   "examples": {
+    "negative": [
+      [
+        "apple",
+        "apple"
+      ],
+      [
+        "orange",
+        "orange"
+      ]
+    ],
     "positive": [
       [
         "Spanish: escuela",
@@ -35,21 +39,18 @@
         "s-normal",
         "please"
       ]
-    ],
-    "negative": [
-      [
-        "apple",
-        "apple"
-      ],
-      [
-        "orange",
-        "orange"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Initial",
+    "class": "Lexical",
+    "grain": "word",
+    "locus": "initial",
+    "min_repeats": 1,
+    "note": "addition at initial boundary (prothesis)",
+    "operation": "addition",
+    "template": []
+  },
+  "id": 375,
+  "name": "prothesis"
 }
