@@ -605,11 +605,6 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         Direction::Down => "turun",
         Direction::Neutral => "netral",
     };
-    let transformasi = p
-        .transforms
-        .iter()
-        .map(|t| serde_json::json!({"sumbu": t.axis, "arah": arah(t.direction)}))
-        .collect::<Vec<_>>();
     let mut obj = serde_json::json!({
         "jangkar": jangkar,
         "kelas": kelas,
