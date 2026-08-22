@@ -1,11 +1,35 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification"
   ],
+  "examples": {
+    "negative": [
+      [
+        "Some people never read the manual.",
+        "You are right, I should have read it."
+      ]
+    ],
+    "positive": [
+      [
+        "Some people never read the manual.",
+        "Some people never need one."
+      ],
+      [
+        "Ada orang yang tak pernah salah.",
+        "Dan ada yang selalu menyimpan bukti."
+      ]
+    ]
+  },
   "geometry": {
     "anchor": "CrossUnit",
     "class": "Conceptual",
     "grain": "unit",
+    "locus": "response",
     "min_repeats": 1,
     "note": "kompilasi heuristik: respons konsiliatoris meredam pertukaran kasar lewat canda (charientismus)",
     "operation": "substitution",
@@ -22,28 +46,5 @@
     ]
   },
   "id": 125,
-  "name": "broad floute",
-  "examples": {
-    "positive": [
-      [
-        "Some people never read the manual.",
-        "Some people never need one."
-      ],
-      [
-        "Ada orang yang tak pernah salah.",
-        "Dan ada yang selalu menyimpan bukti."
-      ]
-    ],
-    "negative": [
-      [
-        "Some people never read the manual.",
-        "You are right, I should have read it."
-      ]
-    ]
-  },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "name": "broad floute"
 }

@@ -47,7 +47,7 @@
     "grain": "word",
     "locus": "initial",
     "min_repeats": 1,
-    "note": "addition at initial boundary (prothesis)",
+    "note": "kompilasi heuristik: penambahan di awal kata (prothesis)",
     "operation": "addition",
     "template": []
   },

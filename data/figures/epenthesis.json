@@ -38,9 +38,9 @@
     "anchor": "CrossUnit",
     "class": "Lexical",
     "grain": "word",
-    "locus": "medial",
+    "locus": "tengah",
     "min_repeats": 1,
-    "note": "insertion in word interior (epenthesis)",
+    "note": "kompilasi heuristik: penambahan di tengah kata (epenthesis)",
     "operation": "addition",
     "template": []
   },

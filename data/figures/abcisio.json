@@ -30,7 +30,7 @@
     "class": "Lexical",
     "grain": "word",
     "min_repeats": 1,
-    "note": "kompilasi heuristik: pemotongan segmen akhir kata (apocope/clipping)",
+    "note": "kompilasi heuristik: pemotongan segmen awal/akhir/tengah kata (apocope/aphaeresis/syncope/clipping)",
     "operation": "deletion",
     "template": []
   },

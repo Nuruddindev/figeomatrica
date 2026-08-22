@@ -1,19 +1,23 @@
 {
+  "atribusi": {
+    "contoh": "kushala",
+    "geometri": "kushala",
+    "lisensi": "MIT"
+  },
   "categories": [
     "of Amplification"
   ],
-  "geometry": {
-    "anchor": "Final",
-    "class": "Lexical",
-    "grain": "word",
-    "min_repeats": 1,
-    "note": "kompilasi heuristik: pemotongan segmen awal/akhir/tengah kata (apocope/aphaeresis/syncope/clipping)",
-    "operation": "deletion",
-    "template": []
-  },
-  "id": 174,
-  "name": "contractio",
   "examples": {
+    "negative": [
+      [
+        "Don't",
+        "Do not"
+      ],
+      [
+        "Can't",
+        "Can not"
+      ]
+    ],
     "positive": [
       [
         "Don't",
@@ -27,21 +31,18 @@
         "Won't",
         "Will not"
       ]
-    ],
-    "negative": [
-      [
-        "Don't",
-        "Do not"
-      ],
-      [
-        "Can't",
-        "Can not"
-      ]
     ]
   },
-  "atribusi": {
-    "geometri": "kushala",
-    "contoh": "kushala",
-    "lisensi": "MIT"
-  }
+  "geometry": {
+    "anchor": "Final",
+    "class": "Lexical",
+    "grain": "word",
+    "locus": "tengah",
+    "min_repeats": 1,
+    "note": "kompilasi heuristik: pemotongan segmen tengah kata (syncope)",
+    "operation": "deletion",
+    "template": []
+  },
+  "id": 174,
+  "name": "contractio"
 }
