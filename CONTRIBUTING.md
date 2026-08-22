@@ -1,85 +1,91 @@
-*English version · [Versi Indonesia](CONTRIBUTING.id.md)*
+# Berkontribusi
 
-# Contributing to Figeometrica
+Aturan mainnya satu kalimat: **klaim harus berbukti.** Semua yang ada di
+repo ini bisa diperiksa mesin — termasuk klaim Anda. Gerbangnya jalan di
+CI setiap PR, dan versi lokalnya sama persis.
 
-Thank you! This guide explains how to contribute a **figure geometry** —
-a structured specification that makes a rhetorical figure machine-detectable.
-You don't need to write code; a single JSON file plus example sentences is
-enough.
+## Menambah / memperbaiki satu figur = satu file JSON
 
-## Thesis in one line
-
-> Every figure, when properly defined, is an operation over a series:
-> **operation × anchor × unit × repetition**.
-
-## Canonical form
-
-| Field | Content | Valid values |
-|---|---|---|
-| `jangkar` (anchor) | where the pattern attaches | `Awal` (Start), `Akhir` (End), `Sisipan` (Insertion), `UnitUtuh` (WholeUnit), `AntarUnit` (BetweenUnits) |
-| `kelas` (class) | equivalence class of elements | `Leksikal` (Lexical), `Akar` (Root), `Gramatikal` (Grammatical), `Konseptual` (Conceptual) |
-| `satuan` (unit) | unit of the operated element | `grafem` (grapheme), `kata` (word), `frasa` (phrase), `unit`, `wacana` (discourse) |
-| `operasi` (operation) | classical operation (operae) | `adjectio`, `detractio`, `immutatio`, `transmutatio`, `repetitio` |
-| `minim_ulangan` (min. repetitions) | minimum repetition count of the pattern | integer ≥ 1 |
-| `template` | pattern slots (optional) | `["A","*","A"]` — same id = same label, `*` = anything |
-| `catatan` (notes) | brief explanation (optional) | free text |
-
-Note: field names and enum values stay in Indonesian in the actual JSON
-(`jangkar`, `kelas`, `satuan`, etc.) — this table only translates their
-meaning for English-speaking contributors. Use the Indonesian keys exactly
-as shown when writing your entry.
-
-Full example entry (`data/figures/anaphora.json`):
+Buka `data/figures/<nama>.json`. Strukturnya:
 
 ```json
 {
-  "id": 59,
-  "name": "anaphora",
-  "categories": ["of Repetition"],
-  "geometri": {
-    "jangkar": "Awal", "kelas": "Leksikal", "satuan": "unit",
-    "operasi": "repetitio", "minim_ulangan": 2,
-    "template": ["A", "*", "A"]
+  "id": 91,
+  "name": "apocope",
+  "definition": "Cutting off final letter/syllable",
+  "geometry":   { "...": "blok geometri warisan (opsional)" },
+  "signature": {
+    "domain_id": "textual",
+    "unit_id": "word",
+    "scope_id": null,
+    "anchor_id": "final-segment",
+    "operation": "detractio",
+    "payload_id": null,
+    "locus_id": null,
+    "result": null,
+    "constraints": {}
   },
-  "contoh": {
-    "positif": [["We came.", "We saw.", "We conquered."]],
-    "negatif": [["He came.", "They saw.", "It ended."]]
+  "epistemic": {
+    "status": "WITNESS_TESTED"
   },
-  "atribusi": { "geometri": "your-username", "contoh": "your-username", "lisensi": "MIT" }
+  "examples": {
+    "positive": [["Photograph", "photo"]],
+    "negative": [["The veterinarian examined the dog.",
+                  "The vet examined the dog carefully and completely."]]
+  }
 }
 ```
 
-## Example rules (the most important part)
+### Aturan blok `signature` (CONTRACT.md §2, §12)
 
-- **Positive** examples MUST trigger the pattern; **negative** examples
-  MUST NOT trigger it (similar-looking, but not the figure itself).
-- Each example is an array of discourse units (sentences). Cross-unit
-  figures (anaphora, anadiplosis, climax) need multiple units; antimetabole
-  only needs one.
-- The validator runs a deterministic matcher against your examples. Passing
-  means your contribution is machine-validated; failing means CI tells you
-  exactly which example is problematic.
-- Patterns outside the current matcher family (e.g. Conceptual-class figures
-  like chiasmus, or insertion figures like tmesis/parenthesis) are still
-  accepted — CI flags them for a *manual review* path by maintainers.
+- Semua slot **wajib** berasal dari manifest knowledge versi kanon:
+  `data/knowledge/vN/manifest.json` — N tertinggi adalah kanon.
+- Slot yang tidak relevan: `null`, bukan nilai karangan.
+- `scope` bukan tempat sampah: kalau tak yakin, biarkan `null`.
 
-## Workflow
+### Aturan blok `epistemic` (tangga status)
 
-1. Open an issue using the **"Geometrize a figure"** template, and claim one figure.
-2. Fork → branch → edit **a single file** `data/figures/<name>.json`.
-3. Run locally: `cargo run -p figeometrica-rhetorica --bin validate`
-4. Push and open a PR. CI verifies automatically.
+| Status Anda klaim | Syarat yang dicek CI |
+|---|---|
+| `EXTRACTED` | signature ada & slot valid |
+| `STRUCTURALLY_VALID` | + bindings bukan INVALID |
+| `WITNESS_TESTED` | + protokol witness lulus (CI menjalankan ulang) |
+| `USER_ACCEPTED` / `CANONICAL` | + merge oleh maintainer |
 
-## License & attribution
+Mengklaim status tanpa bukti = PR gagal CI dengan pesan yang menjelaskan
+kenapa. Itu fitur, bukan bug: *NO SILENT PROMOTION*.
 
-- Contributions are licensed under **MIT** as soon as the PR is opened (inbound = outbound).
-- Your name is stored in the entry's `atribusi` field and in CONTRIBUTORS.md.
-- **Do not copy prose definitions** from copyrighted sources (Silva
-  Rhetoricae, etc.). The classical taxonomic structure is public domain;
-  other people's writing is not.
+### Definisi prosa
 
-## Dataset paper co-authorship
+Tulis dengan kata-kata sendiri. Definisi yang disalin dari sumber
+berhak cipta tidak diterima.
 
-Contributors with **≥ 10 accepted entries**, or who serve as a validator,
-are added to the co-author list of the dataset publication. Final criteria
-will be announced before the paper is written and are not retroactive.
+## Slot vocabulary yang dibutuhkan belum ada?
+
+Jangan paksa slot lain. Ajukan **versi knowledge baru**:
+
+1. `cp -r data/knowledge/v2 data/knowledge/v3` (atau N tertinggi saat ini)
+2. Tambah slot/binding di `v3/manifest.json`
+3. Tulis `v3/README.md`: slot apa, figur mana yang membutuhkan, dari
+   eksperimen/contoh apa ditemukan
+4. Rujuk folder itu di PR Anda
+
+Versi lama tidak pernah diedit — mereka adalah rekam jejak eksperimen.
+Detail: [`data/knowledge/README.md`](data/knowledge/README.md).
+
+## Verifikasi lokal sebelum push
+
+```bash
+cargo test --workspace
+cargo run -q -p figeometrica-rhetorica --bin sidang -- --ci
+cargo run -q -p figeometrica-rhetorica --bin validate
+```
+
+Kalau ketiganya hijau, CI juga akan hijau.
+
+## Review = Meja Hakim
+
+PR yang lulus CI direview maintainer. Merge adalah tindakan pengesahan:
+di situ figur naik ke `USER_ACCEPTED`, dan hanya lewat jalur ini sebuah
+figur bisa mencapai `CANONICAL`. Riwayat review tersimpan permanen di
+PR — itulah buku besar kami.

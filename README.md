@@ -65,16 +65,26 @@ enough.
 1. **Claim a figure** — open an issue with the
    ["Geometrize a figure"](../../issues/new?template=geometrize-figure.md)
    template, or pick any file in [`data/figures/`](data/figures) whose
-   `"geometri"` is `null` (e.g. `epizeuxis.json`).
-2. **Fill the canonical form** — `jangkar`, `kelas`, `satuan`, `operasi`,
-   `minim_ulangan`, plus a slot `template` if the figure has one. The field
-   reference is in [CONTRIBUTING.md](CONTRIBUTING.md).
-3. **Add examples** — positive sentences that *must* trigger the pattern,
+   contract blocks are missing (e.g. `epizeuxis.json`).
+2. **Fill the `signature` block** — every slot must come from the
+   canonical knowledge manifest (`data/knowledge/vN`, highest N wins).
+   Need a slot that doesn't exist? Propose a new knowledge version with
+   the story of what demands it — see
+   [CONTRIBUTING.md](CONTRIBUTING.md).
+3. **Set your ladder claim in `epistemic`** — CI re-runs the witness
+   protocol itself: a claimed status without evidence fails the check.
+   *No silent promotion.*
+4. **Add examples** — positive sentences that *must* trigger the pattern,
    near-miss negatives that *must not*. This is what makes your entry
    machine-checkable.
-4. **Check locally** — `cargo run -p figeometrica-rhetorica --bin validate`
-5. **Open a PR** — CI verifies automatically: pass = merged with your name
-   in the entry's `atribusi`; fail = you get the exact failing example.
+5. **Check locally**
+   ```bash
+   cargo run -p figeometrica-rhetorica --bin sidang -- --ci
+   cargo run -p figeometrica-rhetorica --bin validate
+   ```
+6. **Open a PR** — CI verifies automatically: pass = merged with your name
+   in the entry's `atribusi`; fail = you get the exact failing witness.
+   Review is our Judgment Desk — merge is what ratifies a figure.
 
 Patterns outside the matcher's current family (conceptual-class figures like
 chiasmus, insertions like tmesis) are welcome too — they route to maintainer

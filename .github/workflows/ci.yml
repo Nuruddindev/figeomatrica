@@ -15,3 +15,5 @@ jobs:
         run: cargo test --workspace
       - name: Validate theory base (machine geometry verification)
         run: cargo run -q -p figeometrica-rhetorica --bin validate
+      - name: Sidang kontrak (CONTRACT.md §12 — witness + ladder consistency)
+        run: cargo run -q -p figeometrica-rhetorica --bin sidang -- --ci
