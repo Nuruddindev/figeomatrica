@@ -134,6 +134,8 @@ fn terjemahkan(geo: &serde_json::Value) -> Option<serde_json::Value> {
             "setiap" => "every",
             "respons" => "response",
             "ujung" => "terminal",
+            "tersebar" => "distributed",
+            "berumpun" => "clustered",
             other => other,
         };
         out.insert("locus".into(), serde_json::Value::String(v.into()));

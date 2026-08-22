@@ -1,7 +1,47 @@
 {
-  "id": 6,
-  "name": "abode",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Conceptual",
+    "grain": "unit",
+    "locus": "distributed",
+    "min_repeats": 2,
+    "note": "kembalian berulang ke anchor argumen sama, materi selingan diizinkan (commoratio)",
+    "operation": "repetition",
+    "template": []
+  },
+  "id": 6,
+  "name": "abode",
+  "examples": {
+    "positive": [
+      [
+        "We must invest in education.",
+        "Markets will fluctuate.",
+        "Taxes may rise.",
+        "Education is the investment that never depreciates.",
+        "Some argue infrastructure first.",
+        "Still: educate first."
+      ],
+      [
+        "Invest in education.",
+        "Fix the roads.",
+        "Hire more teachers.",
+        "Build the ports."
+      ]
+    ],
+    "negative": [
+      [
+        "We must invest in education.",
+        "We must fix the roads.",
+        "We must hire police."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

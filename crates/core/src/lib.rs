@@ -192,19 +192,28 @@ impl Transform {
 /// text structure); LOCUS indexes occurrences inside a sequence of events.
 /// Single-occurrence figures leave it `None` — the locus degenerates to
 /// the anchored position. Vocabulary grows with evidence, not speculation:
-/// today three values are demanded by the dataset.
+/// every variant here names the figure that demanded it. No wildcard
+/// match arms anywhere — a future variant forces every consumer to
+/// acknowledge it at compile time.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Locus {
     /// Every slot of the series carries the pattern (anaphora, epistrophe).
-    #[serde(alias = "setiap")]
+    #[serde(alias = "setiap", alias = "every")]
     EverySlot,
     /// The second element of an adjacency pair answers the first
     /// (charientismus, asteismus).
-    #[serde(alias = "respons")]
+    #[serde(alias = "respons", alias = "response")]
     ResponseSlot,
     /// Only the terminal occurrence of the series (abating, anesis).
-    #[serde(alias = "ujung")]
+    #[serde(alias = "ujung", alias = "terminal")]
     TerminalSlot,
+    /// Occurrences recur irregularly across the discourse, intervening
+    /// material permitted between them (commoratio: A B C A D E A).
+    #[serde(alias = "tersebar", alias = "distributed")]
+    Distributed,
+    /// Occurrences adjacent or locally clustered (epimone: A A A A).
+    #[serde(alias = "berumpun", alias = "clustered")]
+    Clustered,
 }
 
 /// Geometry definition of one figure (data-driven; future source: the
@@ -451,6 +460,22 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
             Operation::Repetition, 2, 0.90, "repetition", Some(Locus::EverySlot), &[],
             "pengulangan kata penutup antar-unit (epistrophe)"));
     }
+    if d.contains("repetit")
+        && (d.contains("intervening") || d.contains("non-contiguous")
+            || d.contains("across multiple")) {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
+            Operation::Repetition, 2, 0.75, "repetition",
+            Some(Locus::Distributed), &[],
+            "kembalian berulang ke anchor argumen sama, materi selingan diizinkan (commoratio)"));
+    }
+    if d.contains("reiterate")
+        || d.contains("dwelling on")
+        || (d.contains("persisten") && d.contains("repetit")) {
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
+            Operation::Repetition, 2, 0.70, "repetition",
+            Some(Locus::Clustered), &[],
+            "plea hampir identik diulang persisten secara berumpun (epimone)"));
+    }
     if d.contains("last word") && (d.contains("first word") || d.contains("next")) {
         c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word,
             Operation::Repetition, 1, 0.85, "repetition", None, &[],
@@ -615,6 +640,8 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
             Locus::EverySlot => "setiap",
             Locus::ResponseSlot => "respons",
             Locus::TerminalSlot => "ujung",
+            Locus::Distributed => "tersebar",
+            Locus::Clustered => "berumpun",
         };
         json.push_str(&format!(",\"locus\":\"{v}\""));
     }
@@ -1301,6 +1328,24 @@ mod tests {
         let t = compile_definition("Truncate(word, terminal_segment) -> a \
             shortened word form produced by removing its final segment.").unwrap();
         assert_eq!(t.pattern.locus, None);
+    }
+
+    #[test]
+    fn locus_vocabulary_grew_from_evidence() {
+        // commoratio: distributed recurrence — varian lahir dari figur ini
+        let cm = compile_definition("Repetition of an argumentative anchor \
+            across multiple discourse positions, with intervening material \
+            permitted between occurrences.").unwrap();
+        assert_eq!(cm.pattern.locus, Some(Locus::Distributed));
+        assert_eq!(cm.pattern.operation, Some(Operation::Repetition));
+        // epimone: clustered — definisi baru MAUPUN ringkas terdeteksi
+        let ep1 = compile_definition("reiterate(anchor, near_identical_unit) -> \
+            persistent repetition of the same argumentative plea in \
+            substantially the same verbal form.").unwrap();
+        assert_eq!(ep1.pattern.locus, Some(Locus::Clustered));
+        let ep2 = compile_definition("Persistent dwelling on point; refrain; \
+            commoratio.").unwrap();
+        assert_eq!(ep2.pattern.locus, Some(Locus::Clustered));
     }
 
     #[test]

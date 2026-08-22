@@ -1,7 +1,42 @@
 {
-  "id": 234,
-  "name": "epimone",
   "categories": [
     "of Amplification"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Conceptual",
+    "grain": "unit",
+    "locus": "clustered",
+    "min_repeats": 2,
+    "note": "plea hampir identik diulang persisten secara berumpun (epimone)",
+    "operation": "repetition",
+    "template": []
+  },
+  "id": 234,
+  "name": "epimone",
+  "examples": {
+    "positive": [
+      [
+        "Do not go gentle into that night.",
+        "Do not go gentle into that night."
+      ],
+      [
+        "Turunlah ke jalan!",
+        "Turunlah ke jalan!",
+        "Turunlah ke jalan!"
+      ]
+    ],
+    "negative": [
+      [
+        "Do not go gentle into that night.",
+        "Speak softly at the door.",
+        "Sleep well tonight."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }
