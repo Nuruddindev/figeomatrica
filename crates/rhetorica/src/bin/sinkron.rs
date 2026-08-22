@@ -129,6 +129,15 @@ fn terjemahkan(geo: &serde_json::Value) -> Option<serde_json::Value> {
             out.insert("transforms".into(), serde_json::Value::Array(mapped));
         }
     }
+    if let Some(l) = as_str(pick("locus", "locus")) {
+        let v = match l {
+            "setiap" => "every",
+            "respons" => "response",
+            "ujung" => "terminal",
+            other => other,
+        };
+        out.insert("locus".into(), serde_json::Value::String(v.into()));
+    }
     if let Some(s) = as_str(pick("note", "catatan")) {
         out.insert("note".into(), serde_json::Value::String(s.into()));
     }
