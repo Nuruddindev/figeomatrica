@@ -1,7 +1,40 @@
 {
-  "id": 226,
-  "name": "epanalepsis",
   "categories": [
     "of Repetition"
-  ]
+  ],
+  "geometry": {
+    "anchor": "CrossUnit",
+    "class": "Conceptual",
+    "grain": "unit",
+    "locus": "distributed",
+    "min_repeats": 2,
+    "note": "kompilasi heuristik: kembalian berulang ke anchor argumen sama, materi selingan diizinkan (commoratio)",
+    "operation": "repetition",
+    "template": []
+  },
+  "id": 226,
+  "name": "epanalepsis",
+  "examples": {
+    "positive": [
+      [
+        "The king is dead, long live the king.",
+        "The king is dead, long live the king."
+      ],
+      [
+        "Raja mati, hidup raja.",
+        "Raja mati, hidup raja."
+      ]
+    ],
+    "negative": [
+      [
+        "The king is dead.",
+        "Long live the king."
+      ]
+    ]
+  },
+  "atribusi": {
+    "geometri": "kushala",
+    "contoh": "kushala",
+    "lisensi": "MIT"
+  }
 }

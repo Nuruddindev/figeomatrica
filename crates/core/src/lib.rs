@@ -40,6 +40,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 use serde::{Deserialize, Serialize};
+use serde_json;
 
 /// Equality class of pattern elements — parallel to parallelism levels
 /// (Structural/Syntactic/Semantic/Positional). Used as score/query metadata;
@@ -118,20 +119,6 @@ where
         .collect())
 }
 
-/// Grain of the operated-on element (canonical-form axis).
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-pub enum Grain {
-    #[serde(alias = "grafem", alias = "grapheme")]
-    Grapheme,
-    #[serde(alias = "kata", alias = "word")]
-    Word,
-    #[serde(alias = "frasa", alias = "phrase")]
-    Phrase,
-    #[serde(alias = "unit")]
-    Unit,
-    #[serde(alias = "wacana", alias = "discourse")]
-    Discourse,
-}
 
 /// Operation performed on elements (canonical-form axis; the four classical
 /// operae plus repetition).
@@ -186,35 +173,6 @@ impl Transform {
     }
 }
 
-/// Occurrence index within the series of slots that repetition creates.
-///
-/// Architectural position is ANCHOR's job (where the pattern attaches to
-/// text structure); LOCUS indexes occurrences inside a sequence of events.
-/// Single-occurrence figures leave it `None` — the locus degenerates to
-/// the anchored position. Vocabulary grows with evidence, not speculation:
-/// every variant here names the figure that demanded it. No wildcard
-/// match arms anywhere — a future variant forces every consumer to
-/// acknowledge it at compile time.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-pub enum Locus {
-    /// Every slot of the series carries the pattern (anaphora, epistrophe).
-    #[serde(alias = "setiap", alias = "every")]
-    EverySlot,
-    /// The second element of an adjacency pair answers the first
-    /// (charientismus, asteismus).
-    #[serde(alias = "respons", alias = "response")]
-    ResponseSlot,
-    /// Only the terminal occurrence of the series (abating, anesis).
-    #[serde(alias = "ujung", alias = "terminal")]
-    TerminalSlot,
-    /// Occurrences recur irregularly across the discourse, intervening
-    /// material permitted between them (commoratio: A B C A D E A).
-    #[serde(alias = "tersebar", alias = "distributed")]
-    Distributed,
-    /// Occurrences adjacent or locally clustered (epimone: A A A A).
-    #[serde(alias = "berumpun", alias = "clustered")]
-    Clustered,
-}
 
 /// Geometry definition of one figure (data-driven; future source: the
 /// `geometri` column of the figures table).
@@ -233,8 +191,8 @@ pub struct FigurePattern {
     /// Minimum repeats for repetition patterns (anaphora/epistrophe: how many units).
     #[serde(alias = "minim_ulangan")]
     pub min_repeats: usize,
-    #[serde(default, alias = "satuan", skip_serializing_if = "Option::is_none")]
-    pub grain: Option<Grain>,
+    #[serde(default, alias = "satuan", alias = "grain", skip_serializing_if = "Option::is_none")]
+    pub unit_id: Option<String>,
     #[serde(default, alias = "operasi", skip_serializing_if = "Option::is_none")]
     pub operation: Option<Operation>,
     /// Signed coordinate shifts in rhetorical space (empty = purely
@@ -243,8 +201,8 @@ pub struct FigurePattern {
     pub transforms: Vec<Transform>,
     /// Occurrence index in the series (None = single occurrence, collapses
     /// to the anchor).
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub locus: Option<Locus>,
+    #[serde(default, alias = "locus", skip_serializing_if = "Option::is_none")]
+    pub locus_id: Option<String>,
     #[serde(default, alias = "catatan", skip_serializing_if = "Option::is_none")]
     pub note: Option<String>,
 }
@@ -263,9 +221,9 @@ impl FigurePattern {
                 anchor: Initial,
                 class: Lexical,
                 min_repeats: 2,
-                grain: Some(Grain::Word),
+                unit_id: Some("word".into()),
                 operation: Some(Operation::Repetition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -275,9 +233,9 @@ impl FigurePattern {
                 anchor: Final,
                 class: Lexical,
                 min_repeats: 2,
-                grain: Some(Grain::Word),
+                unit_id: Some("word".into()),
                 operation: Some(Operation::Repetition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -287,9 +245,9 @@ impl FigurePattern {
                 anchor: Initial,
                 class: Lexical,
                 min_repeats: 2,
-                grain: Some(Grain::Word),
+                unit_id: Some("word".into()),
                 operation: Some(Operation::Repetition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: Some("repetition at both ends of each unit; composite pattern".into()),
             },
@@ -299,9 +257,9 @@ impl FigurePattern {
                 anchor: CrossUnit,
                 class: Lexical,
                 min_repeats: 1,
-                grain: Some(Grain::Word),
+                unit_id: Some("word".into()),
                 operation: Some(Operation::Repetition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -311,9 +269,9 @@ impl FigurePattern {
                 anchor: CrossUnit,
                 class: Lexical,
                 min_repeats: 2,
-                grain: Some(Grain::Word),
+                unit_id: Some("word".into()),
                 operation: Some(Operation::Repetition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: Some("chained anadiplosis; >= 2 consecutive links".into()),
             },
@@ -323,9 +281,9 @@ impl FigurePattern {
                 anchor: WholeUnit,
                 class: Lexical,
                 min_repeats: 1,
-                grain: Some(Grain::Phrase),
+                unit_id: Some("phrase".into()),
                 operation: Some(Operation::Permutation),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -335,9 +293,9 @@ impl FigurePattern {
                 anchor: WholeUnit,
                 class: Conceptual,
                 min_repeats: 1,
-                grain: Some(Grain::Phrase),
+                unit_id: Some("phrase".into()),
                 operation: Some(Operation::Permutation),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -347,9 +305,9 @@ impl FigurePattern {
                 anchor: Insertion,
                 class: Lexical,
                 min_repeats: 1,
-                grain: Some(Grain::Grapheme),
+                unit_id: Some("grapheme".into()),
                 operation: Some(Operation::Addition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: Some("a word cut open, another inserted inside it".into()),
             },
@@ -359,9 +317,9 @@ impl FigurePattern {
                 anchor: Insertion,
                 class: Lexical,
                 min_repeats: 1,
-                grain: Some(Grain::Phrase),
+                unit_id: Some("phrase".into()),
                 operation: Some(Operation::Addition),
-                locus: None,
+                locus_id: None,
                 transforms: vec![],
                 note: None,
             },
@@ -393,9 +351,9 @@ pub struct DraftGeometri {
     pub family: &'static str,
 }
 
-fn draft(anchor: Anchor, class: ElementClass, grain: Grain, op: Operation,
+fn draft(anchor: Anchor, class: ElementClass, grain: Option<&str>, op: Operation,
          min_repeats: usize, confidence: f32, family: &'static str,
-         locus: Option<Locus>, transforms: &[(&str, Direction)],
+         locus_id: Option<&str>, transforms: &[(&str, Direction)],
          catatan: &str) -> DraftGeometri {
     DraftGeometri {
         pattern: FigurePattern {
@@ -404,9 +362,9 @@ fn draft(anchor: Anchor, class: ElementClass, grain: Grain, op: Operation,
             anchor,
             class,
             min_repeats,
-            grain: Some(grain),
+            unit_id: grain.map(|s| s.to_string()),
             operation: Some(op),
-            locus,
+            locus_id: locus_id.map(|s| s.to_string()),
             transforms: transforms
                 .iter()
                 .map(|(axis, dir)| Transform::new(axis, *dir))
@@ -446,49 +404,41 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     let akhir = d.contains("end of") || d.contains("the end")
         || d.contains("conclusion of successive");
     if rep && awal && akhir {
-        c.push(draft(Anchor::Initial, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 2, 0.80, "repetition", Some(Locus::EverySlot), &[],
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Repetition, 2, 0.80, "repetition", Some("every"), &[],
             "pengulangan di awal DAN akhir unit (symploce)"));
     } else if rep && (d.contains("beginning of successive") || d.contains("begins successive")
         || d.contains("at the beginning")) {
-        c.push(draft(Anchor::Initial, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 2, 0.90, "repetition", Some(Locus::EverySlot), &[],
+        c.push(draft(Anchor::Initial, ElementClass::Lexical, Some("word"), Operation::Repetition, 2, 0.90, "repetition", Some("every"), &[],
             "pengulangan kata pembuka antar-unit (anaphora)"));
     } else if rep && (d.contains("end of successive") || d.contains("ends of successive")
         || d.contains("at the end")) {
-        c.push(draft(Anchor::Final, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 2, 0.90, "repetition", Some(Locus::EverySlot), &[],
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Some("word"), Operation::Repetition, 2, 0.90, "repetition", Some("every"), &[],
             "pengulangan kata penutup antar-unit (epistrophe)"));
     }
     if d.contains("repetit")
         && (d.contains("intervening") || d.contains("non-contiguous")
             || d.contains("across multiple")) {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
-            Operation::Repetition, 2, 0.75, "repetition",
-            Some(Locus::Distributed), &[],
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Some("unit"), Operation::Repetition, 2, 0.75, "repetition",
+            Some("distributed"), &[],
             "kembalian berulang ke anchor argumen sama, materi selingan diizinkan (commoratio)"));
     }
     if d.contains("reiterate")
         || d.contains("dwelling on")
         || (d.contains("persisten") && d.contains("repetit")) {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
-            Operation::Repetition, 2, 0.70, "repetition",
-            Some(Locus::Clustered), &[],
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Some("unit"), Operation::Repetition, 2, 0.70, "repetition",
+            Some("clustered"), &[],
             "plea hampir identik diulang persisten secara berumpun (epimone)"));
     }
     if d.contains("last word") && (d.contains("first word") || d.contains("next")) {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 1, 0.85, "repetition", None, &[],
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("word"), Operation::Repetition, 1, 0.85, "repetition", None, &[],
             "akhir unit menjadi awal unit berikut (anadiplosis)"));
     }
     if (d.contains("chain") || d.contains("series of clauses")) && rep {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 2, 0.70, "repetition", None, &[],
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("word"), Operation::Repetition, 2, 0.70, "repetition", None, &[],
             "rantai pengulangan berturutan (gradatio/climax)"));
     }
     if rep && (d.contains("immediate repetition") || d.contains("repeated immediatel")) {
-        c.push(draft(Anchor::WholeUnit, ElementClass::Lexical, Grain::Word,
-            Operation::Repetition, 2, 0.70, "repetition", None, &[],
+        c.push(draft(Anchor::WholeUnit, ElementClass::Lexical, Some("word"), Operation::Repetition, 2, 0.70, "repetition", None, &[],
             "pengulangan langsung dalam satu unit (epizeuxis)"));
     }
 
@@ -500,8 +450,7 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
         } else {
             ElementClass::Lexical
         };
-        c.push(draft(Anchor::WholeUnit, kelas, Grain::Phrase,
-            Operation::Permutation, 1, 0.80, "transposition", None,
+        c.push(draft(Anchor::WholeUnit, kelas, Some("phrase"), Operation::Permutation, 1, 0.80, "transposition", None,
             &[("order", Direction::Neutral)],
             "inversi/permutasi frasa (antimetabole/chiasmus)"));
     }
@@ -509,18 +458,15 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     // ── ADDITION (interpolation) ─────────────────────────────────────
     if d.contains("insert") && (d.contains("word") && (d.contains("within a word")
         || d.contains("into a word") || d.contains("middle of a word") || d.contains("cut"))) {
-        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Grain::Grapheme,
-            Operation::Addition, 1, 0.75, "addition", None, &[],
+        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Some("grapheme"), Operation::Addition, 1, 0.75, "addition", None, &[],
             "sisipan di dalam kata (tmesis)"));
     } else if d.contains("interpolat") || d.contains("parenthetic")
         || (d.contains("insert") && (d.contains("sentence") || d.contains("clause"))) {
-        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Grain::Phrase,
-            Operation::Addition, 1, 0.70, "addition", None, &[],
+        c.push(draft(Anchor::Insertion, ElementClass::Lexical, Some("phrase"), Operation::Addition, 1, 0.70, "addition", None, &[],
             "penyela di tengah kalimat (parenthesis)"));
     }
     if d.contains("exaggerat") || d.contains("hyperbole") || d.contains("overstat") {
-        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Phrase,
-            Operation::Addition, 1, 0.65, "amplification", None,
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Some("phrase"), Operation::Addition, 1, 0.65, "amplification", None,
             &[("magnitude", Direction::Up)],
             "melampaui baseline skala (hyperbole)"));
     }
@@ -529,33 +475,28 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     let turun = d.contains("reduce") || d.contains("diminish") || d.contains("lessen")
         || d.contains("lower than") || d.contains("beneath the");
     if turun && d.contains("conclud") {
-        c.push(draft(Anchor::Final, ElementClass::Conceptual, Grain::Discourse,
-            Operation::Deletion, 1, 0.75, "understatement", Some(Locus::TerminalSlot),
+        c.push(draft(Anchor::Final, ElementClass::Conceptual, Some("discourse"), Operation::Deletion, 1, 0.75, "understatement", Some("terminal"),
             &[("force", Direction::Down)],
             "penutup yang meredam gaya sebelumnya (abating/anesis)"));
     } else if turun && (d.contains("expected") || d.contains("anticipat")) {
-        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Discourse,
-            Operation::Deletion, 1, 0.70, "understatement", None,
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Some("discourse"), Operation::Deletion, 1, 0.70, "understatement", None,
             &[("status", Direction::Down)],
             "di bawah skala ekspektasi konteks (abbaser)"));
     }
     if d.contains("mockery") || d.contains("conciliator")
         || (d.contains("soften") && d.contains("harsh")) {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Grain::Unit,
-            Operation::Substitution, 1, 0.75, "understatement", Some(Locus::ResponseSlot),
+        c.push(draft(Anchor::CrossUnit, ElementClass::Conceptual, Some("unit"), Operation::Substitution, 1, 0.75, "understatement", Some("response"),
             &[("intensity", Direction::Down), ("social acceptability", Direction::Up)],
             "respons konsiliatoris meredam pertukaran kasar lewat canda (charientismus)"));
     }
     if d.contains("litotes") || ((d.contains("negat") || d.contains("deni"))
         && (d.contains("opposite") || d.contains("extreme"))) {
-        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Word,
-            Operation::Substitution, 1, 0.70, "understatement", None,
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Some("word"), Operation::Substitution, 1, 0.70, "understatement", None,
             &[("explicitness", Direction::Down), ("intensity", Direction::Down)],
             "menegaskan lewat menyangkal lawan ekstrem (litotes)"));
     }
     if d.contains("belittle") || d.contains("meiosis") || d.contains("understat") {
-        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Grain::Phrase,
-            Operation::Deletion, 1, 0.65, "understatement", None,
+        c.push(draft(Anchor::WholeUnit, ElementClass::Conceptual, Some("phrase"), Operation::Deletion, 1, 0.65, "understatement", None,
             &[("importance", Direction::Down)],
             "mengecilkan makna dibanding baseline (meiosis)"));
     }
@@ -565,8 +506,7 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
         || d.contains("shorten") && (d.contains("remov") || d.contains("cut") || d.contains("delet"))
         || d.contains("final segment") || d.contains("terminal segment")
         || d.contains("removing the end") || d.contains("cut off the end") {
-        c.push(draft(Anchor::Final, ElementClass::Lexical, Grain::Word,
-            Operation::Deletion, 1, 0.80, "truncation", None, &[],
+        c.push(draft(Anchor::Final, ElementClass::Lexical, Some("word"), Operation::Deletion, 1, 0.80, "truncation", None, &[],
             "pemotongan segmen akhir kata (apocope/clipping)"));
     }
 
@@ -574,8 +514,7 @@ pub fn compile_definition(definition: &str) -> Option<DraftGeometri> {
     if d.contains("alphabet") || d.contains("successive letters")
         || d.contains("initial letters in order")
         || d.contains("letters follow") {
-        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Grain::Grapheme,
-            Operation::Ordering, 1, 0.80, "ordering", None,
+        c.push(draft(Anchor::CrossUnit, ElementClass::Lexical, Some("grapheme"), Operation::Ordering, 1, 0.80, "ordering", None,
             &[("order", Direction::Neutral)],
             "huruf awal tiap unit mengikuti urutan referensi eksternal (abecedarian)"));
     }
@@ -601,14 +540,7 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         ElementClass::Grammatical => "Gramatikal",
         ElementClass::Conceptual => "Konseptual",
     };
-    let satuan = match p.grain {
-        Some(Grain::Grapheme) => "grafem",
-        Some(Grain::Word) => "kata",
-        Some(Grain::Phrase) => "frasa",
-        Some(Grain::Unit) => "unit",
-        Some(Grain::Discourse) => "wacana",
-        None => "unit",
-    };
+    let satuan = p.unit_id.as_deref().unwrap_or("unit");
     let operasi = match p.operation {
         Some(Operation::Addition) => "adjectio",
         Some(Operation::Deletion) => "detractio",
@@ -623,34 +555,39 @@ pub fn ke_json_konvensi_sarva(p: &FigurePattern) -> String {
         Direction::Down => "turun",
         Direction::Neutral => "netral",
     };
-    let transformasi: Vec<String> = p
+    let transformasi = p
         .transforms
         .iter()
-        .map(|t| format!("{{\"sumbu\":\"{}\",\"arah\":\"{}\"}}", t.axis, arah(t.direction)))
-        .collect();
-    let mut json = format!(
-        "{{\"jangkar\":\"{jangkar}\",\"kelas\":\"{kelas}\",\"satuan\":\"{satuan}\",\"operasi\":\"{operasi}\",\"minim_ulangan\":{},\"template\":[]",
-        p.min_repeats,
-    );
-    if !transformasi.is_empty() {
-        json.push_str(&format!(",\"transformasi\":[{}]", transformasi.join(",")));
+        .map(|t| serde_json::json!({"sumbu": t.axis, "arah": arah(t.direction)}))
+        .collect::<Vec<_>>();
+    let mut obj = serde_json::json!({
+        "jangkar": jangkar,
+        "kelas": kelas,
+        "satuan": satuan,
+        "operasi": operasi,
+        "minim_ulangan": p.min_repeats,
+        "template": serde_json::Value::Array(vec![]),
+    });
+    if !p.transforms.is_empty() {
+        obj["transformasi"] = serde_json::Value::Array(p.transforms.iter().map(|t| serde_json::json!({"sumbu": t.axis, "arah": arah(t.direction)})).collect());
     }
-    if let Some(l) = p.locus {
-        let v = match l {
-            Locus::EverySlot => "setiap",
-            Locus::ResponseSlot => "respons",
-            Locus::TerminalSlot => "ujung",
-            Locus::Distributed => "tersebar",
-            Locus::Clustered => "berumpun",
+    if let Some(l) = &p.locus_id {
+        let v = match l.as_str() {
+            "every" => "setiap",
+            "response" => "respons",
+            "terminal" => "ujung",
+            "distributed" => "tersebar",
+            "clustered" => "berumpun",
+            other => other,
         };
-        json.push_str(&format!(",\"locus\":\"{v}\""));
+        obj["locus"] = serde_json::json!(v);
     }
     if let Some(n) = p.note.as_deref() {
-        json.push_str(&format!(",\"catatan\":\"{n}\""));
+        obj["catatan"] = serde_json::json!(n);
     }
-    json.push('}');
-    json
+    serde_json::to_string(&obj).unwrap()
 }
+
 
 /// Text token with its equality label + byte offset in the source unit.
 /// For Lexical, `label` = lowercased word; for Grammatical/Conceptual,
@@ -694,6 +631,12 @@ pub struct GeometricFinding {
 pub struct TextUnit<'a> {
     pub chunk_id: &'a str,
     pub text: &'a str,
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum Position {
+    Initial,
+    Final,
 }
 
 /// The geometry matching engine. Deterministic (no LLM) for the Lexical
@@ -907,7 +850,7 @@ impl GeometryMatcher {
                     },
                 ));
             }
-        }
+        };
 
         if links.is_empty() {
             return (None, None);
@@ -950,12 +893,6 @@ impl GeometryMatcher {
             if gradatio_evidence.is_empty() { None } else { Some(gradatio_evidence) },
         )
     }
-}
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-enum Position {
-    Initial,
-    Final,
 }
 
 fn push_token(results: &mut Vec<LabeledToken>, text: &str, start: usize, end: usize) {
@@ -1218,7 +1155,7 @@ mod tests {
                  original word into two parts.";
         let draft = compile_definition(d).unwrap();
         assert_eq!(draft.pattern.anchor, Anchor::Insertion);
-        assert_eq!(draft.pattern.grain, Some(Grain::Grapheme));
+        assert_eq!(draft.pattern.unit_id, Some("grapheme".into()));
         assert_eq!(draft.pattern.operation, Some(Operation::Addition));
     }
 
@@ -1269,7 +1206,7 @@ mod tests {
         let draft = compile_definition(d).unwrap();
         assert_eq!(draft.pattern.anchor, Anchor::CrossUnit);
         assert_eq!(draft.pattern.operation, Some(Operation::Ordering));
-        assert_eq!(draft.pattern.grain, Some(Grain::Grapheme));
+        assert_eq!(draft.pattern.unit_id, Some("grapheme".into()));
     }
 
     #[test]
@@ -1315,19 +1252,19 @@ mod tests {
         // response-slot: charientismus menjawab provokasi
         let c = compile_definition("A conciliatory response that transforms a \
             harsh exchange into a softened one through mockery.").unwrap();
-        assert_eq!(c.pattern.locus, Some(Locus::ResponseSlot));
+        assert_eq!(c.pattern.locus_id, Some("response".into()));
         // every-slot: epistrophe menyebar ke tiap slot deret
         let e = compile_definition("Repetition of the same word or group of \
             words at the ends of successive clauses.").unwrap();
-        assert_eq!(e.pattern.locus, Some(Locus::EverySlot));
+        assert_eq!(e.pattern.locus_id, Some("every".into()));
         // terminal-slot: abating hanya pada okurensi penutup
         let a = compile_definition("A concluding representation that reduces \
             the rhetorical force of what precedes it.").unwrap();
-        assert_eq!(a.pattern.locus, Some(Locus::TerminalSlot));
+        assert_eq!(a.pattern.locus_id, Some("terminal".into()));
         // okurensi tunggal: locus runtuh ke anchor (None)
         let t = compile_definition("Truncate(word, terminal_segment) -> a \
             shortened word form produced by removing its final segment.").unwrap();
-        assert_eq!(t.pattern.locus, None);
+        assert_eq!(t.pattern.locus_id, None);
     }
 
     #[test]
@@ -1336,16 +1273,16 @@ mod tests {
         let cm = compile_definition("Repetition of an argumentative anchor \
             across multiple discourse positions, with intervening material \
             permitted between occurrences.").unwrap();
-        assert_eq!(cm.pattern.locus, Some(Locus::Distributed));
+        assert_eq!(cm.pattern.locus_id, Some("distributed".into()));
         assert_eq!(cm.pattern.operation, Some(Operation::Repetition));
         // epimone: clustered — definisi baru MAUPUN ringkas terdeteksi
         let ep1 = compile_definition("reiterate(anchor, near_identical_unit) -> \
             persistent repetition of the same argumentative plea in \
             substantially the same verbal form.").unwrap();
-        assert_eq!(ep1.pattern.locus, Some(Locus::Clustered));
+        assert_eq!(ep1.pattern.locus_id, Some("clustered".into()));
         let ep2 = compile_definition("Persistent dwelling on point; refrain; \
             commoratio.").unwrap();
-        assert_eq!(ep2.pattern.locus, Some(Locus::Clustered));
+        assert_eq!(ep2.pattern.locus_id, Some("clustered".into()));
     }
 
     #[test]
@@ -1361,9 +1298,9 @@ mod tests {
             anchor: Anchor::CrossUnit,
             class: ElementClass::Lexical,
             min_repeats: 1,
-            grain: Some(Grain::Word),
+            unit_id: Some("word".into()),
             operation: Some(Operation::Repetition),
-            locus: None,
+            locus_id: None,
             transforms: vec![],
             note: None,
         };
@@ -1375,4 +1312,5 @@ mod tests {
         let back: FigurePattern = serde_json::from_str(&j).unwrap();
         assert_eq!(back.anchor, Anchor::CrossUnit);
     }
+
 }

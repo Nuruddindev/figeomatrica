@@ -161,7 +161,7 @@ mod tests {
         let r = Rhetorica::from_str(json).unwrap();
         let g = r.figure("tmesis").unwrap().geometry.as_ref().unwrap();
         assert_eq!(g.anchor, Anchor::Insertion);
-        assert_eq!(g.grain, Some(figeometrica_core::Grain::Grapheme));
+        assert_eq!(g.unit_id, Some("grafem".to_string()));
         assert_eq!(g.operation, Some(figeometrica_core::Operation::Addition));
     }
 }
